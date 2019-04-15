@@ -1,0 +1,5 @@
+"0","firstLetter <- proper %>% "
+"0","  mutate(first = str_sub(name, 1, 1)) %>% "
+"0","  distinct(name, .keep_all = TRUE) %>% "
+"0","  ungroup() %>% "
+"0","  count(first, sort = TRUE)"

@@ -1,0 +1,5 @@
+"0","checkAllNames <- function(artist, song, lyrics, .pb=NULL){"
+"0","	if ((!is.null(.pb)) && inherits(.pb, ""Progress"") && (.pb$i < .pb$n)) .pb$tick()$print()"
+"0","  innerArgs <- list(artist, song, list(lyrics), onlyNames$Name)"
+"0","  data <- pmap_dfr(innerArgs, findName)"
+"0","}"

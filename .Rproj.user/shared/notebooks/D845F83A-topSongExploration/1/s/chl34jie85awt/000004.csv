@@ -1,0 +1,1 @@
+"0","ggplot(firstLetter, aes(x = first, y = n)) + geom_bar(stat = ""identity"")"

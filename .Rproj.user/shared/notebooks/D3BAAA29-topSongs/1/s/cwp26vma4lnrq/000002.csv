@@ -1,0 +1,4 @@
+"0","lyricDataNew <- lyricData %>% "
+"0","  left_join(forMetro, by = (""searchTerm"")) %>% "
+"0","  rename(song = album)"
+"2","Column `searchTerm` has different attributes on LHS and RHS of join"

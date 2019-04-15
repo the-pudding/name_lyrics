@@ -1,0 +1,6 @@
+"0","lastLetter <- proper %>% "
+"0","  mutate(last = str_sub(name, -1, -1)) %>% "
+"0","  distinct(name, .keep_all = TRUE) %>% "
+"0","  ungroup() %>% "
+"0","  count(last, sort = TRUE)"
+"0","lastLetter"

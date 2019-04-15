@@ -1,0 +1,340 @@
+---
+title: "exploration"
+author: "Amber Thomas"
+date: "3/14/2019"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: cosmo
+    df_print: paged
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intro
+
+This is an exploration of songs that contain names (from a Kaggle corpus of 57k songs searching for over 3k names that have been used more than 5k times between the 1950's and now).
+
+## Packages
+
+```{r messages = FALSE}
+library(tidyverse)
+library(here)
+library(data.table)
+library(gender)
+library(Rspotify)
+library(sentimentr)
+library(magrittr)
+library(glue)
+```
+## Preparing data
+
+Let's start by just loading the data.
+```{r}
+#nameData <- fread(here::here("processed_data", "songNames.csv"), data.table =FALSE)
+nameData <- fread(here::here("raw_data", "topSongNames.csv"), data.table =FALSE)
+
+```
+
+## Exploration
+
+How many songs (out of 40k) had a name in it?
+
+```{r}
+count <- nameData %>% distinct(artist, song) %>% summarise(count = n())
+```
+Ok, so there's `r count` (`r (count/40000) * 100`%) songs with names. 
+
+
+Let's limit to just the ones that are "proper nouns" and filter out any where the sentence is just the name in parentheses or brackets.
+
+```{r}
+proper <- allSongNames %>% 
+  filter(upos == "PROPN") %>% 
+  mutate(sentence = gsub("(\\(|\\[).*(\\)|\\])", "", sentence)) %>% 
+  filter(sentence != "")
+```
+ 
+### Most Common Names 
+Ok, out of those, which are the most common?
+
+```{r}
+common <- proper %>% 
+  count(name, sort = TRUE)
+
+common
+```
+
+### By Artist
+
+Which artists use the most names?
+
+```{r}
+byArtist <- proper %>% 
+  distinct(artist, song) %>% 
+  count(artist, sort = TRUE)
+
+byArtist
+```
+
+Woah, some of these artists have a lot of songs with names! Let's look at `Drake`.
+
+```{r}
+drake <- proper %>% 
+  filter(artist == "Drake") %>%  
+  distinct(song, .keep_all = TRUE) %>% 
+  count(name, sort = TRUE)
+
+drake
+```
+
+Ok, so some of these are most likely references to places (i.e., `Brooklyn`, `America`) or things (`Bentley`). Let's look at `John`.
+
+```{r}
+johnFab <- proper %>% 
+  filter(artist == "Fabolous" & name == "John")
+
+johnFab$sentence
+```
+
+Well, that seems to check out. Let's spot check someone from a different genre: `Jimmy Buffett`
+
+```{r}
+buff <- proper %>% 
+  filter(artist == "Jimmy Buffett") %>%  
+  distinct(song, .keep_all = TRUE) %>% 
+  count(name, sort = TRUE)
+
+buff
+```
+
+He says his own name a lot. Let's make sure that looks right:
+
+```{r}
+jimmyBuff <- proper %>% 
+  filter(artist == "Jimmy Buffett" & name == "Jimmy")
+
+jimmyBuff$sentence
+```
+
+Ah, we've got a minor data issue where his name has been inserted into the lyrics to indicate that he is speaking. I'll have to think about how to remove this.
+
+Let's check one more: `Cher`.
+
+```{r}
+cher <- proper %>% 
+  filter(artist == "Cher") %>%  
+  distinct(song, .keep_all = TRUE) %>% 
+  count(name, sort = TRUE)
+
+cher
+```
+
+How many of these names are the artists' own name (either purposely in the data or a data-error?)
+
+```{r}
+own <- proper %>% 
+  mutate(own = str_detect(artist, regex(glue("\\b{name}([:space:]|\\n)"))))
+
+ownName <- own %>% 
+  filter(own == TRUE)
+
+notOwn <- own %>% 
+  filter(own == FALSE)
+```
+
+Alright, so that's not too bad, only `r nrow(ownName)` or (`r (nrow(ownName)/nrow(proper)) * 100`%) of songs conceivably have this error. 
+
+### Song with most names
+
+Which songs say the same name the most times?
+
+```{r}
+most <- proper %>% 
+  group_by(artist, song, name) %>%  
+  summarise(count = n()) %>% 
+  ungroup() %>% 
+  arrange(desc(count))
+
+head(most, n = 50)
+```
+
+And which songs have the most different names?
+
+```{r}
+different <- proper %>% 
+  group_by(artist, song) %>% 
+  distinct(name) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+
+head(different, n = 50)
+```
+
+### Gendered Difference in Names
+
+Using the `genderizeR` package, can we look at the top `male` vs. `female` (predicted) names? 
+
+```{r}
+findGender <- function(name){
+  years <- c(1963, 2012)
+  
+  gender(name, years)
+}
+
+genderedNames <- map_dfr(common$name, findGender)
+
+cleanGenderedNames <- genderedNames %>% 
+  mutate(gen = ifelse(proportion_male >= 0.6, "male",
+                      ifelse(proportion_female >= 0.6, "female", "unknown")))
+
+countGendered <- proper %>% 
+  count(name, sort = TRUE) %>% 
+  left_join(cleanGenderedNames) %>% 
+  select(c(name, n, gen)) %>% 
+  group_by(gen) %>% 
+  arrange(desc(n)) %>% 
+  mutate(rank = row_number()) %>% 
+  filter(rank <= 20)
+
+countGendered
+```
+
+
+### Adding Sentiment Data
+
+Anything interesting about the sentiment of a song with different names? 
+
+```{r}
+distinctSongs <- proper %>% 
+  distinct(artist, song, .keep_all = TRUE) 
+
+sentiment <- distinctSongs %>% 
+  dplyr::mutate(dialogue_split = get_sentences(sentence)) %$%
+  sentiment_by(dialogue_split, list(artist, song))
+
+sentimentByName <- proper %>% 
+  left_join(sentiment, by = c("artist", "song")) 
+
+sentimentGroup <- sentimentByName %>% 
+  group_by(name) %>% 
+  summarise(count = n(),
+            avg = mean(ave_sentiment),
+            stdev = sd(ave_sentiment)) %>% 
+  arrange(desc(count)) %>% 
+  filter(count >= 5)
+
+namesToCheck <- head(sentimentGroup, n = 20) %$%
+  name
+
+limitedNames <- sentimentByName %>% 
+  filter(name %in% namesToCheck)
+  
+
+ggplot(limitedNames, aes(x = factor(name), y = ave_sentiment)) +
+  geom_boxplot(alpha = 0.80) +
+  geom_point(aes(fill = "name"), size = 2, shape = 21, position = position_jitterdodge())  +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+How about the songs with the highest sentiment? 
+
+```{r}
+highestNames <- sentimentByName %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  group_by(name) %>% 
+  summarise(count = n(),
+            avg = mean(ave_sentiment),
+            stdev = sd(ave_sentiment)) %>% 
+  arrange(desc(avg)) %>% 
+  filter(count >= 10)
+
+namesToCheck <- head(highestNames, n = 20) %$%
+  name
+
+limitedNames <- sentimentByName %>% 
+  filter(name %in% namesToCheck)
+  
+
+ggplot(limitedNames, aes(x = factor(name), y = ave_sentiment)) +
+  geom_boxplot(alpha = 0.80) +
+  geom_point(aes(fill = "name"), size = 2, shape = 21, position = position_jitterdodge()) + theme(legend.position="none") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+Or the lowest sentiment
+```{r}
+lowestNames <- sentimentByName %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  group_by(name) %>% 
+  summarise(count = n(),
+            avg = mean(ave_sentiment),
+            stdev = sd(ave_sentiment)) %>% 
+  arrange((avg)) %>% 
+  filter(count >= 10)
+
+namesToCheck <- head(lowestNames, n = 20) %$%
+  name
+
+limitedNames <- sentimentByName %>% 
+  filter(name %in% namesToCheck)
+  
+
+ggplot(limitedNames, aes(x = factor(name), y = ave_sentiment)) +
+  geom_boxplot(alpha = 0.80) +
+  geom_point(aes(fill = "name"), size = 2, shape = 21, position = position_jitterdodge()) + theme(legend.position="none") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+Or the name with the lowest variation in sentiment? 
+
+```{r}
+lowestVar <- sentimentByName %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  group_by(name) %>% 
+  summarise(count = n(),
+            avg = mean(ave_sentiment),
+            stdev = sd(ave_sentiment)) %>% 
+  arrange((stdev)) %>% 
+  filter(count >= 10)
+
+namesToCheck <- head(lowestVar, n = 20) %$%
+  name
+
+limitedNames <- sentimentByName %>% 
+  filter(name %in% namesToCheck)
+  
+
+ggplot(limitedNames, aes(x = factor(name), y = ave_sentiment)) +
+  geom_boxplot(alpha = 0.80) +
+  geom_point(aes(fill = "name"), size = 2, shape = 21, position = position_jitterdodge()) + theme(legend.position="none") +
+  theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+
+```{r}
+alyssa <- proper %>% 
+  filter(artist == "Sir Mix") 
+
+alyssa
+```
+
+
+## Other Possibilities
+
+* Generate playlist of songs for each name
+* Look at change over time
+* Look at names by genre
+
+```{r}
+songs <- proper %>% 
+  count(artist, song)
+```
+
+

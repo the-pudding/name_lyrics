@@ -1,0 +1,5 @@
+"0","artist <- proper %>% "
+"0","  group_by(artist) %>% "
+"0","  distinct(song, .keep_all = TRUE) %>% "
+"0","  ungroup() %>% "
+"0","  count(artist, sort = TRUE)"

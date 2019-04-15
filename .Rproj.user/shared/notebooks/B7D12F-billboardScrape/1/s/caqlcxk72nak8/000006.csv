@@ -1,0 +1,7 @@
+"0","missingSongs <- toFindClean %>% "
+"0","  left_join(oldData, by = c(""artist"" = ""artist"", ""album"" = ""title"")) %>% "
+"0","  mutate(newScraped = ifelse(is.na(scraped), ""False"", scraped)) %>% "
+"0","  filter(newScraped == ""False"")"
+"0","foundSongs <- toFindClean %>% "
+"0","  left_join(oldData, by = c(""artist"" = ""artist"", ""album"" = ""title"")) %>% "
+"0","  filter(scraped == ""True"")"

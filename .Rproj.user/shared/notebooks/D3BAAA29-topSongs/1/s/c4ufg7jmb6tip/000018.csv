@@ -1,0 +1,9 @@
+"0","fixingNames <- colin %>% 
+  left_join(unnestedSongs, by = c(""artist"", ""song"", ""sentence"" = ""lyrics"")) %>% 
+  left_join(replaceNames, by = ""file"") %>% 
+  mutate(artist2 = ifelse(is.na(newArtist), artist, newArtist),
+         song2 = ifelse(is.na(newSong), song, newSong)) %>% 
+  select(-c(artist, song, newArtist, newSong)) %>% 
+  rename(artist = artist2, song = song2)
+"
+"2","Column `file` joining character vector and factor, coercing into character vector"

@@ -1,0 +1,4 @@
+"0","own <- proper %>% "
+"0","  mutate(own = str_detect(artist, regex(glue(""\\b{name}([:space:]|\\n)""))))"
+"0","ownName <- own %>% "
+"0","  filter(own == TRUE)"

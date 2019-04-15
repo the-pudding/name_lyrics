@@ -1,0 +1,5 @@
+"0","fuzzyMatching <- fixingNames %>% 
+  stringdist_left_join(meta, by = c(""artist"" = ""artist"", ""song"" = ""title""))
+"
+"2","
+"

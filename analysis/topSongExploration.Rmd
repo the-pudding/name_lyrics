@@ -1,0 +1,322 @@
+---
+title: "Full Exploration"
+author: "Amber Thomas"
+date: "4/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intro
+
+Ok, so now we have data on all the names found in x top songs from Billboard's Hot 100!
+
+We'll start with loading some necessary packages. 
+
+```{r}
+library(tidyverse)
+library(here)
+library(gender)
+library(sentimentr)
+```
+
+and the data
+
+```{r}
+allNameSongs <- read.csv(here::here("processed_data", "allNamesInSongs.csv"), header = TRUE, stringsAsFactors = FALSE)
+```
+
+## Processing Data
+
+Most of the processing has already been done, but we can limit our results to just names that were identified as Proper Nouns. 
+
+```{r}
+proper <- allNameSongs %>% 
+  filter(upos == "PROPN")
+```
+
+## Exploration
+
+### Common Names
+
+Alright, let's start simple. What are the most common names used overall? 
+
+```{r}
+common <- proper %>% 
+  count(name, sort = TRUE)
+
+common
+```
+
+Out of the `nrow(common)` names used across all of our songs. The most common names are `common[1,1]`, `common[1,2]`, and `common[1,3]`. But that is a total of mentions of each name. Let's see which ones are the most common across each song (that is, counting each song that mentions a name only once).
+
+```{r}
+commonBySong <- proper %>% 
+  group_by(artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(name, sort = TRUE)
+
+commonBySong
+```
+
+Pretty similar. The top names are now `commonBySong[1,1]`, `commonBySong[2,1]`, and `commonBySong[3,1]`.
+
+
+### By Artist
+
+Do certain artists use names in more songs than others? 
+
+```{r}
+artist <- proper %>% 
+  group_by(artist) %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(artist, sort = TRUE)
+
+artist
+```
+
+Well, with the exception of `Glee Cast` (who just sing lots of popular songs), most of these artists are rappers or Hip Hop artists. Let's see if the most popular are consistently singing about the same names. 
+
+We'll start with Drake, who has names in 59 of his top songs!
+
+```{r}
+drake <- proper %>% 
+  filter(artist == "Drake") %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  count(name, sort = TRUE)
+
+drake
+```
+
+Wow, with `nrow(drake)` different names in his repertoire, Drake is rarely singing about the same person in multiple songs.
+
+Let's check with our #2 artist, Eminem. 
+
+```{r}
+eminem <- proper %>% 
+  filter(artist == "Eminem") %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  count(name, sort = TRUE)
+```
+
+Although Eminem also doesn't include the same name too repetitively, it's unsurprising that he uses the name "Hailie" in 4 separate songs. Hailie is his daughter's name, afterall. 
+
+### Repeat Names
+
+Some songs (like Jolene or Barbara Anne) use the same name over and over again. Which songs use the same name repeatedly?
+
+```{r}
+repeats <- proper %>% 
+  group_by(artist, song) %>% 
+  count(name) %>% 
+  ungroup() %>% 
+  arrange(desc(n))
+
+repeats
+```
+```{r}
+justin <- allNameSongs %>% 
+  filter(artist == "Justin Bieber")
+```
+
+### Different Names
+
+On the flip side, which songs use the most unique names? 
+
+```{r}
+uniqueNames <- proper %>% 
+  group_by(artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  summarise(count = n()) %>% 
+  arrange(desc(count))
+
+uniqueNames
+```
+
+### First Letter
+
+Back in 2014, Slate published an [article](https://slate.com/culture/2014/07/most-common-names-in-songs-why-is-pop-music-obsessed-with-songs-about-johnny-jenny-and-jane.html) about how pop songs that have names in the _titles_ most often contain names that start with J. Do we see the same trend with names in the lyrics? 
+
+```{r}
+firstLetter <- proper %>% 
+  mutate(first = str_sub(name, 1, 1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(first, sort = TRUE)
+```
+
+```{r}
+ggplot(firstLetter, aes(x = first, y = n)) + geom_bar(stat = "identity")
+```
+
+How does this compare to the Social Security name data that we have? 
+
+```{r}
+onlyNames <- read.csv(here::here("processed_data", "onlyNames.csv"), header = TRUE, stringsAsFactors = FALSE)
+
+onlyNameLetter <- onlyNames %>% 
+  mutate(first = str_sub(Name, 1, 1)) %>% 
+  count(first, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(onlyNames)) * 100,
+         group = "SS")
+
+firstLetterPercent <- proper %>% 
+  mutate(first = str_sub(name, 1, 1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(first, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(common)) * 100,
+         group = "song")
+
+firstLettersAll <- rbind(onlyNameLetter, firstLetterPercent)
+```
+
+```{r}
+ggplot(firstLettersAll, aes(x = first, y = percent, group = group, fill = group)) + geom_bar(stat = "identity", position = "dodge")
+```
+Huh, names starting with B, C, P, R, and S are quite a bit more popular in songs than in the actual country. A names and J names are slightly less common and K and L names are wayyy less common in songs than in the country.
+
+
+What about letters that end a name? 
+
+```{r}
+lastLetter <- proper %>% 
+  mutate(last = str_sub(name, -1, -1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(last, sort = TRUE)
+
+lastLetter
+```
+
+Names that end in E are reigning supreme here. 
+
+
+### Gendered Names
+
+Anecdotally, it looks like there are more male names mentioned than female names. Let's check that out. 
+
+Using the `gender` package, can we look at the top `male` vs. `female` (predicted) names? 
+
+```{r}
+findGender <- function(name){
+  years <- c(1963, 2012)
+  
+  gender::gender(name, years)
+}
+
+genderedNames <- map_dfr(common$name, findGender)
+
+cleanGenderedNames <- genderedNames %>% 
+  mutate(gen = ifelse(proportion_male >= 0.6, "male",
+                      ifelse(proportion_female >= 0.6, "female", "unknown")))
+
+countGendered <- proper %>% 
+  count(name, sort = TRUE) %>% 
+  left_join(cleanGenderedNames) %>% 
+  select(c(name, n, gen)) %>% 
+  group_by(gen) %>% 
+  arrange(desc(n)) %>% 
+  mutate(rank = row_number()) %>% 
+  filter(rank <= 20)
+
+countGendered
+```
+
+How many songs contain male names vs. female names? 
+
+```{r}
+maleFemaleSongs <- proper %>% 
+  left_join(cleanGenderedNames) %>% 
+  group_by(artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(gen, sort = TRUE)
+
+maleFemaleSongs
+```
+
+There are almost twice as many male names (`maleFemaleSongs[1,2]`) mentioned in songs as female names (`maleFemaleSongs[2,2]`)!
+
+### By Decade
+
+Let's take a look at the top names by decade
+
+```{r}
+byDecade <- proper %>% 
+  mutate(decade = year - year %% 10) %>% 
+  group_by(decade) %>% 
+  count(name, sort = TRUE) %>% 
+  mutate(rank = row_number()) %>% 
+  filter(rank <= 10) %>% 
+  filter(!is.na(decade))
+```
+
+```{r}
+
+my_theme <- function() {
+
+  # Colors
+  color.background = "white"
+  color.text = "#22211d"
+
+  # Begin construction of chart
+  theme_bw(base_size=15) +
+
+    # Format background colors
+    theme(panel.background = element_rect(fill=color.background, color=color.background)) +
+    theme(plot.background  = element_rect(fill=color.background, color=color.background)) +
+    theme(panel.border     = element_rect(color=color.background)) +
+    theme(strip.background = element_rect(fill=color.background, color=color.background)) +
+
+    # Format the grid
+    theme(panel.grid.major.y = element_blank()) +
+    theme(panel.grid.minor.y = element_blank()) +
+    theme(axis.ticks       = element_blank()) +
+
+    # Format the legend
+    theme(legend.position = "none") +
+
+    # Format title and axis labels
+    theme(plot.title       = element_text(color=color.text, size=20, face = "bold")) +
+    theme(axis.title.x     = element_text(size=14, color="black", face = "bold")) +
+    theme(axis.title.y     = element_text(size=14, color="black", face = "bold", vjust=1.25)) +
+    theme(axis.text.x      = element_text(size=10, vjust=0.5, hjust=0.5, color = color.text)) +
+    theme(axis.text.y      = element_text(size=10, color = color.text)) +
+    theme(strip.text       = element_text(face = "bold")) +
+
+    # Plot margins
+    theme(plot.margin = unit(c(0.35, 0.2, 0.3, 0.35), "cm"))
+}
+
+show.top.n <- 10
+
+ggplot(data = byDecade, aes(x = decade, y = rank, group = name)) +
+  geom_line(aes(color = name, alpha = 1), size = 2) +
+  geom_point(aes(color = name, alpha = 1), size = 4) +
+  geom_point(color = "#FFFFFF", size = 1) +
+  scale_y_reverse(breaks = 1:show.top.n) +
+  #scale_x_continuous(breaks = 1950:2010, minor_breaks = 1950:2010, expand = c(.05, .05)) +
+  geom_text(data = byDecade %>% filter(decade == 1950),
+            aes(label = name, x = 1950) , hjust = .15, fontface = "bold", color = "#888888", size = 3) +
+  geom_text(data = byDecade %>% filter(decade == 2010),
+            aes(label = name, x = 2010) , hjust = 0.85, fontface = "bold", color = "#888888", size = 3) +
+  coord_cartesian(ylim = c(1,show.top.n)) + 
+  theme(legend.position = "none") +
+  labs(x = "Decade",
+       y = "Rank") +
+  my_theme() 
+
+# ggplot(byDecade, aes(x = decade, y = rank, group = name)) +
+#   geom_line(aes(color = name, alpha = 1), size = 2) +
+#   geom_point(aes(color = name, alpha = 1), size = 4) +
+#   scale_y_reverse(breaks = 1:nrow(byDecade))
+```
+
+
+
+

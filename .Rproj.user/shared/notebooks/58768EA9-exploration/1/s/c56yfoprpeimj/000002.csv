@@ -1,0 +1,4 @@
+"0","proper <- allSongNames %>% "
+"0","  filter(upos == ""PROPN"") %>% "
+"0","  mutate(sentence = gsub(""(\\(|\\[).*(\\)|\\])"", """", sentence)) %>% "
+"0","  filter(sentence != """")"

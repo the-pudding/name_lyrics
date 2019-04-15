@@ -1,0 +1,9 @@
+"0","topOldMeta <- topSongNamesOld %>% 
+  left_join(oldMeta) %>% 
+  rename(earliest = date, highestRank = peak) %>% 
+  mutate(earliest = ymd(earliest)) %>% 
+  mutate(year = year(earliest)) %>% 
+  select(-c(""fname"", ""title""))
+"
+"2","Joining, by = c(""artist"", ""song"")
+"

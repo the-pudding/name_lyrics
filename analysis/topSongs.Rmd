@@ -1,0 +1,358 @@
+---
+title: "topSongs"
+author: "Amber Thomas"
+date: "April 5, 2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+What names are used most often in song lyrics? I'm using 2 data sources to look into this: 
+
+* [US Baby Names](https://www.kaggle.com/kaggle/us-baby-names)
+* [Lyrics from 55K songs](https://www.kaggle.com/mousehead/songlyrics)
+
+## Packages
+
+```{r}
+library(tidyverse)
+library(here)
+library(udpipe)
+library(jsonlite)
+library(fuzzyjoin)
+library(readxl)
+```
+
+## Make list of names
+
+```{r eval = FALSE}
+names <- read.csv(here::here("raw_data", "NationalNames.csv"), header = TRUE, stringsAsFactors = FALSE)
+```
+
+I don't care exactly how often a name is used over time, I just want a list of names. 
+
+```{r eval = FALSE}
+onlyNames <- names %>% 
+  group_by(Name) %>% 
+  summarise(count = sum(Count)) %>% 
+  filter(count >= 5000)
+
+write.csv(onlyNames, here::here("processed_data", "onlyNames.csv"), row.names = FALSE)
+```
+
+Alright a total of `r nrow(onlyNames)` names that were used over 5000 times between 1880 and 2014. Not too bad. Let's import some song lyrics. 
+
+```{r echo = TRUE}
+onlyNames <- read.csv(here::here("processed_data", "onlyNames.csv"), header = TRUE, stringsAsFactors = FALSE)
+```
+
+
+## Lyrics
+
+Colin sent along lyrics in individual text files. I'll need to write a function to read in each one, separate the file name into the artist name and song name and append the lyrics.
+
+```{r}
+files <- list.files(
+  path = here("raw_data", "lyrics"),
+  pattern = "*.txt",
+  full.names = FALSE
+)
+```
+
+
+```{r}
+bindLyrics <- function(file, .pb = NULL){
+  
+  if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
+  Sys.sleep(0.001)
+  
+  df <- tibble(file = file) %>% 
+    separate(file, into = c("artist", "song"), sep = "-", remove = FALSE) %>% 
+    mutate(song = gsub(".txt", "", song),
+           artist = gsub("_", " ", artist),
+           song = gsub("_", " ", song)) %>% 
+    mutate(lyrics = map(here::here("raw_data", "lyrics", file), function(x){
+      lines <- scan(x, what = character(), strip.white = TRUE, blank.lines.skip = TRUE, sep = "\n")
+    }),
+    # Remove text inside of parenthesis or square brackets
+      lyrics = map(lyrics, function(x) gsub("(\\(|\\[).*(\\)|\\])", "", x)))
+  
+  outputFile = here::here("processed_data", "topLyrics.json")
+  
+  json <- df %>% 
+    toJSON() %>% 
+    write_lines(outputFile, append = TRUE)
+  
+  return(df)
+  
+}
+
+possiblyBindLyrics <- possibly(bindLyrics, otherwise = NULL, quiet = TRUE)
+
+pb <- progress_estimated(length(files))
+
+lyricData <- map_df(files, possiblyBindLyrics, .pb = pb)
+```
+
+
+Let's also load in the data from 2017 - 2019
+
+```{r}
+files <- list.files(
+  path = here::here("raw_data", "new_lyrics"),
+  pattern = "*.txt",
+  full.names = FALSE
+)
+```
+
+```{r}
+bindLyricsNew <- function(file, .pb = NULL){
+  
+  if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
+  Sys.sleep(0.001)
+  
+  df <- tibble(file = file) %>% 
+    mutate(searchTerm = gsub(".txt", "", file)) %>% 
+    mutate(lyrics = map(here::here("raw_data", "new_lyrics", file), function(x){
+      lines <- scan(x, what = character(), strip.white = TRUE, blank.lines.skip = TRUE, sep = "\n")
+    }),
+    # Remove text inside of parenthesis or square brackets
+      lyrics = map(lyrics, function(x) gsub("(\\(|\\[).*(\\)|\\])", "", x)))
+  
+  
+  outputFile = here::here("processed_data", "topLyricsNew.json")
+  
+  json <- df %>%
+    toJSON() %>%
+    write_lines(outputFile, append = TRUE)
+  
+  return(df)
+  
+}
+
+possiblyBindLyrics <- possibly(bindLyricsNew, otherwise = NULL, quiet = TRUE)
+
+pb <- progress_estimated(length(files))
+
+lyricData <- map_df(files, possiblyBindLyrics, .pb = pb)
+```
+
+Now to bind this with the `forMetro` data frame to find the song and artist that matches each search term.
+
+```{r}
+lyricDataNew <- lyricData %>% 
+  left_join(forMetro, by = ("searchTerm")) %>% 
+  rename(song = album)
+```
+
+
+
+
+
+## Function
+
+Alright, so I need a function to look for a name, and if it finds it, to add it to a new data frame. Then this function needs to be looped over every name in our set. 
+
+```{r}
+findName <- function(artist, song, lyrics, name){
+  search <- paste0("\\b(", name, ")([:space:]|\\b)")
+  found <- stringr::str_detect(string = lyrics, pattern = regex(pattern = search))
+
+  if (TRUE %in% found){
+      songTibble <- tibble("artist" = artist,
+                           "song" = song,
+                           "lyrics" = list(lyrics),
+                           "name" = name) %>% 
+        unnest(lyrics) %>% 
+        mutate(contains = stringr::str_detect(string = lyrics, pattern = regex(pattern = search))) %>% 
+        filter(contains == TRUE)
+      
+      parsedSong <- map_dfr(songTibble$lyrics, function(x){
+          parse <-  udpipe::udpipe_annotate(x, object = ud_english)
+          txt <- as.data.frame(parse)
+        }) %>% 
+          filter(token == name) %>% 
+          mutate(artist = artist,
+               song = song, 
+               name = name) %>% 
+        select(c(artist, song, name, sentence, upos, xpos, dep_rel))
+      
+    
+  
+    fileName = here::here("processed_data", "topSongNamesNew.csv")
+      
+
+	  write.table(parsedSong, file = fileName, row.names = FALSE, append = TRUE, sep = ",", col.names = !file.exists(fileName))
+	  
+	  return(parsedSong)
+  }
+}
+```
+
+
+
+```{r}
+checkAllNames <- function(artist, song, lyrics, .pb=NULL){
+	if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
+
+  innerArgs <- list(artist, song, list(lyrics), onlyNames$Name)
+
+  data <- pmap_dfr(innerArgs, findName)
+
+}
+```
+
+
+```{r}
+sub <- lyricDataNew %>% 
+pb <- progress_estimated(nrow(sub))
+args <- list(artist = sub$artist, song = sub$song, lyrics = sub$lyrics)
+namesInSongs <- pmap_dfr(args, checkAllNames, .pb = pb)
+```
+
+
+```{r}
+topSongNamesNew <- read_excel(here::here("processed_data", "topSongNamesNewXL.xlsx")) %>% 
+  select(-contains("X__"))
+```
+
+Ok, so Colin's data actually had some processing errors with separating out the artist/song name. Let's see if we can clean some of that up. 
+
+```{r}
+topSongs <- jsonlite::fromJSON(here::here("processed_data", "topLyrics.json"))
+
+topSongsHyphens <- topSongs %>% 
+  mutate(hyphens = str_count(file, "-")) %>% 
+  filter(hyphens > 1) %>% 
+  unnest(lyrics)
+
+unnestedSongs <- topSongs %>%
+  unnest(lyrics)
+
+# read in colin's name data
+colin <- read.csv(here::here("processed_data", "topSongNames.csv"), header = TRUE, stringsAsFactors = FALSE)
+
+wrongNames <- colin %>% 
+  left_join(topSongsHyphens, by = c("artist", "song", "sentence" = "lyrics")) %>% 
+  filter(!is.na(hyphens)) %>% 
+  group_by(file) %>% 
+  summarise(count = n())
+
+write.csv(wrongNames, here::here("raw_data", "wrongNames.csv"), row.names = FALSE)
+replaceNames <- read.csv(here::here("raw_data", "wrongNames.csv"), header = TRUE)
+
+fixingNames <- colin %>% 
+  left_join(unnestedSongs, by = c("artist", "song", "sentence" = "lyrics")) %>% 
+  left_join(replaceNames, by = "file") %>% 
+  mutate(artist2 = ifelse(is.na(newArtist), artist, newArtist),
+         song2 = ifelse(is.na(newSong), song, newSong)) %>% 
+  select(-c(artist, song, newArtist, newSong)) %>% 
+  rename(artist = artist2, song = song2)
+```
+Ok, so now any file names with multiple hyphens have been fixed, but both artist and song names have been clipped to the first 15 or so characters. let's see if we can fuzzy match the artist/song combinations.
+
+```{r}
+metadata <- read.csv(here::here("raw_data", "song_metadata.csv"), header = TRUE, stringsAsFactors = FALSE)
+
+fullNames <- topSongs %>%
+  left_join(metadata, by = c("file" = "fname")) %>% 
+  unnest(lyrics)
+
+fullMeta <- colin %>% 
+  left_join(fullNames, by = c("artist" = "artist.x", "song", "sentence" = "lyrics"))
+
+missingFile <- fullMeta %>% 
+  filter(is.na(file))
+
+
+```
+
+
+```{r}
+meta <- read.csv(here::here("raw_data", "songs.csv"), header = TRUE, stringsAsFactors = FALSE) %>% 
+  filter(scraped == "True") %>% 
+  select(c(artist, date, title))
+
+fuzzyMatching <- fixingNames %>% 
+  stringdist_left_join(meta, by = c("artist" = "artist", "song" = "title"))
+
+manual <- fuzzyMatching %>% 
+  filter(is.na(title)) %>% 
+  group_by(artist.x, song) %>% 
+  count(.)
+
+panic <- fuzzyMatching %>% filter(artist.x == "Panic! At The D")
+  
+```
+
+
+```{r}
+colin <- read.csv(here::here("processed_data", "topSongNames.csv"), header = TRUE, stringsAsFactors = FALSE)
+new <- read.csv(here::here("processed_data", "topSongNamesNew.csv"), header = TRUE, stringsAsFactors = FALSE)
+
+allSongNames <- rbind(colin, new)
+```
+
+```{r}
+check <- read.csv(here::here("processed_data", "songNamesNew.csv"), header = TRUE, stringsAsFactors = FALSE, row.names = NULL)
+
+fifteen <- taylor %>% filter(song == "Fifteen")
+```
+
+part of speech tagging
+
+```{r}
+ud_english <- udpipe_download_model(language = "english")
+ud_english <- udpipe_load_model(here::here("english-ud-2.0-170801.udpipe"))
+parsedTxt <- udpipe::udpipe_annotate(fifteen$text, object = ud_english)
+txt <- as.data.frame(parsedTxt)
+parsedTxt$phrase_tag <- as_phrasemachine(parsedTxt$upos, type = "upos")
+```
+
+Light analysis
+```{r}
+
+counts <- allSongNames %>% 
+  filter(upos == "PROPN") %>% 
+  group_by(artist, song, name) %>% 
+  count(.) %>% 
+  group_by(name) %>% 
+  count(., sort = TRUE)
+```
+
+
+Let's try loading in the songs from another kaggle dataset:
+
+```{r}
+topBBSongsData <- read.csv("https://raw.githubusercontent.com/walkerkq/musiclyrics/master/billboard_lyrics_1964-2015.csv", header = TRUE, stringsAsFactors = FALSE)
+
+cleanBB <- topBBSongsData %>%
+  mutate(Lyrics = trimws(Lyrics)) %>% 
+  filter(!is.na(Lyrics),
+   Lyrics != "",
+   Lyrics != " ",
+   Lyrics != "instrumental")
+```
+
+Looking for names in the Billboard Top Songs dataset.
+
+```{r}
+pb <- progress_estimated(nrow(topBBSongsData))
+args <- list(artist = cleanBB$Artist, song = cleanBB$Song, lyrics = cleanBB$Lyrics)
+bbsongsNames <- pmap_dfr(args, checkAllNames, .pb = pb)
+```
+
+```{r}
+first <- cleanBB[1,]
+sam <- findName(first$Artist, first$Song, first$Lyrics, "Sam")
+```
+

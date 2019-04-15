@@ -1,0 +1,86 @@
+---
+title: "Testing"
+author: "Amber Thomas"
+date: "3/13/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Intro
+
+This is a way for me to experiment with using the musixmatch api to collect song lyrics.
+
+## Packages
+
+```{r}
+library(tidyverse)
+library(musixmatchPudding)
+```
+
+## Setting up musixmatch api
+
+```{r}
+api_key <- "5adafa9fbdcc2ef44d54793f1d5aad65"
+base_url <- "https://api.musixmatch.com/ws/1.1/"
+```
+
+## Testing API
+
+```{r}
+check_internet <- function(){
+  attempt::stop_if_not(.x = curl::has_internet(), msg = "Please check your internet connexion")
+}
+```
+
+```{r}
+check_status <- function(res){
+  attempt::stop_if_not(.x = httr::status_code(res),
+              .p = ~ .x == 200,
+              msg = "The API returned an error")
+}
+```
+
+
+
+
+```{r}
+search_artistlocal <- function(q_artist = NULL, f_artist_id = NULL, f_artist_mbid = NULL, page = NULL, page_size = NULL, format = "json", apikey = api_key){
+  args <- list(q_artist = q_artist, f_artist_id = f_artist_id, f_artist_mbid = f_artist_mbid, page = page, page_size = page_size, format = format, apikey = apikey)
+
+  # Check that at least one argument is not null
+  attempt::stop_if_all(args, is.null, "You need to specify at least one argument")
+
+  # Chek for internet
+  check_internet()
+  # function specific url
+  functionURL <- paste0(base_url, "artist.search?")
+  # Create the
+  res <- httr::GET(functionURL, query = purrr::compact(args))
+  # Check the result
+  check_status(res)
+  # Get the content and return it as a data.frame
+  jsonlite::fromJSON(rawToChar(res$content))$message$body$artist_list$artist
+}
+```
+
+```{r}
+ariana <- search_artist("Ariana Grande")
+```
+
+```{r}
+ariAlbums <- get_albums("13958599")
+```
+
+```{r}
+ariTracks <- search_track("31234760")
+```
+
+```{r}
+lyrics <- get_lyrics("164289228")
+```
+
+
+

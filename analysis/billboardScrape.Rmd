@@ -1,0 +1,256 @@
+---
+title: "Billboard Scraper"
+author: "Amber Thomas"
+date: "3/13/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(httr)
+library(rvest)
+library(rebus)
+library(stringr)
+library(lubridate)
+library(glue)
+library(purrr)
+library(lubridate)
+```
+```{r} 
+testURL <- "https://www.billboard.com/archive/charts/2018/billboard-200" 
+parsedURL <- read_html(testURL)
+
+```
+
+Finding URLs for each year.
+
+```{r}
+years <- seq(2017, 2018, 1)
+```
+
+Trying to extract a list of urls per year.
+
+```{r}
+findWeeklyURL <- function(year, .pb = NULL){
+	if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
+
+	Sys.sleep(0.001)
+  		
+  url <- glue("https://www.billboard.com/archive/charts/{year}/hot-100")
+  parsedURL <- read_html(url)
+  
+  pages_data <- parsedURL %>% 
+    # The '.' indicates the class
+    html_nodes('.archive-table a') %>% 
+    # Extract the link
+    html_attr("href") %>% 
+    # Into a tibble
+    as_tibble()
+  
+  map_dfr(pages_data$value, findTopAlbums)
+}
+```
+
+```{r}
+findTopAlbums <- function(url){
+  fullURL <- glue("https://www.billboard.com{url}")
+  parsedURL <- read_html(fullURL)
+  columns <- c("rank", "artist", "album")
+  
+  # Finding number 1
+  artist <- parsedURL %>% 
+    html_nodes('.chart-number-one__title') %>% 
+    html_text() %>% 
+    as_tibble()
+  
+  album <- parsedURL %>% 
+    html_nodes('.chart-number-one__artist') %>% 
+    html_text() %>% 
+    as_tibble()
+  
+  one <- cbind(1, album, artist) 
+  colnames(one) <- columns
+  
+  rank <- parsedURL %>% 
+    html_nodes('.chart-list-item__rank') %>% 
+    html_text() %>% 
+    as_tibble()
+  
+  album <- parsedURL %>% 
+    html_nodes('.chart-list-item__title') %>% 
+    html_text() %>% 
+    as_tibble()
+  
+  artist <- parsedURL %>% 
+    html_nodes('.chart-list-item__artist') %>% 
+    html_text() %>% 
+    as_tibble()
+  
+  rest <- cbind(rank, artist, album)
+  colnames(rest) <- columns
+  
+  output <- rbind(one, rest) %>% 
+    mutate(url = url)
+  
+  fileName = "billboardHot100.csv"
+
+	write.table(output, file = here::here("processed_data", fileName), row.names = FALSE, append = TRUE, sep = ",", col.names = !file.exists(fileName))
+}
+```
+
+```{r}
+pb <- progress_estimated(length(years))
+allBillboard <- map_dfr(years, findWeeklyURL, .pb = pb)
+thisYear <- map_dfr(2019, findWeeklyURL)
+```
+
+Let's look at all the songs that have made it onto the Hot 100 since Colin finished data collection (April 2017). 
+
+```{r}
+toFind <- read.csv(here::here("processed_data", "billboardHot100.csv"), header = TRUE, stringsAsFactors = FALSE )
+```
+
+Let's clean this up a bit.
+
+```{r}
+toFindClean <- toFind %>% 
+  filter(url != "url") %>%
+  mutate(artist = trimws(artist),
+         album = trimws(album)) %>% 
+  count(artist, album)
+```
+
+Now let's load in the songs that Colin has in his database. 
+
+```{r}
+oldData <- read.csv(here::here("raw_data", "songs.csv"), header = TRUE, stringsAsFactors = FALSE)
+```
+
+Now let's find if any of our new songs already exist in Colin's database (so we won't need to access them a second time). 
+
+```{r}
+missingSongs <- toFindClean %>% 
+  left_join(oldData, by = c("artist" = "artist", "album" = "title")) %>% 
+  mutate(newScraped = ifelse(is.na(scraped), "False", scraped)) %>% 
+  filter(newScraped == "False")
+
+foundSongs <- toFindClean %>% 
+  left_join(oldData, by = c("artist" = "artist", "album" = "title")) %>% 
+  filter(scraped == "True")
+```
+
+Alright, let's try to make some of this into the format we'll need to search for MetroLyrics. 
+
+```{r}
+forMetro <- missingSongs %>% 
+  select(c("artist", "album")) %>% 
+  mutate(artistSearch = gsub(" Featuring.*| x .*| \\& .*|\\, .*| \\+ .*| X .*|\\.|\\'| Feauring.*| With .*|\\*| \\/ .*", "", artist),
+         artistSearch = gsub("\\$", "s", artistSearch),
+         artistSearch = gsub("P!nk", "pink", artistSearch),
+         artistSearch = gsub("\\!", "", artistSearch),
+         artistSearch = gsub(" ", "\\-", artistSearch),
+         artistSearch = tolower(artistSearch)) %>% 
+  mutate(songSearch = gsub("\\(|\\)|\\,|\\'|\\!|\\.|\\:|\\& |\\?|\\+|\\-|\\/ |%", "", album),
+         songSearch = gsub(">", "than", songSearch),
+         songSearch = tolower(songSearch),
+         songSearch = gsub("s\\*\\*t|sh\\*t", "shit", songSearch),
+         songSearch = gsub("f\\*\\*k", "fuck", songSearch),
+         songSearch = gsub("\\*", "", songSearch),
+         songSearch = gsub(" ", "\\-", songSearch)) %>% 
+  mutate(searchTerm = glue::glue("{songSearch}-lyrics-{artistSearch}"))
+```
+
+```{r}
+findLyrics <- function(url, .pb = NULL){
+  # Keep track of progress and add a random amount of time between 0 and 5 seconds in between each call
+  if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
+  Sys.sleep(runif(1, min = 0, max = 10))
+  
+  fullURL <- glue("http://www.metrolyrics.com/{url}")
+  parsedURL <- read_html(fullURL)
+
+  
+  # Finding number 1
+  lyrics <- parsedURL %>% 
+    html_nodes('.verse') %>% 
+    html_text() 
+  
+  fileName = glue::glue("{url}.txt")
+  
+  write_lines(lyrics, here::here("raw_data", "new_lyrics", fileName))
+}
+```
+
+```{r}
+safelyFindLyrics <- safely(findLyrics, otherwise = "Not Found")
+pb <- progress_estimated(nrow(forMetro))
+metroResults <- map(forMetro$searchTerm, safelyFindLyrics, .pb = pb)
+```
+
+Now let's add the earliest date/year that a song reached and it's highest rank
+
+```{r}
+earliest <- toFind %>% 
+  filter(rank != "rank") %>% 
+  mutate(date = ymd(gsub("/charts/hot-100/", "", url)),
+         artist = trimws(artist),
+         album = trimws(album)) %>% 
+  group_by(artist, album) %>% 
+  arrange(date)  %>% 
+  summarise(earliest = min(date),
+            highestRank = min(rank)) %>% 
+  mutate(year = year(earliest)) %>% 
+  rename(song = album)
+
+write.csv(earliest, here::here("processed_data", "newMetaData.csv"), row.names = FALSE)
+```
+
+And bind that with our data
+
+```{r}
+topSongNamesNew <- read_excel(here::here("processed_data", "topSongNamesNewXL.xlsx")) %>% 
+  select(-contains("X__"))
+
+newMeta <- read.csv(here::here("processed_data", "newMetaData.csv"), header = TRUE, stringsAsFactors = FALSE) %>% 
+  mutate(artist = trimws(artist),
+         song = trimws(song))
+
+topNewMeta <- topSongNamesNew %>% 
+  mutate(artist = trimws(artist),
+         song = trimws(song)) %>% 
+  left_join(newMeta)
+```
+
+Let's see if we can also load in the results from Colin's data: 
+
+```{r}
+topSongNamesOld <- read_excel(here::here("processed_data", "topSongNamesUpdate.xlsx")) %>% 
+  select(-contains("X__")) %>% 
+  mutate(artist = trimws(artist),
+         song = trimws(song))
+```
+
+and combine it with the metadata from his songs:
+
+```{r}
+oldMeta <- read.csv(here::here("raw_data", "song_metadata.csv"), header = TRUE, stringsAsFactors = FALSE) %>% 
+    mutate(artist = trimws(artist),
+         song = trimws(title))
+
+topOldMeta <- topSongNamesOld %>% 
+  left_join(oldMeta) %>% 
+  rename(earliest = date, highestRank = peak) %>% 
+  mutate(earliest = ymd(earliest)) %>% 
+  mutate(year = year(earliest)) %>% 
+  select(-c("fname", "title"))
+
+allNamesSongs <- rbind(topNewMeta, topOldMeta)
+
+write.csv(allNamesSongs, here::here("processed_data", "allNamesInSongs.csv"), row.names = FALSE)
+```
+
+

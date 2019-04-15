@@ -1,0 +1,5 @@
+"0","check_status <- function(res){"
+"0","  attempt::stop_if_not(.x = httr::status_code(res),"
+"0","              .p = ~ .x == 200,"
+"0","              msg = ""The API returned an error"")"
+"0","}"
