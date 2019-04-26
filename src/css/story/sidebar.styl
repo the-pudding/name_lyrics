@@ -45,3 +45,28 @@
       font-family $sans-display
       set-type-size('small')
       margin 0.25rem 0
+
+  &__nonPeople-button
+    display flex
+    align-items: center
+    button
+      padding 0.5rem
+      font-family $sans-display
+      border-radius 5px
+      border 1px solid $white
+      background-color $bg-light
+      width 160px
+      height 45px
+
+    span
+      padding 0 0.5rem
+      border-radius 2px
+    [role="switch"][aria-checked="true"] :first-child,
+    [role="switch"][aria-checked="false"] :last-child
+    	background $bg-light
+    	color $fg
+
+    [role="switch"][aria-checked="false"] :first-child,
+    [role="switch"][aria-checked="true"] :last-child
+    	background $fg
+    	color $bg
