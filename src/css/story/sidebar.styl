@@ -7,3 +7,41 @@
     left 0
     top 0
     width $sidebar-width
+    padding 1rem
+
+    svg
+      max-width 150px
+      fill $white
+
+  &-title
+    set-type-size('x-large')
+    text-transform uppercase
+    font-weight: 200;
+    font-family $sans-display
+    padding-left 0.5rem
+
+  &-prose
+    font-family $sans-display
+    set-type-size('small')
+    margin 1rem 0
+
+  &__section
+    border-bottom 1px solid rgba($white, 0.2)
+    padding 0.5rem
+    max-height 45px
+    overflow hidden
+    background-color transparent
+    transition 300ms ease-in-out
+    cursor: pointer;
+    &:hover
+      max-height 200px
+      background-color rgba($white, 0.1)
+      transition 300ms ease-in-out
+    &-title
+      margin-top 0.25rem
+      set-type-size('root')
+      font-weight bold
+    &-prose
+      font-family $sans-display
+      set-type-size('small')
+      margin 0.25rem 0
