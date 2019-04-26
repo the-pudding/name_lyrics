@@ -1,0 +1,19 @@
+<aside class='sidebar'>
+  <div class='sidebar__content'>
+    <div class='sidebar__pudding'>
+      <img inline src='pudding-wordmark.svg'>
+    </div>
+
+    <div class='sidebar__sections'>
+      <h2 class='sidebar-title'>{{doc.sectionTitle}}</h2>
+    </div>
+
+    <div class='sidebar__nonPeople'>
+      <h2 class='sidebar-title'>{{doc.nonPeopleTitle}}</h2>
+      {{#each doc.nonPeopleText}}
+        <p class='sidebar-prose'>{{{value}}}</p>
+      {{/each}}
+    </div>
+
+  </div>
+</aside>
