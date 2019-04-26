@@ -154,7 +154,46 @@ lyricDataNew <- lyricData %>%
   rename(song = album)
 ```
 
+And a handful of songs that would be noticeably absent from our dataset
 
+```{r}
+files <- list.files(
+  path = here::here("raw_data", "manual_lyrics"),
+  pattern = "*.txt",
+  full.names = FALSE
+)
+```
+
+```{r}
+bindLyricsNew <- function(file, .pb = NULL){
+  
+  if ((!is.null(.pb)) && inherits(.pb, "Progress") && (.pb$i < .pb$n)) .pb$tick()$print()
+  Sys.sleep(0.001)
+  
+  df <- tibble(file = file) %>% 
+    mutate(searchTerm = gsub(".txt", "", file)) %>% 
+    mutate(lyrics = map(here::here("raw_data", "manual_lyrics", file), function(x){
+      lines <- scan(x, what = character(), strip.white = TRUE, blank.lines.skip = TRUE, sep = "\n")
+    }),
+    # Remove text inside of parenthesis or square brackets
+      lyrics = map(lyrics, function(x) gsub("(\\(|\\[).*(\\)|\\])", "", x)))
+  
+  outputFile = here::here("processed_data", "manualLyricsNew.json")
+  
+  json <- df %>%
+    toJSON() %>%
+    write_lines(outputFile, append = TRUE)
+  
+  return(df)
+  
+}
+
+possiblyBindLyrics <- possibly(bindLyricsNew, otherwise = NULL, quiet = TRUE)
+
+pb <- progress_estimated(length(files))
+
+lyricData <- map_df(files, possiblyBindLyrics, .pb = pb)
+```
 
 
 
@@ -188,7 +227,7 @@ findName <- function(artist, song, lyrics, name){
       
     
   
-    fileName = here::here("processed_data", "topSongNamesNew.csv")
+    fileName = here::here("processed_data", "manualSongNamesNew.csv")
       
 
 	  write.table(parsedSong, file = fileName, row.names = FALSE, append = TRUE, sep = ",", col.names = !file.exists(fileName))
@@ -213,7 +252,12 @@ checkAllNames <- function(artist, song, lyrics, .pb=NULL){
 
 
 ```{r}
-sub <- lyricDataNew %>% 
+artist <- c("Justin Bieber", "Elton John", "The Oak Ridge Boys", "Tony Bennett", "Ricky Martin", "The Four Seasons")
+song <- c("Baby", "Bennie and the Jets", "Elvira", "When Joanna Loved Me", "Maria", "Sherry")
+
+lyricDataUpdated <- cbind(lyricData, artist, song)
+
+sub <- lyricDataUpdated
 pb <- progress_estimated(nrow(sub))
 args <- list(artist = sub$artist, song = sub$song, lyrics = sub$lyrics)
 namesInSongs <- pmap_dfr(args, checkAllNames, .pb = pb)

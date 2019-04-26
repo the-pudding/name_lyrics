@@ -20,21 +20,85 @@ library(tidyverse)
 library(here)
 library(gender)
 library(sentimentr)
+library(googledrive)
 ```
 
 and the data
 
-```{r}
-allNameSongs <- read.csv(here::here("processed_data", "allNamesInSongs.csv"), header = TRUE, stringsAsFactors = FALSE)
+```{r eval = FALSE}
+#allNameSongs <- read.csv(here::here("processed_data", "allNamesInSongs.csv"), header = TRUE, stringsAsFactors = FALSE)
 ```
+
+and the manually cleaned data 
+
+```{r}
+sheetID <- googledrive::as_id("https://docs.google.com/spreadsheets/d/1TW1skGoCvdOyIdjD-2yjiQ6YWAA6EdJTk9g03FeHYtM/edit#gid=772914444")
+
+googledrive::drive_download(sheetID, path = here("raw_data", "allSongsManualClean.csv"), overwrite = TRUE)
+
+allNameSongs <- read.csv(here::here("raw_data", "allSongsManualClean.csv"), stringsAsFactors = FALSE, header = TRUE, na.strings = c("", " ", "none"))
+```
+
+and the few that were missing/noticeably mis-tagged in our cleaned dataset
+
+```{r}
+sheetID <- googledrive::as_id("https://docs.google.com/spreadsheets/d/1r5MeitTTbY5tkNP21yOrBrdWolmaPmivUbN5pC2pl94/edit#gid=214384950")
+
+googledrive::drive_download(sheetID, path = here("raw_data", "chosenSongsManualClean.csv"), overwrite = TRUE)
+
+artist <- c("Justin Bieber", "Elton John", "The Oak Ridge Boys", "Tony Bennett", "Ricky Martin", "The Four Seasons")
+song <- c("Baby", "Bennie and the Jets", "Elvira", "When Joanna Loved Me", "Maria", "Sherry")
+year <- c(2010, 1974, 1981, 1964, 1996, 1962)
+highestRank <- c(5, 1, 5, 94, 88, 1)
+
+crosswalk <- tibble(artist = artist,
+                    song = song,
+                    year = year,
+                    highestRank = highestRank)
+
+manualNameSongs <- read.csv(here::here("raw_data", "chosenSongsManualClean.csv"), stringsAsFactors = FALSE, header = TRUE, na.strings = c("", " ", "none")) %>% 
+  left_join(crosswalk)
+```
+Now to remove those songs from the first dataset:
+
+```{r}
+songsToRemove <- c("Baby", "Bennie and the Jets", "Elvira")
+
+`%notIn%` <- purrr::negate(`%in%`)
+
+allMinusChosen <- allNameSongs %>% 
+  filter(song %notIn% songsToRemove) %>% 
+  select(-earliest)
+```
+
+and add the correct versions in: 
+
+```{r}
+allNames <- rbind(allMinusChosen, manualNameSongs)
+```
+
+
+
 
 ## Processing Data
 
-Most of the processing has already been done, but we can limit our results to just names that were identified as Proper Nouns. 
+Most of the processing has already been done, but we can limit our results to just names that were identified as Proper Nouns either manually or programmatically. We also need to remove last names, and substitute double names (like "Barbara Ann" or "Mary Sue") with the single names tagged by the system.  
 
 ```{r}
-proper <- allNameSongs %>% 
-  filter(upos == "PROPN")
+proper <- allNames %>% 
+  mutate(manualPOS = ifelse(is.na(posCorrection), upos, posCorrection),
+         manualName = ifelse(is.na(compound), name, compound)) %>% 
+  filter(manualPOS == "PROPN",
+         is.na(last)) %>% 
+  select(-c(name)) %>% 
+  rename(name = manualName)
+```
+
+Let's also split out our data, to just names, and names that could include other things (brands, drugs, cities, etc.)
+
+```{r}
+justNames <- proper %>% 
+  filter(is.na(NaP))
 ```
 
 ## Exploration
@@ -44,7 +108,7 @@ proper <- allNameSongs %>%
 Alright, let's start simple. What are the most common names used overall? 
 
 ```{r}
-common <- proper %>% 
+common <- justNames %>% 
   count(name, sort = TRUE)
 
 common
@@ -53,7 +117,7 @@ common
 Out of the `nrow(common)` names used across all of our songs. The most common names are `common[1,1]`, `common[1,2]`, and `common[1,3]`. But that is a total of mentions of each name. Let's see which ones are the most common across each song (that is, counting each song that mentions a name only once).
 
 ```{r}
-commonBySong <- proper %>% 
+commonBySong <- justNames %>% 
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   ungroup() %>% 
@@ -70,7 +134,7 @@ Pretty similar. The top names are now `commonBySong[1,1]`, `commonBySong[2,1]`, 
 Do certain artists use names in more songs than others? 
 
 ```{r}
-artist <- proper %>% 
+artist <- justNames %>% 
   group_by(artist) %>% 
   distinct(song, .keep_all = TRUE) %>% 
   ungroup() %>% 
@@ -81,10 +145,10 @@ artist
 
 Well, with the exception of `Glee Cast` (who just sing lots of popular songs), most of these artists are rappers or Hip Hop artists. Let's see if the most popular are consistently singing about the same names. 
 
-We'll start with Drake, who has names in 59 of his top songs!
+We'll start with Drake, who has names in 49 of his top songs!
 
 ```{r}
-drake <- proper %>% 
+drake <- justNames %>% 
   filter(artist == "Drake") %>% 
   distinct(song, .keep_all = TRUE) %>% 
   count(name, sort = TRUE)
@@ -97,38 +161,38 @@ Wow, with `nrow(drake)` different names in his repertoire, Drake is rarely singi
 Let's check with our #2 artist, Eminem. 
 
 ```{r}
-eminem <- proper %>% 
+eminem <- justNames %>% 
   filter(artist == "Eminem") %>% 
   distinct(song, .keep_all = TRUE) %>% 
   count(name, sort = TRUE)
+
+eminem
 ```
 
-Although Eminem also doesn't include the same name too repetitively, it's unsurprising that he uses the name "Hailie" in 4 separate songs. Hailie is his daughter's name, afterall. 
+Although Eminem also doesn't include the same name too repetitively, it's unsurprising that he uses the name "Hailie" in 3 separate songs and "Hailie Jade" in another. Hailie is his daughter's name, afterall. 
 
 ### Repeat Names
 
 Some songs (like Jolene or Barbara Anne) use the same name over and over again. Which songs use the same name repeatedly?
 
 ```{r}
-repeats <- proper %>% 
+repeats <- justNames %>% 
   group_by(artist, song) %>% 
   count(name) %>% 
   ungroup() %>% 
-  arrange(desc(n))
+  arrange(desc(n)) %>% 
+  filter(n > 15)
 
 repeats
 ```
-```{r}
-justin <- allNameSongs %>% 
-  filter(artist == "Justin Bieber")
-```
+
 
 ### Different Names
 
 On the flip side, which songs use the most unique names? 
 
 ```{r}
-uniqueNames <- proper %>% 
+uniqueNames <- justNames %>% 
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   summarise(count = n()) %>% 
@@ -142,7 +206,7 @@ uniqueNames
 Back in 2014, Slate published an [article](https://slate.com/culture/2014/07/most-common-names-in-songs-why-is-pop-music-obsessed-with-songs-about-johnny-jenny-and-jane.html) about how pop songs that have names in the _titles_ most often contain names that start with J. Do we see the same trend with names in the lyrics? 
 
 ```{r}
-firstLetter <- proper %>% 
+firstLetter <- justNames %>% 
   mutate(first = str_sub(name, 1, 1)) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   ungroup() %>% 
@@ -164,7 +228,7 @@ onlyNameLetter <- onlyNames %>%
   mutate(percent = (n / nrow(onlyNames)) * 100,
          group = "SS")
 
-firstLetterPercent <- proper %>% 
+firstLetterPercent <- justNames %>% 
   mutate(first = str_sub(name, 1, 1)) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   ungroup() %>% 
@@ -178,13 +242,23 @@ firstLettersAll <- rbind(onlyNameLetter, firstLetterPercent)
 ```{r}
 ggplot(firstLettersAll, aes(x = first, y = percent, group = group, fill = group)) + geom_bar(stat = "identity", position = "dodge")
 ```
-Huh, names starting with B, C, P, R, and S are quite a bit more popular in songs than in the actual country. A names and J names are slightly less common and K and L names are wayyy less common in songs than in the country.
+Huh, names starting with B, C, P, R, and S are quite a bit more popular in songs than in the actual country. A names and D names are slightly less common and K and L names are wayyy less common in songs than in the country.
+
+```{r}
+firstLetterDif <- firstLettersAll %>% 
+  select(-n) %>% 
+  spread(group, percent) %>% 
+  mutate(dif = song - SS)
+
+ggplot(firstLetterDif, aes(x = first, y = dif)) + geom_bar(stat = "identity")
+```
+
 
 
 What about letters that end a name? 
 
 ```{r}
-lastLetter <- proper %>% 
+lastLetter <- justNames %>% 
   mutate(last = str_sub(name, -1, -1)) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   ungroup() %>% 
@@ -194,6 +268,49 @@ lastLetter
 ```
 
 Names that end in E are reigning supreme here. 
+
+
+```{r}
+onlyNameLetterLast <- onlyNames %>% 
+  mutate(first = str_sub(Name, -1, -1)) %>% 
+  count(first, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(onlyNames)) * 100,
+         group = "SS")
+
+lastLetterPercent <- justNames %>% 
+  mutate(first = str_sub(name, -1, -1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(first, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(common)) * 100,
+         group = "song")
+
+lastLettersAll <- rbind(onlyNameLetterLast, lastLetterPercent)
+
+lastLetterDif <- lastLettersAll %>% 
+  select(-n) %>% 
+  spread(group, percent) %>% 
+  mutate(dif = song - SS)
+
+ggplot(lastLetterDif, aes(x = first, y = dif)) + geom_bar(stat = "identity")
+
+```
+
+What are the most popular names that end in Y?
+
+```{r}
+endY <- justNames %>% 
+  mutate(last = str_sub(name, -1, -1)) %>%
+  filter(last == "y") %>% 
+  count(name, sort = TRUE)
+```
+
+```{r}
+endA <- justNames %>% 
+  mutate(last = str_sub(name, -1, -1)) %>%
+  filter(last == "a") %>% 
+  count(name, sort = TRUE)
+```
 
 
 ### Gendered Names
@@ -215,7 +332,7 @@ cleanGenderedNames <- genderedNames %>%
   mutate(gen = ifelse(proportion_male >= 0.6, "male",
                       ifelse(proportion_female >= 0.6, "female", "unknown")))
 
-countGendered <- proper %>% 
+countGendered <- justNames %>% 
   count(name, sort = TRUE) %>% 
   left_join(cleanGenderedNames) %>% 
   select(c(name, n, gen)) %>% 
@@ -230,7 +347,7 @@ countGendered
 How many songs contain male names vs. female names? 
 
 ```{r}
-maleFemaleSongs <- proper %>% 
+maleFemaleSongs <- justNames %>% 
   left_join(cleanGenderedNames) %>% 
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
@@ -247,8 +364,12 @@ There are almost twice as many male names (`maleFemaleSongs[1,2]`) mentioned in 
 Let's take a look at the top names by decade
 
 ```{r}
-byDecade <- proper %>% 
+byDecade <- justNames %>% 
+  mutate(year = as.integer(year)) %>% 
   mutate(decade = year - year %% 10) %>% 
+  group_by(decade, artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
   group_by(decade) %>% 
   count(name, sort = TRUE) %>% 
   mutate(rank = row_number()) %>% 
@@ -318,5 +439,21 @@ ggplot(data = byDecade, aes(x = decade, y = rank, group = name)) +
 ```
 
 
+### Manual Corrections 
+Send to Google Docs for manual corrections. New columns: 
+
+* posCorrect: was the part of speech mislabeled? What should the label be? 
+* NaP: is this name referencing something that's "Not a Person"? 
+* last: is this referring to a last name? 
+* compound: What is the compound name (like "Barbara Ann")? 
+
+Let's upload `allNameSongs` to google drive. 
+
+```{r}
+googledrive::drive_upload(media = here::here("processed_data", "allNamesInSongs.csv"), 
+             path = "names in songs/", 
+             name = "namesInSongs", 
+             type = "spreadsheet")
+```
 
 
