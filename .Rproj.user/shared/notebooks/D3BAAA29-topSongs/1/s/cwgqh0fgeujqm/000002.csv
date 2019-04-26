@@ -1,6 +1,0 @@
-"0","fullMeta <- colin %>% 
-  left_join(fullNames, by = c(""artist"", ""song"", ""sentence"" = ""lyrics""))
-"
-"2","Error: `by` can't contain join column `artist` which is missing from RHS
-[90mCall `rlang::last_error()` to see a backtrace[39m
-"

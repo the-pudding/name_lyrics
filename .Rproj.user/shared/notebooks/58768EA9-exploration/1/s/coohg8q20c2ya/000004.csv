@@ -1,6 +1,0 @@
-"0","most <- proper %>% "
-"0","  group_by(artist, song, name) %>%  "
-"0","  summarise(count = n()) %>% "
-"0","  ungroup() %>% "
-"0","  arrange(desc(count))"
-"0","head(most, n = 50)"

@@ -1,5 +1,0 @@
-"0","files <- list.files("
-"0","  path = here::here(""raw_data"", ""new_lyrics""),"
-"0","  pattern = ""*.txt"","
-"0","  full.names = FALSE"
-"0",")"

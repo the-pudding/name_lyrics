@@ -1,1 +1,0 @@
-"0","ggplot(firstLettersAll, aes(x = first, y = percent, group = group, fill = group)) + geom_bar(stat = ""identity"", position = ""dodge"")"

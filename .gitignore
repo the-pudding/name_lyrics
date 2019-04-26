@@ -1,3 +1,13 @@
+.DS_Store
+.tmp
+.cache
+.vscode
+npm-debug.log
+node_modules
+dev
+dist
 /analysis/raw_data/new_lyrics
 /analysis/processed_data/billboardResults.csv
+analysis/raw_data/new_lyrics
+analysis/processed_data/billboardResults.csv
 .Rproj.user
