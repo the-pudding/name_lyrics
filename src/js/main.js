@@ -30,6 +30,18 @@ function setupStickyHeader() {
   }
 }
 
+function setupToggle(){
+  const $toggle = $body.select('.filter')
+
+
+  $toggle.on('click', function(){
+    const el = d3.select(this)
+    const aria = el.attr('aria-checked')
+    if (aria === "false") el.attr('aria-checked', 'true')
+    else if (aria === "true") el.attr('aria-checked', 'false')
+  })
+}
+
 function init() {
   // add mobile class to body tag
   $body.classed('is-mobile', isMobile.any());
@@ -38,6 +50,8 @@ function init() {
   // setup sticky header menu
   //setupStickyHeader();
   // kick off graphic code
+  // setup data filtering toggle
+  setupToggle()
   graphic.init();
   footer.init();
 }
