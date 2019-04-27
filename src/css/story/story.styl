@@ -6,3 +6,48 @@
     max-width $column-width
     padding 0 1rem
     margin-left 2rem
+
+.playlist__song
+  padding 0 1rem 1rem 1rem
+  display flex
+  flex-direction row
+  align-items: center;
+  margin 0.5rem 0
+  border-bottom 1px solid rgba($white, 0.2)
+  &:last-child
+    border-bottom none
+
+  .playlist__info
+    display flex
+    flex-direction column
+
+    .playlist-lyrics
+      font-family $sans-display
+      font-weight 700
+      margin 0.5rem 0
+
+    .playlist__info-credits
+      display flex
+      flex-direction row
+      justify-content: space-between;
+      p
+        font-family $sans-display
+        text-transform uppercase
+        set-type-size('small')
+        margin 0
+
+  .playlist-button
+    margin 0 2rem
+    button
+      width 30px
+      height 30px
+      background-color $primary
+      padding 0.5rem
+      border-radius 50%
+    svg
+      width 15px
+      height 15px
+      display block
+      margin auto
+      stroke $white
+      fill $white
