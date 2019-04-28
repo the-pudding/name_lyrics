@@ -222,10 +222,7 @@ unNameOut <- proper %>%
   mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
-  mutate(count = n()) %>% 
-  group_by(artist, song) %>% 
-  arrange(desc(count)) %>% 
-  filter(count >= 14)
+  select(c("artist", "name", "song", "person"))
 
 write.csv(unNameOut, "../src/assets/data/unique.csv", row.names = FALSE)
 ```
@@ -404,7 +401,28 @@ byDecade <- justNames %>%
   count(name, sort = TRUE) %>% 
   mutate(rank = row_number()) %>% 
   filter(rank <= 10) %>% 
-  filter(!is.na(decade))
+  filter(!is.na(decade)) %>% 
+  filter(decade != "1950") %>% 
+  mutate(person = TRUE)
+
+byDecadeAll <- proper %>% 
+  mutate(year = as.integer(year)) %>% 
+  mutate(decade = year - year %% 10) %>% 
+  group_by(decade, artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  group_by(decade) %>% 
+  count(name, sort = TRUE) %>% 
+  mutate(rank = row_number()) %>% 
+  filter(rank <= 10) %>% 
+  filter(!is.na(decade)) %>% 
+  filter(decade != "1950") %>% 
+  mutate(person = FALSE)
+
+decades <- rbind(byDecade, byDecadeAll)
+
+write.csv(decades, "../src/assets/data/decade.csv", row.names = FALSE)
+
 ```
 
 ```{r}

@@ -5,6 +5,7 @@ import graphic from './graphic';
 import footer from './footer';
 import repeat from './repeat'
 import unique from './unique'
+import timeless from './timeless'
 
 const $body = d3.select('body');
 let previousWidth = 0;
@@ -46,6 +47,7 @@ function setupToggle(){
     // update data in charts
     repeat.update(aria);
     unique.update(aria);
+    timeless.update(aria);
   })
 
 }
@@ -64,6 +66,7 @@ function init() {
   footer.init();
   repeat.init();
   unique.init();
+  timeless.init();
 }
 
 init();
