@@ -9,10 +9,8 @@
 
 d3.selection.prototype.repeats = function init(options) {
 	function createChart(el) {
-    console.log({el})
 		const $sel = d3.select(el);
 		let data = $sel.datum();
-    console.log({data})
 		// dimension stuff
 		let width = 0;
 		let height = 0;

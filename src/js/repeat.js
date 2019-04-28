@@ -6,16 +6,24 @@ const $section = d3.select('#repeat')
 const $figure = $section.selectAll('.section__figure-repeat')
 
 let data = []
+let charts = []
 
-function update(){
+function update(state){
+  const trim = data.filter(d => state === 'true' ? d.person === 'TRUE' : d)
+    .slice(0, 12)
+
+  charts.forEach((d, i) => {
+    d.data(trim[i])
+  })
 
 }
 
 function setup(){
-  const trim = data.slice(0, 12)
-  console.log({trim})
+  const trim = data.filter(d => d.person === 'TRUE')
+    .slice(0, 12)
+
   const $sel = $figure
-  const charts = $sel
+  charts = $sel
     .selectAll('.chart')
     .data(trim)
     .enter()
@@ -57,4 +65,4 @@ function init() {
   })
 }
 
-export default { init, resize };
+export default { init, resize, update };

@@ -40,7 +40,12 @@ function setupToggle(){
     const aria = el.attr('aria-checked')
     if (aria === "false") el.attr('aria-checked', 'true')
     else if (aria === "true") el.attr('aria-checked', 'false')
+
+
+    // update data in charts
+    repeat.update(aria)
   })
+
 }
 
 function init() {
