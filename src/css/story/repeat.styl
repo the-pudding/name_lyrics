@@ -1,0 +1,57 @@
+#repeat
+  .section__figure
+    display flex
+    flex-wrap wrap
+  .chart
+    width 125px
+    margin 0.5rem
+
+    &__container
+      height 125px
+      border 1px solid $white
+      border-radius 5px
+      padding 5px
+      background-color: $bg-light
+      display flex
+      flex-direction column
+      justify-content: space-between;
+
+      .name-details
+        display flex
+        font-family $sans-display
+        align-items: baseline;
+        justify-content: space-between;
+        .name
+          set-type-size('root')
+          font-weight bold
+          margin 0
+        .count
+          set-type-size('small')
+          margin 0
+      .block-container
+        display flex
+        flex-direction: row;
+        flex-wrap wrap-reverse
+        align-self flex-end
+
+        .repeat-block
+          width 8px
+          height 8px
+          background-color $primary
+          margin 1px
+          border-radius 2px
+
+    .meta__container
+      display flex
+
+      .repeat-title
+        font-family $sans-display
+        set-type-size('root')
+        font-weight bold
+        margin 0
+
+      .repeat-artist
+        font-family $sans-display
+        set-type-size('small')
+        text-transform uppercase
+        margin 0

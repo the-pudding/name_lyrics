@@ -185,7 +185,19 @@ repeats <- justNames %>%
 
 repeats
 ```
+Let's find the single song with the most mentions of every name.
 
+```{r}
+repeatInd <- repeats <- justNames %>% 
+  group_by(artist, song) %>% 
+  count(name) %>% 
+  ungroup() %>% 
+  group_by(name) %>% 
+  arrange(desc(n)) %>% 
+  mutate(row = row_number()) %>% 
+  filter(row == 1)
+  
+```
 
 ### Different Names
 

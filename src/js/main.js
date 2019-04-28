@@ -3,6 +3,7 @@ import debounce from 'lodash.debounce';
 import isMobile from './utils/is-mobile';
 import graphic from './graphic';
 import footer from './footer';
+import repeat from './repeat'
 
 const $body = d3.select('body');
 let previousWidth = 0;
@@ -54,6 +55,7 @@ function init() {
   setupToggle()
   graphic.init();
   footer.init();
+  repeat.init()
 }
 
 init();
