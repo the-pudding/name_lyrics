@@ -39,7 +39,21 @@ function setup(){
     .sortKeys(d3.ascending)
     .entries(trim)
 
+
+
   const $sel = $figure
+
+  // add number column
+  const count = $sel.append('div')
+    .attr('class', 'chart chart-count')
+
+  count.selectAll('.rank')
+    .data(d3.range(10))
+    .enter()
+    .append('p')
+    .text(d => d + 1)
+    .attr('class', 'timelessName')
+
   charts = $sel
     .selectAll('.chart')
     .data(nested)
