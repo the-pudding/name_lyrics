@@ -4,6 +4,7 @@ import isMobile from './utils/is-mobile';
 import graphic from './graphic';
 import footer from './footer';
 import repeat from './repeat'
+import unique from './unique'
 
 const $body = d3.select('body');
 let previousWidth = 0;
@@ -43,7 +44,8 @@ function setupToggle(){
 
 
     // update data in charts
-    repeat.update(aria)
+    repeat.update(aria);
+    unique.update(aria);
   })
 
 }
@@ -60,7 +62,8 @@ function init() {
   setupToggle()
   graphic.init();
   footer.init();
-  repeat.init()
+  repeat.init();
+  unique.init();
 }
 
 init();

@@ -188,14 +188,18 @@ repeats
 Let's find the single song with the most mentions of every name.
 
 ```{r}
-repeatInd <- repeats <- justNames %>% 
-  group_by(artist, song) %>% 
+repeatInd <- proper %>% 
+  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  group_by(artist, song, person) %>% 
   count(name) %>% 
   ungroup() %>% 
-  group_by(name) %>% 
+  group_by(person, name) %>% 
   arrange(desc(n)) %>% 
   mutate(row = row_number()) %>% 
-  filter(row == 1)
+  filter(row == 1) %>% 
+  select(-row)
+
+write.csv(repeatInd, "../src/assets/data/repeats.csv", row.names = FALSE)
   
 ```
 
@@ -212,6 +216,20 @@ uniqueNames <- justNames %>%
 
 uniqueNames
 ```
+
+```{r}
+unNameOut <- proper %>% 
+  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  group_by(artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  mutate(count = n()) %>% 
+  group_by(artist, song) %>% 
+  arrange(desc(count)) %>% 
+  filter(count >= 14)
+
+write.csv(unNameOut, "../src/assets/data/unique.csv", row.names = FALSE)
+```
+
 
 ### First Letter
 
