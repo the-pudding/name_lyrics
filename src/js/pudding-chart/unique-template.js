@@ -26,6 +26,7 @@ d3.selection.prototype.unique = function init(options) {
     let $title = null
     let $artist = null
 
+
 		// scales
 		const scaleX = null;
 		const scaleY = null;
@@ -76,8 +77,35 @@ d3.selection.prototype.unique = function init(options) {
         $artist.text(data[0].artist)
 
         $vizCont.selectAll('.uniqueName')
-          .data(data)
-          .join('p')
+          .data(data, d => d.name)
+          .join(
+            enter => enter.append('p')
+            .call(enter => enter
+              .style('opacity', 0)
+              .transition()
+              .duration(250)
+              .style('opacity', '1')
+              .style('color', '#FD6767')
+              .transition()
+              .duration(500)
+              .style('color', '#FFFFFF')
+            ),
+            update => update
+              //.style('opacity', 0)
+              // .call(update => update
+              //   .transition()
+              //   .delay(500)
+              //   .duration(500)
+              //   .style('color', 'red'))
+              ,
+            exit => exit
+              .style('opacity', 1)
+              .call(exit => exit
+                .style('opacity', '0')
+                .remove()
+              )
+
+          )
             .attr('class', 'uniqueName')
             .text(d => d.name)
 

@@ -70,8 +70,32 @@ d3.selection.prototype.timeless = function init(options) {
         // $artist.text(data[0].artist)
 
         $vizCont.selectAll('.timelessName')
-          .data(data.values)
-          .join('p')
+        .data(data.values, d => d.name)
+        .join(
+          enter => enter.append('p')
+          .call(enter => enter
+            .style('opacity', 0)
+            .transition()
+            .duration(250)
+            .style('opacity', '1')
+
+          ),
+          update => update
+            //.style('opacity', 0)
+            // .call(update => update
+            //   .transition()
+            //   .delay(500)
+            //   .duration(500)
+            //   .style('color', 'red'))
+            ,
+          exit => exit
+            .style('opacity', 1)
+            .call(exit => exit
+              .style('opacity', '0')
+              .remove()
+            )
+
+        )
             .attr('class', d => `timelessName timelessName-${d.name}`)
             .text((d, i) => `${d.name}`)
           .on('mouseover', d => {

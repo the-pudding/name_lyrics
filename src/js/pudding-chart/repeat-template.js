@@ -92,8 +92,27 @@ d3.selection.prototype.repeats = function init(options) {
         const range = d3.range(data.n)
 
         $blockCont.selectAll('.repeat-block')
-          .data(range)
-          .join('div')
+          .data(range, d => d)
+          .join(enter => enter.append('div')
+            .call(enter => enter
+              .style('opacity', 0)
+              .transition()
+              .duration(250)
+              .style('opacity', '1')
+              .style('backgroundColor', '#FD6767')
+              .transition()
+              .duration(500)
+              .style('backgroundColor', '#FFFFFF')
+            ),
+            update => update,
+            exit => exit
+              .style('opacity', 1)
+              .call(exit => exit
+                .transition()
+                .duration(250)
+                .style('opacity', '0')
+                .remove()
+              ))
             .attr('class', 'repeat-block')
 
 				return Chart;
