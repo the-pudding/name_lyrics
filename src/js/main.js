@@ -6,6 +6,7 @@ import footer from './footer';
 import repeat from './repeat'
 import unique from './unique'
 import timeless from './timeless'
+import letters from './letters'
 
 const $body = d3.select('body');
 let previousWidth = 0;
@@ -48,6 +49,7 @@ function setupToggle(){
     repeat.update(aria);
     unique.update(aria);
     timeless.update(aria);
+    letters.update(aria);
   })
 
 }
@@ -67,6 +69,7 @@ function init() {
   repeat.init();
   unique.init();
   timeless.init();
+  letters.init()
 }
 
 init();
