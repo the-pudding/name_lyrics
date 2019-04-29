@@ -5,14 +5,14 @@
     min-width 800px
   .chart
     margin 0.75rem 0.5rem
-    max-width 350px
+    max-width 310px
 
     &__container
       .letter-details
         display flex
         align-items: baseline;
         .left-container, .right-container
-          min-width 150px
+          min-width 125px
         .left-container
           display flex
           justify-content: flex-end;
@@ -22,3 +22,28 @@
           border-radius 3px
         .letter
           margin 0 1rem
+          line-height 1.2
+          font-family $sans-display
+          font-weight bold
+          set-type-size('root')
+          width 12px
+          text-align: center;
+
+    .meta__container
+      margin-bottom 1rem
+      .letters-legend
+        display flex
+        flex-direction row
+        justify-content: space-between;
+        set-type-size('small')
+        p
+          width 100px
+          text-align: center;
+          margin 0
+      .letters-title
+        font-family $sans-display
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom 0.5rem
+        border-bottom 1px solid $primary
+        font-weight: bold

@@ -77,7 +77,7 @@ d3.selection.prototype.letters = function init(options) {
 				height = $sel.node().offsetHeight - marginTop - marginBottom;
 
         scaleX
-          .range([0, 150])
+          .range([0, 125])
           .domain([0, 8.2])
 
 				return Chart;
@@ -118,7 +118,7 @@ d3.selection.prototype.letters = function init(options) {
                 })
             },
             update => {
-             $leftBar
+             update.select('.left-bar')
                 .transition()
                 .duration(500)
                 .style('width', d => {
@@ -126,7 +126,7 @@ d3.selection.prototype.letters = function init(options) {
                   else return '0px'
                 })
 
-              $rightBar
+              update.select('.right-bar')
                 .transition()
                 .duration(500)
                 .style('width', d => {
@@ -136,12 +136,6 @@ d3.selection.prototype.letters = function init(options) {
 
             }
           )
-
-
-
-
-
-
 
 				return Chart;
 			},
