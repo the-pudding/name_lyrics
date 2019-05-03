@@ -4,7 +4,7 @@
 const $section = d3.select('#popular')
 const $spark = $section.selectAll('.section__figure-popularSpark')
 const $figure = $section.selectAll('.section__figure-popular')
-const $uiChart = $figure.select('.chart__search')
+const $uiChart = $figure.select('.ui__search')
 
 let $resultSel = $uiChart.select('.search__result')
 let $inputSel = $uiChart.select('.search__input')
@@ -73,7 +73,6 @@ function setupSpark(dat){
   const mapped = dat.map(d => {
     return {key: d.key, count: d.value.count}
   })
-  console.log({dat})
 
 
   $spark.selectAll('.g-bar')
@@ -110,7 +109,6 @@ function setupSpark(dat){
       }
 
     )
-  console.log({dat, mapped})
 }
 
 function hideResult() {
@@ -120,35 +118,51 @@ function hideResult() {
 
 function handleResult(d){
   let uniqData = d.value.values
-  uniqueArtist.classed('is-visible', true)
-  uniqueArtist.text(d.value.values[0].artist)
+  console.log(uniqData)
 
-  $chartCont.selectAll('.uniqueName')
+  $chartCont.selectAll('.playlist-item')
     .data(uniqData, d => d.name)
     .join(
-      enter => enter.append('p')
-      .call(enter => enter
-        .style('opacity', 0)
-        .transition()
-        .duration(250)
-        .style('opacity', '1')
-        .style('color', '#FD6767')
-        .transition()
-        .duration(500)
-        .style('color', '#FFFFFF')
-      ),
-      update => update
-        ,
-      exit => exit
-        .style('opacity', 1)
-        .call(exit => exit
-          .style('opacity', '0')
-          .remove()
-        )
+      enter => {
+        const g = enter.append('div')
+          .attr('class', 'playlist-item')
+
+        g.append('p')
+          .attr('class', 'pop-lyrics')
+          .text(d => d.sentence)
+
+        const meta = g.append('div')
+          .attr('class', 'pop-meta')
+
+        meta.append('p')
+          .attr('class', 'pop-song')
+          .text(d => d.song)
+
+        meta.append('p')
+          .attr('class', 'pop-artist')
+          .text(d => d.artist)
+
+        meta.append('p')
+          .attr('class', 'pop-year')
+          .text(d => d.year)
+      },
+      update => {
+        update.select('pop-lyrics')
+          .text(d => d.sentence)
+
+        update.select('pop-song')
+          .text(d => d.song)
+
+        update.select('pop-artist')
+          .text(d => d.artist)
+
+        update.select('pop-year')
+          .text(d => d.year)
+      },
+      exit => exit.remove()
 
     )
-      .attr('class', 'uniqueName')
-      .text(d => d.name)
+
 
 }
 
