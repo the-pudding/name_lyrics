@@ -34,7 +34,7 @@ function update(state){
     .sort((a, b) => d3.descending(a.value.count, b.value.count))
 
   const sliced = nested
-    .slice(0, 7)
+    .slice(0, 5)
 
   charts.forEach((d, i) => {
     d.data(sliced[i])
@@ -56,7 +56,7 @@ function setup(){
     .sort((a, b) => d3.descending(a.value.count, b.value.count))
 
   const sliced = nested
-    .slice(0, 7)
+    .slice(0, 5)
 
     console.log({nested, sliced})
 

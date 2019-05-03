@@ -1,4 +1,5 @@
 #unique
+  max-width $column-width
   .section__figure-unique
     display flex
     align-items: flex-end;
@@ -112,42 +113,42 @@
           margin 0
           order 1
 
-  .chart__search
-    order 6
-    flex-direction column !important
-    .chart__container
-      order 0
+    .chart__search
+      order 6
+      flex-direction column !important
+      .chart__container
+        order 0
 
-    .text-container
-      .unique-meta
-        display none
-        &.is-visible
-          display block
-      .ui__search
-        input
-          outline none;
-          border none;
-          background-color $primary
-          set-type-size('medium')
-          font-family $sans-display
-          font-weight bold
-          color $bg !important
-          width 100px
-          margin 0 0.5rem 0 0.25rem
-          &::placeholder
-            color $bg-light
-
-
-        .search__result
-          cursor pointer
-          display none;
+      .text-container
+        .unique-meta
+          display none
           &.is-visible
             display block
+        .ui__search
+          input
+            outline none;
+            border none;
+            background-color $primary
+            set-type-size('medium')
+            font-family $sans-display
+            font-weight bold
+            color $bg !important
+            width 150px
+            //margin 0 0.5rem 0 0.25rem
+            &::placeholder
+              color $bg-light
 
-          li
-            set-type-size('small')
-            font-weight 400
-            margin 0
-            padding 0.25rem 0.5rem
-            &:hover
-              background-color $bg-light
+
+          .search__result
+            cursor pointer
+            display none;
+            &.is-visible
+              display block
+
+            li
+              set-type-size('small')
+              font-weight 400
+              margin 0
+              padding 0.25rem 0.5rem
+              &:hover
+                background-color $bg-light
