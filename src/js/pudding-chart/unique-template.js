@@ -11,6 +11,13 @@ d3.selection.prototype.unique = function init(options) {
 	function createChart(el) {
 		const $sel = d3.select(el);
 		let data = $sel.datum().value.values;
+		let count = $sel.datum().value.count
+
+		let selSection = $sel.attr('data-section')
+
+		let colorScale = d3.scaleThreshold()
+			.range(['#ffffff','#ffdcd9','#ffbab4','#ff938d','#fd6767'])
+			.domain([3, 6, 9])
 		// dimension stuff
 		let width = 0;
 		let height = 0;
@@ -25,6 +32,8 @@ d3.selection.prototype.unique = function init(options) {
     let $count = null
     let $title = null
     let $artist = null
+
+		let colors = ['']
 
 
 		// scales
@@ -52,14 +61,23 @@ d3.selection.prototype.unique = function init(options) {
         const $text = $meta.append('div')
           .attr('class', 'text-container')
 
-        $title = $text.append('h3')
-          .attr('class', 'unique-title')
+
+
+				if (selSection == 'uniqueArtist'){
+					$title = $text.append('p')
+						.attr('class', 'unique-meta')
+				} else {
+					$title = $text.append('h3')
+						.attr('class', 'unique-title')
+				}
 
         $artist = $text.append('p')
           .attr('class', 'unique-artist')
 
-        const $play = $meta.append('button')
-          .attr('class', 'play')
+				if (selSection != "uniqueArtist"){
+	        const $play = $meta.append('button')
+	          .attr('class', 'play')
+				}
 
 				Chart.resize();
 				Chart.render();
@@ -73,8 +91,14 @@ d3.selection.prototype.unique = function init(options) {
 			},
 			// update scales and render chart
 			render() {
-        $title.text(data[0].song)
-        $artist.text(data[0].artist)
+				$artist.text(data[0].artist)
+				if (selSection == 'uniqueArtist'){
+					let ex = data[0]
+					$title.text(`${count} names across ${ex.songs} songs`)
+				} else {
+					$title.text(data[0].song)
+				}
+
 
         $vizCont.selectAll('.uniqueName')
           .data(data, d => d.name)
@@ -88,7 +112,11 @@ d3.selection.prototype.unique = function init(options) {
               .style('color', '#FD6767')
               .transition()
               .duration(500)
-              .style('color', '#FFFFFF')
+              .style('color', d => {
+								if (selSection == 'uniqueArtist'){
+									return colorScale(d.names)
+								} else return '#FFFFFF'
+							})
             ),
             update => update
               //.style('opacity', 0)

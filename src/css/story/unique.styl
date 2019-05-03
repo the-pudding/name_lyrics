@@ -1,44 +1,125 @@
 #unique
-  .section__figure
+  .section__figure-unique
     display flex
     align-items: flex-end;
     height 575px
-  .chart, .chart__search
-    min-width 100px
-    margin 0.75rem 0.5rem
+    .chart, .chart__search
+      min-width 100px
+      margin 0.75rem 0.5rem
 
-    .uniqueName
-      margin 0
-      set-type-size('small')
-      line-height 1.1
-
-    .text-container
-      height 100px
-      margin-top 0.5rem
-      border-top 1px solid $primary
-
-      .unique-title
-        set-type-size('root')
-        font-family $sans-display
-        font-weight bold
-        margin-top 0.25rem
-
-      .unique-artist
-        set-type-size('small')
-        font-family $sans-display
-        text-transform: uppercase
+      .uniqueName
         margin 0
+        set-type-size('small')
+        line-height 1.1
+
+      .text-container
+        height 100px
+        margin-top 0.5rem
+        border-top 1px solid $primary
+
+        .unique-title
+          set-type-size('root')
+          font-family $sans-display
+          font-weight bold
+          margin-top 0.25rem
+
+        .unique-artist
+          set-type-size('small')
+          font-family $sans-display
+          text-transform: uppercase
+          margin 0
+
+    .chart__search
+      display flex
+      flex-direction column-reverse
+      order 6
+      .chart__container
+        order 0
+
+      .text-container
+        height 123px
+        .unique-artist
+          display none
+          &.is-visible
+            display block
+        .ui__search
+          input
+            outline none;
+            border none;
+            background-color $primary
+            set-type-size('root')
+            font-family $sans-display
+            font-weight bold
+            color $bg !important
+            width 100px
+            margin-top 0.25rem
+            &::placeholder
+              color $bg-light
+
+
+          .search__result
+            cursor pointer
+            display none;
+            &.is-visible
+              display block
+
+            li
+              set-type-size('small')
+              font-weight 400
+              margin 0
+              padding 0.25rem 0.5rem
+              &:hover
+                background-color $bg-light
+
+
+  .section__figure-uniqueArtist
+    display flex
+    flex-direction column
+    align-items: flex-end;
+
+    .chart, .chart__search
+      margin 0.75rem 0.5rem
+      width 100%
+      display flex
+      flex-direction column-reverse
+      &__container
+        display flex
+        flex-direction row
+        flex-wrap wrap
+      .uniqueName
+        margin 0 0.25rem
+        set-type-size('small')
+        line-height 1.1
+
+      .text-container
+        margin-bottom 0.5rem
+        border-bottom 1px solid $primary
+        display flex
+        flex-direction row
+        align-items: baseline;
+
+        .unique-artist
+          set-type-size('large')
+          font-family $sans-display
+          font-weight bold
+          order 0
+          margin 0 0.5rem 0 0.25rem
+
+        .unique-meta
+          set-type-size('small')
+          font-family $sans-display
+          text-transform: uppercase
+          margin 0
+          order 1
 
   .chart__search
-    display flex
-    flex-direction column-reverse
     order 6
+    flex-direction column !important
     .chart__container
       order 0
 
     .text-container
-      height 123px
-      .unique-artist
+      .unique-meta
         display none
         &.is-visible
           display block
@@ -47,11 +128,12 @@
           outline none;
           border none;
           background-color $primary
-          set-type-size('root')
+          set-type-size('medium')
           font-family $sans-display
           font-weight bold
           color $bg !important
           width 100px
+          margin 0 0.5rem 0 0.25rem
           &::placeholder
             color $bg-light
 

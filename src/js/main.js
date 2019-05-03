@@ -7,6 +7,7 @@ import repeat from './repeat'
 import unique from './unique'
 import timeless from './timeless'
 import letters from './letters'
+import uniqueArtist from './uniqueArtist'
 
 const $body = d3.select('body');
 let previousWidth = 0;
@@ -48,6 +49,7 @@ function setupToggle(){
     // update data in charts
     repeat.update(aria);
     unique.update(aria);
+    uniqueArtist.update(aria);
     timeless.update(aria);
     letters.update(aria);
   })
@@ -68,6 +70,7 @@ function init() {
   footer.init();
   repeat.init();
   unique.init();
+  uniqueArtist.init()
   timeless.init();
   letters.init()
 }
