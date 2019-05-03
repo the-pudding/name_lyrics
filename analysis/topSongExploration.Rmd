@@ -138,9 +138,21 @@ artist <- justNames %>%
   group_by(artist) %>% 
   distinct(song, .keep_all = TRUE) %>% 
   ungroup() %>% 
-  count(artist, sort = TRUE)
+  count(artist, sort = TRUE) %>% 
+  mutate(person = TRUE)
 
 artist
+
+artistNP <- proper %>% 
+  group_by(artist) %>% 
+  distinct(song, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(artist, sort = TRUE) %>% 
+  mutate(person = FALSE)
+
+allArtist <- rbind(head(artist, n = 10), head(artistNP, n = 10))
+
+write.csv(allArtist, "../src/assets/data/artist.csv", row.names = FALSE)
 ```
 
 Well, with the exception of `Glee Cast` (who just sing lots of popular songs), most of these artists are rappers or Hip Hop artists. Let's see if the most popular are consistently singing about the same names. 
@@ -212,7 +224,8 @@ uniqueNames <- justNames %>%
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   summarise(count = n()) %>% 
-  arrange(desc(count))
+  arrange(desc(count)) %>% 
+  filter(artist != "R. Kelly")
 
 uniqueNames
 ```
@@ -222,7 +235,8 @@ unNameOut <- proper %>%
   mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
-  select(c("artist", "name", "song", "person"))
+  select(c("artist", "name", "song", "person"))  %>% 
+  filter(artist != "R. Kelly")
 
 write.csv(unNameOut, "../src/assets/data/unique.csv", row.names = FALSE)
 ```
@@ -272,14 +286,48 @@ ggplot(firstLettersAll, aes(x = first, y = percent, group = group, fill = group)
 Huh, names starting with B, C, P, R, and S are quite a bit more popular in songs than in the actual country. A names and D names are slightly less common and K and L names are wayyy less common in songs than in the country.
 
 ```{r}
+firstLetterPercent <- justNames %>% 
+  mutate(first = str_sub(name, 1, 1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(first, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(common)) * 100,
+         group = "song")
+
+firstLettersAll <- rbind(onlyNameLetter, firstLetterPercent)
 firstLetterDif <- firstLettersAll %>% 
   select(-n) %>% 
   spread(group, percent) %>% 
-  mutate(dif = song - SS)
+  mutate(dif = song - SS) %>% 
+  select(c("first", "dif")) %>% 
+  mutate(person = TRUE,  
+         letter = first,
+         pos = "first") %>% 
+  select(-first)
 
 ggplot(firstLetterDif, aes(x = first, y = dif)) + geom_bar(stat = "identity")
 ```
 
+```{r}
+firstLetterPercentNP <- proper %>% 
+  mutate(first = str_sub(name, 1, 1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(first, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(common)) * 100,
+         group = "song")
+
+firstLettersAllNP <- rbind(onlyNameLetter, firstLetterPercentNP)
+firstLetterDifNP <- firstLettersAllNP %>% 
+  select(-n) %>% 
+  spread(group, percent) %>% 
+  mutate(dif = song - SS) %>% 
+  select(c("first", "dif")) %>% 
+  mutate(person = FALSE,  
+         letter = first,
+         pos = "first") %>% 
+  select(-first)
+```
 
 
 What about letters that end a name? 
@@ -299,16 +347,16 @@ Names that end in E are reigning supreme here.
 
 ```{r}
 onlyNameLetterLast <- onlyNames %>% 
-  mutate(first = str_sub(Name, -1, -1)) %>% 
-  count(first, sort = TRUE) %>% 
+  mutate(last = str_sub(Name, -1, -1)) %>% 
+  count(last, sort = TRUE) %>% 
   mutate(percent = (n / nrow(onlyNames)) * 100,
          group = "SS")
 
 lastLetterPercent <- justNames %>% 
-  mutate(first = str_sub(name, -1, -1)) %>% 
+  mutate(last = str_sub(name, -1, -1)) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   ungroup() %>% 
-  count(first, sort = TRUE) %>% 
+  count(last, sort = TRUE) %>% 
   mutate(percent = (n / nrow(common)) * 100,
          group = "song")
 
@@ -317,11 +365,52 @@ lastLettersAll <- rbind(onlyNameLetterLast, lastLetterPercent)
 lastLetterDif <- lastLettersAll %>% 
   select(-n) %>% 
   spread(group, percent) %>% 
-  mutate(dif = song - SS)
+  mutate(dif = song - SS) %>% 
+  select(c("last", "dif")) %>% 
+  mutate(person = TRUE,  
+         letter = last,
+         pos = "last") %>% 
+  select(-last)
 
 ggplot(lastLetterDif, aes(x = first, y = dif)) + geom_bar(stat = "identity")
 
 ```
+
+
+```{r}
+onlyNameLetterLast <- onlyNames %>% 
+  mutate(last = str_sub(Name, -1, -1)) %>% 
+  count(last, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(onlyNames)) * 100,
+         group = "SS")
+
+lastLetterPercentNP <- proper %>% 
+  mutate(last = str_sub(name, -1, -1)) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  ungroup() %>% 
+  count(last, sort = TRUE) %>% 
+  mutate(percent = (n / nrow(common)) * 100,
+         group = "song")
+
+lastLettersAllNP <- rbind(onlyNameLetterLast, lastLetterPercentNP)
+
+lastLetterDifNP <- lastLettersAllNP %>% 
+  select(-n) %>% 
+  spread(group, percent) %>% 
+  mutate(dif = song - SS) %>% 
+  select(c("last", "dif")) %>% 
+  mutate(person = FALSE,
+         letter = last,
+         pos = "last") %>% 
+  select(-last)
+
+allLetters <- rbind(firstLetterDif, firstLetterDifNP, lastLetterDif, lastLetterDifNP) %>% 
+  mutate(letter = toupper(letter))
+
+write.csv(allLetters, "../src/assets/data/letters.csv", row.names = FALSE)
+
+```
+
 
 What are the most popular names that end in Y?
 
