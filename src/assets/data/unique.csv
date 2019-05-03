@@ -17,7 +17,6 @@
 "Meek Mill","Jesus","1942 Flows",TRUE
 "Meek Mill","Nicki","1942 Flows",TRUE
 "Meek Mill","Ross","1942 Flows",TRUE
-"Meek Mill","Sullivan","1942 Flows",TRUE
 "Meek Mill","Wendy","1942 Flows",TRUE
 "G-Eazy Featuring Yo Gotti & YBN Nahmir","Baby","1942",TRUE
 "G-Eazy Featuring Yo Gotti & YBN Nahmir","Christian","1942",FALSE
@@ -60,7 +59,7 @@
 "J. Cole","Mark","Album Of The Year (Freestyle)",TRUE
 "Future & Young Thug","Barry","All Da Smoke",TRUE
 "Future & Young Thug","Bentley","All Da Smoke",FALSE
-"Future & Young Thug","Chanel","All Da Smoke",TRUE
+"Future & Young Thug","Chanel","All Da Smoke",FALSE
 "Juice WRLD","Carlo","All Girls Are The Same",FALSE
 "Juice WRLD","John","All Girls Are The Same",TRUE
 "Juice WRLD","Monte","All Girls Are The Same",FALSE
@@ -78,7 +77,7 @@
 "Halsey Featuring Big Sean & Stefflon Don","Cali","Alone",FALSE
 "Halsey Featuring Big Sean & Stefflon Don","Paris","Alone",FALSE
 "Lady Gaga","Baby","Always Remember Us This Way",TRUE
-"Young Thug Featuring Nicki Minaj","Chanel","Anybody",TRUE
+"Young Thug Featuring Nicki Minaj","Chanel","Anybody",FALSE
 "XXXTENTACION x Lil Pump Featuring Maluma & Swae Lee","Chanel","Arms Around You",FALSE
 "XXXTENTACION x Lil Pump Featuring Maluma & Swae Lee","Mercedes","Arms Around You",FALSE
 "21 Savage","Becky","ASMR",TRUE
@@ -6420,7 +6419,6 @@
 "Madonna","Baby","Rescue Me",TRUE
 "Madonna","Baby","True Blue",TRUE
 "Madonna","Bette","Vogue",TRUE
-"Madonna","Davis","Vogue",TRUE
 "Madonna","Fred","Vogue",TRUE
 "Madonna","Gene","Vogue",TRUE
 "Madonna","Ginger","Vogue",TRUE
