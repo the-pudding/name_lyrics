@@ -50,8 +50,10 @@
           set-type-size('root')
           font-family $sans-display
           font-weight bold
-          color $bg
+          color $bg !important
           width 100px
+          &::placeholder
+            color $bg-light
 
 
         .search__result
