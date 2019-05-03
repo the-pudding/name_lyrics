@@ -152,7 +152,7 @@ artistNP <- proper %>%
 
 allArtist <- rbind(head(artist, n = 10), head(artistNP, n = 10))
 
-write.csv(allArtist, "../src/assets/data/artist.csv", row.names = FALSE)
+#write.csv(allArtist, "../src/assets/data/artist.csv", row.names = FALSE)
 ```
 
 Well, with the exception of `Glee Cast` (who just sing lots of popular songs), most of these artists are rappers or Hip Hop artists. Let's see if the most popular are consistently singing about the same names. 
@@ -240,6 +240,54 @@ unNameOut <- proper %>%
 
 write.csv(unNameOut, "../src/assets/data/unique.csv", row.names = FALSE)
 ```
+
+```{r}
+byNameOut <-  proper %>% 
+  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  group_by(artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  select(c("artist", "name", "song", "person", "sentence", "year"))
+
+#write.csv(unNameOut, "../src/assets/data/unique.csv", row.names = FALSE)
+```
+
+
+
+```{r}
+unNameArtist <- proper %>% 
+  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  group_by(artist, song) %>% 
+  distinct(name, .keep_all = TRUE) %>% 
+  group_by(artist, person, name) %>% 
+  summarise(n = n()) 
+
+#write.csv(unNameArtist, "../src/assets/data/artist.csv", row.names = FALSE)
+```
+
+```{r}
+artistLookupAll <- proper %>% 
+  group_by(artist) %>% 
+  distinct(song) %>% 
+  summarise(count = n()) %>% 
+  mutate(person = FALSE)
+
+artistLookup<- justNames %>% 
+  group_by(artist) %>% 
+  distinct(song) %>% 
+  summarise(count = n()) %>% 
+  mutate(person = TRUE)
+
+allLookup <- rbind(artistLookup, artistLookupAll)
+
+unNameArtistLookup <- unNameArtist %>% 
+  left_join(allLookup) %>% 
+  rename(names = n, songs = count)
+
+
+write.csv(unNameArtistLookup, "../src/assets/data/artist.csv", row.names = FALSE)
+```
+
+
 
 
 ### First Letter
