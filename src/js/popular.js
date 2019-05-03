@@ -116,6 +116,14 @@ function hideResult() {
 	$resultSel.html('');
 }
 
+function highlightName(name, text){
+  const pattern = new RegExp(`((\\b)(${name})(\\b))`)
+  const replaceWith = '<span>$1</span>'
+
+  const rep = text.replace(pattern, replaceWith)
+  return rep
+}
+
 function handleResult(d){
   let uniqData = d.value.values
   console.log(uniqData)
@@ -129,7 +137,7 @@ function handleResult(d){
 
         g.append('p')
           .attr('class', 'pop-lyrics')
-          .text(d => d.sentence)
+          .html(d => `"${highlightName(d.name, d.sentence)}"`)
 
         const meta = g.append('div')
           .attr('class', 'pop-meta')
@@ -148,7 +156,7 @@ function handleResult(d){
       },
       update => {
         update.select('pop-lyrics')
-          .text(d => d.sentence)
+          .html(d => `"${highlightName(d.name, d.sentence)}"`)
 
         update.select('pop-song')
           .text(d => d.song)
