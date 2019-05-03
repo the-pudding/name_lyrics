@@ -17,13 +17,13 @@ let nested = []
 
 let scaleX = d3.scaleLinear()
   .range([0, 150])
-  .domain([0, 142])
+  .domain([0, 169])
 
 function update(state){
   const trim = data.filter(d => state === 'true' ? d.person === 'TRUE' : d)
 
   nested = d3.nest()
-    .key(d => d.song)
+    .key(d => d.name)
     .rollup(leaves => {
       let count = leaves.length
       return {count: count, values: leaves}
@@ -32,11 +32,9 @@ function update(state){
     .sort((a, b) => d3.descending(a.value.count, b.value.count))
 
   const sliced = nested
-    .slice(0, 5)
+    .slice(1, 11)
 
-  charts.forEach((d, i) => {
-    d.data(sliced[i])
-  })
+  setupSpark(sliced)
 
 }
 
@@ -75,11 +73,11 @@ function setupSpark(dat){
   const mapped = dat.map(d => {
     return {key: d.key, count: d.value.count}
   })
-  console.log({$spark})
+  console.log({dat})
 
 
   $spark.selectAll('.g-bar')
-    .data(mapped, d => d.key)
+    .data(mapped)
     .join(
       enter => {
         const g = enter.append('div')
@@ -99,10 +97,16 @@ function setupSpark(dat){
 
       },
       update => {
+        update.select('.spark-name')
+          .text(d => d.key)
+
         update.select('.spark-bar')
           .transition()
           .duration(500)
           .style('width', d => `${scaleX(d.count)}px`)
+
+        update.select('.spark-count')
+          .text(d => d.count)
       }
 
     )
@@ -195,7 +199,7 @@ function cleanData(arr){
 	return arr.map((d, i) => {
 		return {
 			...d,
-      n: +d.n
+      year: +d.year
 		}
 	})
 }

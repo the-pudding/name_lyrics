@@ -48,6 +48,7 @@ function setupToggle(){
 
 
     // update data in charts
+    popular.update(aria);
     repeat.update(aria);
     unique.update(aria);
     uniqueArtist.update(aria);
