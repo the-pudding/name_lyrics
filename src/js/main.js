@@ -9,6 +9,7 @@ import timeless from './timeless'
 import letters from './letters'
 import uniqueArtist from './uniqueArtist'
 import popular from './popular'
+import audio from './audio'
 
 const $body = d3.select('body');
 let previousWidth = 0;
@@ -74,7 +75,8 @@ function init() {
   unique.init();
   uniqueArtist.init()
   timeless.init();
-  letters.init()
+  letters.init();
+  audio.init();
   footer.init();
 
 }
