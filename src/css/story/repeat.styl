@@ -3,12 +3,12 @@
     display flex
     flex-wrap wrap
   .chart
-    width 125px
+    width 150px
     height 230px
     margin 0.75rem 0.5rem
 
     &__container
-      height 125px
+      height 150px
       border 1px solid $white
       border-radius 5px
       padding 5px
@@ -37,14 +37,15 @@
         align-self flex-end
 
         .repeat-block
-          width 6px
-          height 6px
+          width 7px
+          height 7px
           background-color $primary
           margin 1px
           border-radius 2px
 
     .meta__container
       display flex
+      justify-content: space-between;
 
       .repeat-title
         font-family $sans-display
@@ -57,3 +58,6 @@
         set-type-size('small')
         text-transform uppercase
         margin 0
+
+      .playlist-button
+        margin 0 0 0 0.25rem

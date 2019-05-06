@@ -35,6 +35,8 @@ d3.selection.prototype.unique = function init(options) {
 
 		let colors = ['']
 
+		let playSVG = '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-play"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>'
+
 
 		// scales
 		const scaleX = null;
@@ -75,8 +77,19 @@ d3.selection.prototype.unique = function init(options) {
           .attr('class', 'unique-artist')
 
 				if (selSection != "uniqueArtist"){
-	        const $play = $meta.append('button')
+					let $buttonCont = $meta.append('div')
+	          .attr('class', 'playlist-button')
+
+	        const $button = $buttonCont.append('button')
 	          .attr('class', 'play')
+	          .attr('role', 'switch')
+	          .attr('aria-checked', 'false')
+	          .attr('aria-labelledby', 'play-song')
+
+					const file = data[0].song.toLowerCase().replace(/\s/g, '_').replace(/[^\w\s]/gi, '')
+
+					 $button.html(playSVG)
+						 .attr('data-file', file)
 				}
 
 				Chart.resize();

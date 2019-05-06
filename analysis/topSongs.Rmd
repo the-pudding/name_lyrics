@@ -252,8 +252,8 @@ checkAllNames <- function(artist, song, lyrics, .pb=NULL){
 
 
 ```{r}
-artist <- c("Justin Bieber", "Elton John", "The Oak Ridge Boys", "Tony Bennett", "Ricky Martin", "The Four Seasons")
-song <- c("Baby", "Bennie and the Jets", "Elvira", "When Joanna Loved Me", "Maria", "Sherry")
+artist <- c("Justin Bieber", "Elton John", "The Oak Ridge Boys", "Petey Pablo", "Tony Bennett", "Ricky Martin", "The Four Seasons")
+song <- c("Baby", "Bennie and the Jets", "Elvira", "Freek-A-Leek", "When Joanna Loved Me", "Maria", "Sherry")
 
 lyricDataUpdated <- cbind(lyricData, artist, song)
 

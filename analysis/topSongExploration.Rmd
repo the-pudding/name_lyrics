@@ -246,7 +246,8 @@ byNameOut <-  proper %>%
   mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
-  filter(name != "She's Got That Vibe") %>% 
+  mutate(name = trimws(name)) %>% 
+  filter(song != "She's Got That Vibe") %>% 
   select(c("artist", "name", "song", "person", "sentence", "year", "highestRank"))
 
 write.csv(byNameOut, "../src/assets/data/popular.csv", row.names = FALSE)
