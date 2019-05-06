@@ -37,6 +37,15 @@ function update(state){
 
   setupSpark(sliced)
 
+  // check to see if name has been entered
+  const enteredName = $inputSel.node().value
+  if (enteredName) {
+    const filtered = nested.filter(d => d.key === enteredName)
+    console.log({filtered})
+    handleResult(filtered[0])
+  }
+
+
 }
 
 function setup(){
@@ -193,6 +202,7 @@ function handleSearch(){
 
   		li.enter().append('li').merge(li).text(d => d.key).on('click', d => {
   			hideResult();
+        console.log({d})
 
   			$inputSel.node().value = d.key;
   			if (!d.empty) handleResult(d);
