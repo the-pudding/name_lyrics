@@ -6,18 +6,28 @@
 	}).catch(console.error)
 */
 
+function cleanData(arr){
+	return arr.map((d, i) => {
+		return {
+			...d,
+      year: +d.year
+		}
+	})
+}
+
 function loadA(file) {
   return new Promise((resolve, reject) => {
     d3.csv(`assets/data/${file}`)
       .then(result => {
         // clean here
-        resolve(result);
+        let data = cleanData(result)
+        resolve(data);
       })
       .catch(reject);
   });
 }
 
 export default function loadData() {
-  const loads = [loadA('filename.csv')];
+  const loads = [loadA('popular.csv')];
   return Promise.all(loads);
 }

@@ -68,14 +68,15 @@ function init() {
   // kick off graphic code
   // setup data filtering toggle
   setupToggle()
-  graphic.init();
-  footer.init();
+
   repeat.init();
+  popular.init()
   unique.init();
   uniqueArtist.init()
   timeless.init();
   letters.init()
-  popular.init()
+  footer.init();
+
 }
 
 init();

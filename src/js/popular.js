@@ -1,4 +1,5 @@
 /* global d3 */
+import loadData from './load-data'
 
 // selections
 const $section = d3.select('#popular')
@@ -217,30 +218,12 @@ function setupSearch(){
 
 function resize() {}
 
-function cleanData(arr){
-	return arr.map((d, i) => {
-		return {
-			...d,
-      year: +d.year
-		}
-	})
-}
-
-function loadData(){
-	return new Promise((resolve, reject) => {
-    d3.csv('assets/data/popular.csv')
-      .then(response => {
-          data = cleanData(response)
-          resolve(data)
-        })
-      .catch(error => console.log("error loading data"))
-		})
-}
 
 function init() {
   return new Promise((resolve) => {
     loadData()
       .then(response => {
+        data = response[0]
         setup()
         resolve()
       })

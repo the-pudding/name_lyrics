@@ -1,5 +1,6 @@
 /* global d3 */
 import './pudding-chart/unique-template'
+import loadData from './load-data'
 
 // selections
 const $section = d3.select('#unique')
@@ -115,7 +116,7 @@ function handleSearch(){
 
 
       uniqueArtist.classed('is-visible', false)
-      
+
       if (!results.length) results.push({ key: 'No matches', empty: true });
   		const li = $resultSel.selectAll('li').data(results);
 
@@ -154,21 +155,22 @@ function cleanData(arr){
 	})
 }
 
-function loadData(){
-	return new Promise((resolve, reject) => {
-    d3.csv('assets/data/unique.csv')
-      .then(response => {
-          data = cleanData(response)
-          resolve(data)
-        })
-      .catch(error => console.log("error loading data"))
-		})
-}
+// function loadData(){
+// 	return new Promise((resolve, reject) => {
+//     d3.csv('assets/data/unique.csv')
+//       .then(response => {
+//           data = cleanData(response)
+//           resolve(data)
+//         })
+//       .catch(error => console.log("error loading data"))
+// 		})
+// }
 
 function init() {
   return new Promise((resolve) => {
     loadData()
       .then(response => {
+        data = response[0]
         setup()
         resolve()
       })
