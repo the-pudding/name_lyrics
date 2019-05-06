@@ -55,7 +55,6 @@ function setup(){
   const sliced = nested
     .slice(1, 11)
 
-    console.log({nested, sliced})
   setupSpark(sliced)
   //
   // const $sel = $figure

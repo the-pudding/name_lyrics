@@ -58,8 +58,6 @@ function setup(){
   const sliced = nested
     .slice(0, 5)
 
-    console.log({nested, sliced})
-
   const $sel = $figure
   charts = $sel
     .selectAll('.chart')
@@ -81,7 +79,6 @@ function hideResult() {
 function handleResult(d){
   let uniqData = d.value.values
   uniqueArtist.classed('is-visible', true)
-  console.log({d})
   uniqueArtist.text(`${d.value.count} names across ${d.value.values[0].songs} songs`)
 
   $chartCont.selectAll('.uniqueName')
@@ -170,7 +167,6 @@ function loadData(){
 	return new Promise((resolve, reject) => {
     d3.csv('assets/data/artist.csv')
       .then(response => {
-        console.log({response})
           data = cleanData(response)
           resolve(data)
         })

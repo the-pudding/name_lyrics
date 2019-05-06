@@ -15,8 +15,6 @@ function update(state){
     .key(d => d.pos)
     .entries(trim)
 
-    console.log({state, trim, nested})
-
   charts.forEach((d, i) => {
     d.data(nested[i])
   })
