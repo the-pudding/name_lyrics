@@ -96,7 +96,14 @@ d3.selection.prototype.repeats = function init(options) {
 			// update scales and render chart
 			render() {
         $title.text(data.song)
-        $artist.text(data.artist)
+				const cleanArtist = data.artist.replace('Featuring', 'Ft.')
+				if (cleanArtist.length >= 15){
+					const trimmed = `${cleanArtist.substr(0, 15)}...`
+					$artist.text(trimmed)
+				} else {
+					$artist.text(cleanArtist)
+				}
+
         $name.text(data.name)
         $count.text(data.n)
 

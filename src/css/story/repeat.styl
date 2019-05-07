@@ -1,7 +1,14 @@
 #repeat
   .section__figure
     display flex
-    flex-wrap wrap
+    flex-direction column
+    &-chart
+      display flex
+      flex-wrap wrap
+      justify-content: space-between;
+      padding 0 1rem
+  .chart__sub, .chart__title
+    padding 0 1rem
   .chart__search
     order 12
     .repeat-artist
@@ -11,7 +18,8 @@
   .chart, .chart__search
     width 150px
     height 230px
-    margin 0.75rem 0.5rem
+    margin 0.75rem 0
+
 
     &__container
       height 150px
@@ -52,6 +60,7 @@
     .meta__container
       display flex
       justify-content: space-between;
+      margin-top 0.5rem
 
       .repeat-title
         font-family $sans-display

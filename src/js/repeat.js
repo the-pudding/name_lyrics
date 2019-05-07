@@ -3,7 +3,8 @@ import './pudding-chart/repeat-template'
 
 // selections
 const $section = d3.select('#repeat')
-const $figure = $section.selectAll('.section__figure-repeat')
+const $figureCont = $section.selectAll('.section__figure-repeat')
+const $figure = $figureCont.selectAll('.section__figure-chart')
 const $uiChart = $figure.select('.chart__search')
 
 let $resultSel = $uiChart.select('.search__result')
@@ -19,7 +20,6 @@ let trim = []
 
 function update(state){
   trim = data.filter(d => state === 'true' ? d.person === 'TRUE' : d)
-  console.log(trim)
 
   const sliced = trim
     .slice(0, 12)
@@ -95,7 +95,7 @@ function handleSearch(){
     const text = value.trim().toLowerCase()
     const re = new RegExp(`\\b${text}`)
 
-    // hide artist 
+    // hide artist
     $artist.classed('is-visible', false)
 
 

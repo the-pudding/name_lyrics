@@ -13,25 +13,33 @@
   <p class='prose'>{{{doc.repeatProse}}}</p>
 
   <figure class='section__figure section__figure-repeat'>
-    <div class='chart__search'>
-      <div class='chart__container'>
-        <div class='name-details'>
-          <p class='name'></p>
-          <p class='count'></p>
-        </div>
-        <div class='block-container'></div>
-      </div>
+    <div class='section__figure-meta'>
+      <h3 class='chart__title'>{{{doc.repeatChartTitle}}}</h3>
+      <p class='chart__sub'>{{{doc.repeatChartSub}}}</p>
+    </div>
 
-      <div class='meta__container'>
-        <div class='text-container'>
-          <div class='ui__search'>
-            <input class='search__input' placeholder='Find a song...'>
-            <ul class='search__result'></ul>
+    <div class='section__figure-chart'>
+
+      <div class='chart__search'>
+        <div class='chart__container'>
+          <div class='name-details'>
+            <p class='name'></p>
+            <p class='count'></p>
           </div>
-          <p class='repeat-artist'></p>
+          <div class='block-container'></div>
+        </div>
+
+        <div class='meta__container'>
+          <div class='text-container'>
+            <div class='ui__search'>
+              <input class='search__input' placeholder='Find a song...'>
+              <ul class='search__result'></ul>
+            </div>
+            <p class='repeat-artist'></p>
+          </div>
         </div>
       </div>
-
+      
     </div>
   </figure>
 </section>
