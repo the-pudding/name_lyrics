@@ -2,7 +2,13 @@
   .section__figure
     display flex
     flex-wrap wrap
-  .chart
+  .chart__search
+    order 12
+    .repeat-artist
+      display none
+      &.is-visible
+        display block
+  .chart, .chart__search
     width 150px
     height 230px
     margin 0.75rem 0.5rem
@@ -61,3 +67,16 @@
 
       .playlist-button
         margin 0 0 0 0.25rem
+      .ui__search
+        input
+          outline none;
+          border none;
+          background-color $primary
+          set-type-size('root')
+          font-family $sans-display
+          font-weight bold
+          color $bg !important
+          width 150px
+          margin-top 0.25rem
+          &::placeholder
+            color $bg-light
