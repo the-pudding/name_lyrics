@@ -25,6 +25,7 @@ d3.selection.prototype.repeats = function init(options) {
     let $count = null
     let $title = null
     let $artist = null
+		let $button = null
 
 		// scales
 		const scaleX = null;
@@ -74,16 +75,11 @@ d3.selection.prototype.repeats = function init(options) {
         let $buttonCont = $meta.append('div')
           .attr('class', 'playlist-button')
 
-        const $button = $buttonCont.append('button')
+        $button = $buttonCont.append('button')
           .attr('class', 'play')
           .attr('role', 'switch')
           .attr('aria-checked', 'false')
           .attr('aria-labelledby', 'play-song')
-
-       const file = data.song.toLowerCase().replace(/\s/g, '_').replace(/[^\w\s]/gi, '')
-
-        $button.html(playSVG)
-          .attr('data-file', file)
 
 				Chart.resize();
 				Chart.render();
@@ -101,6 +97,11 @@ d3.selection.prototype.repeats = function init(options) {
         $artist.text(data.artist)
         $name.text(data.name)
         $count.text(data.n)
+
+				const file = data.song.toLowerCase().replace(/\s/g, '_').replace(/[^\w\s]/gi, '')
+
+         $button.html(playSVG)
+           .attr('data-file', file)
 
         const range = d3.range(data.n)
 
