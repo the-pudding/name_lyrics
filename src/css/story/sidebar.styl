@@ -6,21 +6,23 @@
   transition transform 400ms ease-in-out
   z-index 50
   position fixed
+  height 100vh
   +mq('bp-6')
     transform translateX(0)
     position relative
+    height auto
   &.is-visible
     transform translateX(0)
     transition transform 400ms ease-in-out
   &__drawer
     cursor pointer
     pointer-events: all
-    position relative
+    position absolute
     background $bg-light
     height 2.5rem
     width 2.5rem
     margin 0
-    left 240px
+    left 260px
     top 1rem
     border-radius 0 0.5rem 0.5rem 0
     transform translateX(100%)
