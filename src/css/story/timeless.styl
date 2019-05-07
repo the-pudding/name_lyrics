@@ -1,8 +1,11 @@
 #timeless
   .section__figure
-    display flex
-    align-items: flex-end;
-    padding 0 0.5rem
+    &-meta
+      padding 0 1rem
+    &-chart
+      display flex
+      align-items: flex-end;
+      padding 0 0.5rem
   .chart
     min-width 85px
     margin 0.75rem 0.5rem
@@ -12,6 +15,7 @@
       min-width 20px
       font-weight bold
       text-align: right;
+      color $primary
 
     &__container
       display flex

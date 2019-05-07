@@ -9,10 +9,12 @@
     </div>
     <a class='playlist-button'>{{doc.playlistButton}}</a>
   </div>
-
-  <p class='prose'>{{{doc.lettersProse}}}</p>
+  {{#each doc.lettersProse}}
+    <p class='prose'>{{{value}}}</p>
+  {{/each}}
 
   <figure class='section__figure section__figure-letters'>
 
   </figure>
+  <p class='figure-note'>{{{doc.lettersNote}}}</p>
 </section>

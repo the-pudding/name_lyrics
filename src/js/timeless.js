@@ -3,7 +3,8 @@ import './pudding-chart/timeless-template'
 
 // selections
 const $section = d3.select('#timeless')
-const $figure = $section.selectAll('.section__figure-timeless')
+const $figureCont = $section.selectAll('.section__figure-timeless')
+const $figure = $figureCont.select('.section__figure-chart')
 
 let data = []
 let charts = []
@@ -51,7 +52,7 @@ function setup(){
     .data(d3.range(10))
     .enter()
     .append('p')
-    .text(d => d + 1)
+    .text(d => `${d + 1}`)
     .attr('class', 'timelessName')
 
   charts = $sel

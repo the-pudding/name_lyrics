@@ -11,7 +11,13 @@ d3.selection.prototype.letters = function init(options) {
 	function createChart(el) {
 		const $sel = d3.select(el);
     let position = $sel.datum().key
-		let data = $sel.datum().values;
+		let data = $sel.datum().values
+		if (position == 'last') {
+			data.push({'letter': 'V', 'dif': 0})
+
+			data = data
+				.sort((a, b) => d3.ascending(a.letter, b.letter))
+		}
 		// dimension stuff
 		let width = 0;
 		let height = 0;
@@ -22,6 +28,7 @@ d3.selection.prototype.letters = function init(options) {
     let $vizCont = null
     let $blockCont = null
     let $meta = null
+		let $legend = null
     let $leftCont = null
     let $rightCont = null
     let $leftBar = null
@@ -49,21 +56,61 @@ d3.selection.prototype.letters = function init(options) {
           .attr('class', 'letters-title')
           .text(position === 'first' ? 'Names that start with...' : 'Names that end with...')
 
-        const $legend = $meta.append('div')
-          .attr('class', 'letters-legend')
-
-        $legend.append('p')
-          .attr('class', 'letters-legend letters-legend-society')
-          .text('More common in society')
-
-        $legend.append('p')
-          .attr('class', 'letters-legend letters-legend-song')
-          .text('More common in songs')
-
 
 				// setting up viz section
         $vizCont = $sel.append('div')
           .attr('class', 'chart__container')
+
+				// setting up legend
+				$legend = $sel.append('div')
+					.attr('class', 'letters-legend')
+
+
+
+				const $legendScale = $legend.append('div')
+					.attr('class', 'letters-legend-scale')
+
+				const $legendLeft = $legendScale.append('div')
+					.attr('class', 'legend-left')
+
+				const $legendSpace = $legendScale.append('div')
+					.attr('class', 'legend-space')
+
+				const $legendRight = $legendScale.append('div')
+					.attr('class', 'legend-right')
+
+				const scale = [0, 4, 8]
+
+				const $gLeft = $legendLeft.selectAll('tick')
+					.data(scale)
+					.enter()
+					.append('div')
+					.attr('class', 'tick')
+
+				$gLeft.append('span')
+					.text(d => `${d}%`)
+
+				const $gRight = $legendRight.selectAll('tick')
+					.data(scale)
+					.enter()
+					.append('div')
+					.attr('class', 'tick')
+
+				$gRight.append('span')
+					.text(d => `${d}%`)
+
+				const $legendLabels = $legend.append('div')
+					.attr('class', 'legend-labels')
+
+				$legendLabels.append('p')
+					.attr('class', 'letters-legend letters-legend-society')
+					.text('More common in society')
+
+				$legendLabels.append('p')
+					.attr('class', 'letters-legend letters-legend-song')
+					.text('More common in songs')
+
+
 
 
 
@@ -77,13 +124,14 @@ d3.selection.prototype.letters = function init(options) {
 				height = $sel.node().offsetHeight - marginTop - marginBottom;
 
         scaleX
-          .range([0, 125])
+          .range([0, 110])
           .domain([0, 8.2])
 
 				return Chart;
 			},
 			// update scales and render chart
 			render() {
+				console.log({data})
         $vizCont.selectAll('.letter-details')
           .data(data, d => {
             return d.letter
