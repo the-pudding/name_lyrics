@@ -86,6 +86,8 @@ d3.selection.prototype.unique = function init(options) {
 	          .attr('aria-checked', 'false')
 	          .attr('aria-labelledby', 'play-song')
 
+					$button.node().disabled = true
+
 					const file = data[0].song.toLowerCase().replace(/\s/g, '_').replace(/[^\w\s]/gi, '')
 
 					 $button.html(playSVG)

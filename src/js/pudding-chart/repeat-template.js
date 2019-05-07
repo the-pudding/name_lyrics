@@ -81,6 +81,8 @@ d3.selection.prototype.repeats = function init(options) {
           .attr('aria-checked', 'false')
           .attr('aria-labelledby', 'play-song')
 
+				$button.node().disabled = true
+
 				Chart.resize();
 				Chart.render();
 			},

@@ -49,6 +49,10 @@ function loadFiles(){
 
 function setupButtons(){
   const $buttons = d3.selectAll('button.play')
+  $buttons.each(function(d){
+    const btn = d3.select(this)
+    btn.node().disabled = false
+  })
     $buttons.on('click', function(){
       prevButton = currentButton
       // if at least one song has already been played

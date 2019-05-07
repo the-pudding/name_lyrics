@@ -48,6 +48,14 @@
     background-color $primary
     padding 0.5rem
     border-radius 50%
+    transition background-color 300ms ease-in-out
+    &:disabled, &[disabled]
+      background-color $bg-light
+      transition background-color 300ms ease-in-out
+      svg
+        stroke $bg
+        fill $bg
+        transition 300ms ease-in-out
   svg
     width 15px
     height 15px
@@ -55,6 +63,8 @@
     margin auto
     stroke $white
     fill $white
+    transition 300ms ease-in-out
+
 
 .section__info
   margin-top 3rem
