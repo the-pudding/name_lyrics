@@ -203,7 +203,10 @@ Let's find the single song with the most mentions of every name.
 repeatInd <- proper %>% 
   mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
   group_by(artist, song, person) %>% 
-  count(name) %>% 
+  count(name, sort = TRUE) %>% 
+  mutate(row = row_number()) %>% 
+  filter(row == 1) %>%  
+  select(-row) %>% 
   ungroup() %>% 
   group_by(person, name) %>% 
   arrange(desc(n)) %>% 

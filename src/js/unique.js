@@ -4,7 +4,8 @@ import loadData from './load-data'
 
 // selections
 const $section = d3.select('#unique')
-const $figure = $section.selectAll('.section__figure-unique')
+const $figureCont = $section.selectAll('.section__figure-unique')
+const $figure = $figureCont.selectAll('.section__figure-chart')
 const $uiChart = $figure.select('.chart__search')
 
 let $resultSel = $uiChart.select('.search__result')
@@ -29,7 +30,7 @@ function update(state){
     .sort((a, b) => d3.descending(a.value.count, b.value.count))
 
   const sliced = nested
-    .slice(0, 5)
+    .slice(0, 4)
 
   charts.forEach((d, i) => {
     d.data(sliced[i])
@@ -50,7 +51,7 @@ function setup(){
     .sort((a, b) => d3.descending(a.value.count, b.value.count))
 
   const sliced = nested
-    .slice(0, 5)
+    .slice(0, 4)
 
   const $sel = $figure
   charts = $sel
@@ -154,17 +155,6 @@ function cleanData(arr){
 		}
 	})
 }
-
-// function loadData(){
-// 	return new Promise((resolve, reject) => {
-//     d3.csv('assets/data/unique.csv')
-//       .then(response => {
-//           data = cleanData(response)
-//           resolve(data)
-//         })
-//       .catch(error => console.log("error loading data"))
-// 		})
-// }
 
 function init() {
   return new Promise((resolve) => {

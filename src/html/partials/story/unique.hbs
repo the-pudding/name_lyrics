@@ -13,17 +13,25 @@
   <p class='prose'>{{{doc.uniqueProse}}}</p>
 
   <figure class='section__figure section__figure-unique'>
-    <div class='chart__search'>
-      <div class='text-container'>
-        <div class='ui__search'>
-          <input class='search__input' placeholder='Find a song...'>
-          <ul class='search__result'></ul>
+    <div class='section__figure-meta'>
+      <h3 class='chart__title'>{{{doc.uniqueChartTitle}}}</h3>
+      <p class='chart__sub'>{{{doc.uniqueChartSub}}}</p>
+    </div>
+    <div class='section__figure-chart'>
+      <div class='chart__search'>
+        <div class='text-container'>
+          <div class='ui__search'>
+            <input class='search__input' placeholder='Find a song...'>
+            <ul class='search__result'></ul>
+          </div>
+          <p class='unique-artist'></p>
         </div>
-        <p class='unique-artist'></p>
       </div>
 
     </div>
   </figure>
+
+  <p class='prose'>{{{doc.uniqueArtistProse}}}</p>
 
   <figure class='section__figure section__figure-uniqueArtist'>
     <div class='chart__search'>
