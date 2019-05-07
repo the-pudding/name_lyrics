@@ -18,7 +18,7 @@ const song = new Howl({
   volume: 0.5
 })
 
-const test = ['baby', 'barbara_ann', 'bennie_and_the_jets', 'cocktales', 'do_the_john_wall', 'dreams',
+const test = ['where_did_our_love_go', 'forever_your_girl', 'always_on_time', 'omg', 'without_me', 'baby', 'barbara_ann', 'bennie_and_the_jets', 'cocktales', 'do_the_john_wall', 'dreams',
  'help_me_rhonda', 'floy_joy', 'going_back_to_cali', 'hello_kitty', 'i_do_the_rock', 'london_bridge', 'marco_polo', 'martians_vs_goblins',
 'mary_mary', 'mickey', 'molly', 'scotty_doesnt_know', 'smooth_criminal', 'vogue', 'we_didnt_start_the_fire', 'wild_wild_west']
 
