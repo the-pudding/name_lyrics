@@ -84,14 +84,12 @@
 "Glee Cast","Jessie's Girl",TRUE,"Jessie",14
 "Neil Sedaka","Alice In Wonderland",TRUE,"Alice",14
 "Ricky Nelson","Hello Mary Lou",TRUE,"Mary Lou",14
-"The Supremes","Floy Joy",TRUE,"Floy Joy",14
 "Tommy Roe","Jack And Jill",TRUE,"Jack",14
 "Billy Joe Royal","Cherry Hill Park",FALSE,"Cherry",13
 "David Bowie","The Jean Genie",TRUE,"Jean",13
 "Dean Martin & Sammy Davis Jr.","Sam's Song",TRUE,"Sam",13
 "Dixie Chicks","Goodbye Earl",TRUE,"Earl",13
 "Fifth Harmony","Bo$$",TRUE,"Michelle",13
-"Gene Chandler","Duke Of Earl",FALSE,"Earl",13
 "James Taylor","Carolina In My Mind",FALSE,"Carolina",13
 "Jay-Z Featuring Big Jaz","Jigga What...",TRUE,"Jay",13
 "Neneh Cherry","Buddy X",TRUE,"Buddy",13
@@ -101,7 +99,6 @@
 "Roger Miller","Vance",TRUE,"Vance",13
 "Sheila E","The Belle Of St. Mark",FALSE,"Mark",13
 "The Grass Roots","Bella Linda",TRUE,"Bella Linda",13
-"Tommy Roe","Jack And Jill",TRUE,"Jill",13
 "David Bowie","Blue Jean",TRUE,"Blue Jean",12
 "Dion","Little Diane",TRUE,"Diane",12
 "Donovan","To Susan On The West Coast Waiting",TRUE,"Susan",12
@@ -124,7 +121,6 @@
 "Chubby Checker","Lovely, Lovely (Loverly, Loverly)",TRUE,"Susannah",11
 "Chuck Berry","Run Rudolph Run",TRUE,"Rudolph",11
 "Johnny Mathis","Gina",TRUE,"Gina",11
-"Kris Kross","Jump",TRUE,"Kris",11
 "Manfred Mann","Mighty Quinn (Quinn The Eskimo)",TRUE,"Quinn",11
 "Michael Jackson","Billie Jean",TRUE,"Billie Jean",11
 "One Direction","Olivia",TRUE,"Olivia",11
@@ -138,7 +134,6 @@
 "Barry Manilow","Mandy",TRUE,"Mandy",10
 "Curtis Mayfield","Freddie's Dead (Theme From Superfly)",TRUE,"Freddie",10
 "Danielle Bradbery","The Heart Of Dixie",TRUE,"Dixie",10
-"Donovan","To Susan On The West Coast Waiting",TRUE,"Andy",10
 "Fats Domino","Margie",TRUE,"Margie",10
 "Gilbert O'Sullivan","Clair",TRUE,"Clair",10
 "Jay-Z Featuring R. Kelly","Guilty Until Proven Innocent",TRUE,"Kelly",10
@@ -178,13 +173,10 @@
 "Dionne Warwick","Message To Michael",TRUE,"Michael",8
 "Eddie Money","Take Me Home Tonight",TRUE,"Ronnie",8
 "Fleetwood Mac","Rhiannon (will You Ever Win)",TRUE,"Rhiannon",8
-"Heidi Newfield","Johnny & June",TRUE,"June",8
 "Jason Derulo","Cheyenne",TRUE,"Cheyenne",8
 "Jerry Reed","Amos Moses",TRUE,"Amos",8
-"Joe Diffie","John Deere Green",TRUE,"Charlene",8
 "Joshua Kadison","Picture Postcards From L.A.",TRUE,"Rachel",8
 "Kodak Black Featuring Lil Wayne","Codeine Dreaming",FALSE,"Christian",8
-"Kodak Black Featuring Lil Wayne","Codeine Dreaming",FALSE,"Venus",8
 "Lil Dicky Featuring Chris Brown","Freaky Friday",TRUE,"Chris",8
 "Marillion","Kayleigh",TRUE,"Kayleigh",8
 "Mark McGuinn","Mrs. Steven Rudy",TRUE,"Steven",8
@@ -192,32 +184,30 @@
 "Migos","Narcos",TRUE,"Pablo",8
 "Neil Diamond","Cherry, Cherry",TRUE,"Cherry",8
 "Ohio Players","Funky Worm",TRUE,"Clarence",8
+"R.E.M.","Man On The Moon",TRUE,"Andy",8
 "Richard Marx","Angelia",TRUE,"Angelia",8
 "Rick James","Mary Jane",FALSE,"Mary Jane",8
 "Rick Ross Featuring Styles P","B.M.F. (Blowin' Money Fast)",TRUE,"Larry",8
 "Rod Stewart","Leave Virginia Alone",TRUE,"Virginia",8
 "Sugarland","Joey",TRUE,"Joey",8
 "The Beatles","Penny Lane",FALSE,"Lane",8
-"The Beatles","Penny Lane",FALSE,"Penny",8
 "The Chainsmokers","Paris",FALSE,"Paris",8
 "The Left Banke","Desiree'",TRUE,"Desiree",8
 "The Lumineers","Ophelia",TRUE,"Ophelia",8
 "Train","Save Me, San Francisco",FALSE,"Francisco",8
 "Usher Featuring Jay-Z","Hot Tottie",TRUE,"King",8
 "Bobbie Gentry","Ode To Billie Joe",TRUE,"Billie Joe",7
-"Britney Spears","3",TRUE,"Paul",7
-"Britney Spears","3",TRUE,"Peter",7
 "Conway Twitty","Danny Boy",TRUE,"Danny",7
 "Dionne Warwick","The April Fools",FALSE,"April",7
 "Emblem3","Chloe (You're The One I Want)",TRUE,"Chloe",7
 "Engelbert Humperdinck","My Marie",TRUE,"Marie",7
 "Florida Georgia Line","Bumpin' The Night",FALSE,"Bud",7
 "Georgie Fame","The Ballad Of Bonnie And Clyde",TRUE,"Bonnie",7
-"Georgie Fame","The Ballad Of Bonnie And Clyde",TRUE,"Clyde",7
 "Illegal","We Getz Busy",TRUE,"Malik",7
 "Jimi Hendrix","Dolly Dagger",TRUE,"Dolly",7
 "John Anderson","Swingin'",TRUE,"Charlotte",7
 "Kendrick Lamar","Duckworth.",TRUE,"Anthony",7
+"Lady Gaga","Venus",FALSE,"Venus",7
 "Lil Wayne Featuring T-Pain","Got Money",TRUE,"Wayne",7
 "Lloyd Price","Stagger Lee",TRUE,"Lee",7
 "Martina McBride","God's Will",TRUE,"Will",7
@@ -243,13 +233,11 @@
 "Bryce Vine","Drew Barrymore",TRUE,"Drew",6
 "Claude King","Wolverton Mountain",TRUE,"Clifton",6
 "Dean Friedman","Ariel",TRUE,"Ariel",6
-"Dean Martin & Sammy Davis Jr.","Sam's Song",TRUE,"Dean",6
 "Dion","Sandy",TRUE,"Sandy",6
 "Duck Sauce","Barbra Streisand",TRUE,"Barbra",6
 "Elton John","Border Song",TRUE,"Moses",6
 "Eve","Got It All",TRUE,"Eve",6
 "Famous Dex Featuring A$AP Rocky","Pick It Up",TRUE,"Dexter",6
-"Fetty Wap","Jimmy Choo",TRUE,"Robin",6
 "Floyd Cramer","San Antonio Rose",FALSE,"Antone",6
 "Frank Ocean","Chanel",FALSE,"Chanel",6
 "Gallery","Big City Miss Ruth Ann",TRUE,"Ruth Ann",6
@@ -257,13 +245,12 @@
 "Jermaine Stewart","Jody",TRUE,"Jody",6
 "Jim Croce","Bad, Bad Leroy Brown",TRUE,"Leroy",6
 "Kevin Gates","Let It Sing",TRUE,"Aretha",6
-"Kevin Gates","Let It Sing",TRUE,"Billy Jean",6
-"Kevin Gates","Let It Sing",TRUE,"Ray",6
 "Lil  Troy Featuring Yungsta, Fat Pat, Lil  Will, Hawk, Big T","Wanna Be A Baller",TRUE,"Ike",6
 "Michael Jackson","Ben",TRUE,"Ben",6
 "Offset & Metro Boomin","Nightmare",TRUE,"Freddy",6
 "Paul McCartney & Wings","Helen Wheels",TRUE,"Helen",6
 "Post Malone","Zack And Codeine",TRUE,"Cody",6
+"Ruth B","Lost Boy",TRUE,"Peter",6
 "Sam Cooke","Cousin Of Mine",TRUE,"Julie",6
 "Taylor Swift","Tim McGraw",TRUE,"Tim",6
 "Thalia Featuring Fat Joe","I Want You",FALSE,"Don",6
@@ -288,16 +275,13 @@
 "Fetty Wap Featuring Remy Boyz","679",TRUE,"Remy",5
 "Glee Cast","Beth",TRUE,"Beth",5
 "Hot Chocolate","Emma",TRUE,"Emma",5
-"Iggy Azalea","Sally Walker",TRUE,"Walker",5
 "JAY-Z Featuring Damian \Jr. Gong\ Marely","Bam",TRUE,"Shawn",5
 "Joni Mitchell","Carey",TRUE,"Carey",5
 "Kenny Rogers","Scarlet Fever",TRUE,"Scarlet",5
-"Marky Mark & The Funky Bunch","Wildside",TRUE,"Charles",5
 "Meek Mill Featuring Kodak Black","Tic Tac Toe",FALSE,"Ace",5
 "Michael Nesmith & The First National Band","Joanne",TRUE,"Joanne",5
 "Mike Jones","Back Then",TRUE,"Mike",5
 "Neil Diamond","Cracklin' Rosie",TRUE,"Rosie",5
-"Paul Simon","You Can Call Me Al",TRUE,"Al",5
 "Pure Prairie League","Amie",TRUE,"Amie",5
 "Rascal Flatts","Skin (Sarabeth)",TRUE,"Sara Beth",5
 "ScHoolboy Q Featuring Kanye West","THat Part",TRUE,"Kobe",5
@@ -305,20 +289,16 @@
 "Teresa Brewer","Pickle Up A Doodle",TRUE,"Belinda",5
 "The Everly Brothers","Cathy's Clown",TRUE,"Cathy",5
 "The Oak Ridge Boys","Bobbie Sue",TRUE,"Bobbie Sue",5
-"The Ting Tings","That's Not My Name",TRUE,"Jo",5
-"The Ting Tings","That's Not My Name",TRUE,"Stacey",5
 "Timbaland Featuring Missy \Misdemeanor\"" Elliott""","Here We Come",TRUE,"Missy",5
 "Tony Bennett","When Joanna Loved Me",FALSE,"May",5
 "Tony Joe White","Roosevelt And Ira Lee (Night of'the Mossacin)",TRUE,"Ira Lee",5
-"Tony Joe White","Roosevelt And Ira Lee (Night of'the Mossacin)",TRUE,"Roosevelt",5
 "twenty one pilots","Nico And The Niners",TRUE,"Nico",5
 "Waka Flocka Flame Featuring Roscoe Dash & Wale","No Hands",TRUE,"Roscoe",5
 "Wilson Pickett","Mini-Skirt Minnie",TRUE,"Minnie",5
 "A Boogie Wit da Hoodie Featuring PnB Rock & YoungBoy Never Broke Again","Beast Mode",FALSE,"Rico",4
 "A Tribe Called Quest","Award Tour",TRUE,"Muhammad",4
 "Akon","Angel",FALSE,"Angel",4
-"Blondie","Maria",TRUE,"Regina",4
-"Bob Dylan","Hurricane (Part I)",TRUE,"Patty",4
+"Anthony Hamilton","Charlene",TRUE,"Charlene",4
 "Bobby Bare","Miller's Cave",FALSE,"Miller",4
 "Bobby Vee","Please Don't Ask About Barbara",TRUE,"Barbara",4
 "Brian Hyland","Ginny Come Lately",TRUE,"Ginny",4
@@ -328,13 +308,9 @@
 "Ciara Featuring Ludacris","Ride",TRUE,"Ciara",4
 "David Guetta Featuring Flo Rida & Nicki Minaj","Where Them Girls At",TRUE,"Lilly",4
 "David Lee Roth","Yankee Rose",FALSE,"Rose",4
-"Desiigner","Panda",TRUE,"Montana",4
-"Desiigner","Panda",TRUE,"Randy",4
-"Dixie Chicks","Goodbye Earl",TRUE,"Wanda",4
 "Don Henley","Johnny Can't Read",FALSE,"Summer",4
 "Donovan","Celia Of The Seals",TRUE,"Celia",4
 "Edison Lighthouse","Love Grows (Where My Rosemary Goes)",TRUE,"Rosemary",4
-"Eminem","We Made You",TRUE,"Jessica",4
 "Eminem","When I'm Gone",TRUE,"Hailie",4
 "Europe","Carrie",TRUE,"Carrie",4
 "Fat Joe Featuring R. Kelly","We Thuggin'",FALSE,"Henry",4
@@ -346,16 +322,12 @@
 "Future","Super Trapper",TRUE,"Albert",4
 "Glee Cast Featuring Chris Colfer & Amber Riley","4 Minutes",TRUE,"Madonna",4
 "Goo Goo Dolls","Slide",TRUE,"May",4
-"Illegal","We Getz Busy",TRUE,"Erick",4
 "Incubus","Megalomaniac",TRUE,"Elvis",4
-"Joe Diffie","John Deere Green",TRUE,"Billy Bob",4
 "John Denver","Take Me Home, Country Roads",FALSE,"Virginia",4
-"Johnny Cash","Don't Take Your Guns To Town",TRUE,"Billy Joe",4
 "Johnny Cash","The Matador",TRUE,"Anita",4
 "Judy Collins","Chelsea Morning",TRUE,"Chelsea",4
-"Kenny Rogers","Coward Of The County",TRUE,"Becky",4
 "Keri Hilson Featuring Lil Wayne","Turnin Me On",TRUE,"Keri",4
-"Lady Gaga","Alejandro",TRUE,"Roberto",4
+"Kris Kross Featuring Supercat","Alright",TRUE,"Kris",4
 "Las Ketchup","The Ketchup Song (Hey Hah)",TRUE,"Diego",4
 "Lesley Gore","Sunshine, Lollipops And Rainbows",FALSE,"Sunshine",4
 "Level 42","Running In The Family",TRUE,"Emily",4
@@ -363,24 +335,17 @@
 "Lil Uzi Vert","New Patek",TRUE,"Frank",4
 "Lil Uzi Vert","X",TRUE,"Leonardo",4
 "Lil Wayne","Used 2",TRUE,"Ivan",4
-"Lil Wayne Featuring Kendrick Lamar","Mona Lisa",TRUE,"Liz",4
 "Lil' Flip Featuring Lea","Sunshine",TRUE,"Sunshine",4
 "Lil' Kim","Lighters Up",FALSE,"Brooklyn",4
 "Lou Bega","Mambo No. 5 (A Little Bit Of...)",TRUE,"Rita",4
-"Lou Bega","Mambo No. 5 (A Little Bit Of...)",TRUE,"Sandra",4
 "Mariah Carey","Honey",TRUE,"Mariah",4
-"Marky Mark & The Funky Bunch","Wildside",TRUE,"Ron",4
 "Marty Robbins","El Paso",TRUE,"Rosa",4
-"Marty Robbins","Jimmy Martinez",TRUE,"Sarah",4
 "Marty Robbins","Ruby Ann",TRUE,"Ruby Ann",4
 "Metro Boomin Featuring Gunna","Space Cadet",TRUE,"Rick",4
 "Miguel Featuring Travis Scott","Sky Walker",TRUE,"Luke",4
-"Mr. Big","Romeo",TRUE,"Juliet",4
 "Nelly Featuring City Spud","Ride Wit Me",TRUE,"Nelly",4
 "Paul Simon","The Obvious Child",TRUE,"Sonny",4
 "Petey Pablo","Freek-A-Leek",TRUE,"Christina",4
-"Petey Pablo","Freek-A-Leek",TRUE,"Monica",4
-"Petey Pablo","Freek-A-Leek",TRUE,"Monique",4
 "Ray Stevens","The Streak",TRUE,"Ethel",4
 "Rihanna","Cheers (Drink To That)",FALSE,"Jameson",4
 "Rodney Dangerfield","Rappin' Rodney",TRUE,"Rodney",4
@@ -388,6 +353,7 @@
 "Sheck Wes","Mo Bamba",TRUE,"Ali",4
 "Sheryl Crow","All I Wanna Do",FALSE,"Monica",4
 "Shontelle","T-Shirt",FALSE,"Jimmy",4
+"Steve Forbert","Say Goodbye To Little Jo",TRUE,"Jo",4
 "Sublime","Doin' Time",TRUE,"Bradley",4
 "T.I.","Hell Of A Life",TRUE,"Serena",4
 "The 5th Dimension","Flashback",FALSE,"Winter",4
@@ -403,6 +369,7 @@
 "Trippie Redd Featuring Juice WRLD","1400 / 999 Freestyle",TRUE,"Madison",4
 "Troop 41","Do The John Wall",FALSE,"Raleigh",4
 "Twista","Overnight Celebrity",TRUE,"Goldie",4
+"WE the Kings","Check Yes Juliet (Run Baby Run)",TRUE,"Juliet",4
 "Young Money Featuring Gucci Mane","Steady Mobbin'",TRUE,"Kane",4
 "50 Cent","Window Shopper",TRUE,"Jada",3
 "A Boogie Wit da Hoodie Featuring 6ix9ine","Swervin",TRUE,"London",3
@@ -410,15 +377,8 @@
 "America","Right Before Your Eyes",TRUE,"Greta",3
 "Andrew McMahon In The Wilderness","Cecilia And The Satellite",TRUE,"Cecilia",3
 "Ariana Grande & Victoria Monet","Monopoly",TRUE,"Cletus",3
-"Avril Lavigne","Hello Kitty",TRUE,"Mina",3
-"B.B. King","Paying The Cost To Be The Boss",TRUE,"Sammy",3
 "Bill Conti","Gonna Fly Now",TRUE,"Rocky",3
-"Blac Youngsta","Booty",TRUE,"Tyson",3
 "Blake Shelton","Austin",TRUE,"Austin",3
-"Blake Shelton","Footloose",TRUE,"Louise",3
-"Bob Dylan","Hurricane (Part I)",TRUE,"Arthur",3
-"Brantley Gilbert","Country Must Be Country Wide",TRUE,"Waylon",3
-"Brantley Gilbert","Country Must Be Country Wide",TRUE,"Willie",3
 "Bread","Aubrey",TRUE,"Aubrey",3
 "Bryson Tiller","Self-Made",TRUE,"Giuseppe",3
 "Carlos Vives & Shakira","La Bicicleta",TRUE,"Carlos",3
@@ -432,11 +392,9 @@
 "David Ball","Riding With Private Malone",TRUE,"Andrew",3
 "David Bowie","The Hearts Filthy Lesson",TRUE,"Ramona",3
 "Deep Blue Something","Breakfast At Tiffany's",TRUE,"Tiffany",3
-"Dixie Chicks","Goodbye Earl",TRUE,"Mary Anne",3
 "Drake","6 Man",TRUE,"Lou",3
 "Easton Corbin","Baby Be My Love Song",FALSE,"Dixie",3
 "Eli Young Band","Dust",TRUE,"Ford",3
-"Elton John","Candle In The Wind",TRUE,"Norma",3
 "Eminem","Mockingbird",TRUE,"Laney",3
 "Eminem","Normal",TRUE,"Milo",3
 "En Vogue","Give It Up, Turn It Loose",TRUE,"Kevin",3
@@ -447,32 +405,27 @@
 "Ginuwine","Last Chance",TRUE,"Jordan",3
 "Gordon Lightfoot","The Wreck Of The Edmund Fitzgerald",FALSE,"Edmund",3
 "Gravediggaz","Diary Of A Madman",TRUE,"Buck",3
+"Gucci Mane Featuring Offset","Met Gala",TRUE,"Monique",3
 "Helen Reddy","Delta Dawn",TRUE,"Dawn",3
 "Jake Owen","I Was Jack (You Were Diane)",FALSE,"Cheyenne",3
 "Jason Aldean","Burnin' It Down",FALSE,"Jack",3
-"Kacey Musgraves","Merry Go 'Round",TRUE,"Mary Kay",3
 "Kanye West","Stronger",TRUE,"Prince",3
 "Kendrick Lamar","Swimming Pools (Drank)",TRUE,"Kendrick",3
 "Kevin Gates Featuring Trey Songz, Ty Dolla $ign &  Jamie Foxx","Jam",TRUE,"Jackson",3
 "Kid Cudi Featuring Kanye West","Erase Me",TRUE,"Aria",3
 "Lee Ann Womack","Last Call",FALSE,"Johnny",3
-"Level 42","Running In The Family",TRUE,"Joseph",3
 "Lil Baby","My Dawg",TRUE,"Deja",3
+"Lonestar","Class Reunion (That Used To Be Us)",TRUE,"Jill",3
 "Lonestar","Mr. Mom",TRUE,"Barney",3
-"Lou Bega","Mambo No. 5 (A Little Bit Of...)",TRUE,"Erica",3
-"Lou Bega","Mambo No. 5 (A Little Bit Of...)",TRUE,"Tina",3
-"Lustra","Scotty Doesn't Know",TRUE,"Fiona",3
 "Mac Miller","Donald Trump",TRUE,"Donald",3
 "Madonna","Cherish",TRUE,"Cherish",3
 "Madonna","La Isla Bonita",FALSE,"Pedro",3
-"Maren Morris","80s Mercedes",FALSE,"Ray",3
 "Maren Morris","Rich",TRUE,"Marilyn",3
 "Mariah Carey","Obsessed",TRUE,"Napoleon",3
 "Meek Mill Featuring Future, Roddy Ricch & Young Thug","Splash Warning",TRUE,"Richie",3
 "Missy Elliott Featuring Lamb","I'm Better",FALSE,"Orlando",3
 "Montgomery Gentry","One In Every Crowd",FALSE,"Harley",3
 "Night Ranger","Sister Christian",TRUE,"Christian",3
-"O-Town","Liquid Dreams",TRUE,"Janet",3
 "Pharoahe Monch","Simon Says",TRUE,"Simon",3
 "Rae Sremmurd","Perplexing Pegasus",FALSE,"Lexus",3
 "Rascal Flatts","Fast Cars And Freedom",FALSE,"Nova",3
@@ -480,13 +433,10 @@
 "Red Hot Chili Peppers","Give It Away",TRUE,"Bob",3
 "Rich Homie Quan","Type Of Way",TRUE,"Sade",3
 "Rod Stewart","Baby Jane",TRUE,"Baby Jane",3
-"Rod Stewart","Young Turks",TRUE,"Patti",3
 "Sean Kingston Featuring Nicki Minaj","Letting Go (Dutty Love)",TRUE,"Sean",3
 "Sir Mix-A-Lot","Jump On It",FALSE,"Austin",3
-"Sir Mix-A-Lot","Jump On It",FALSE,"Phoenix",3
 "Son By Four","Purest Of Pain (A Puro Dolor)",TRUE,"Vida",3
 "Steely Dan","Deacon Blues",TRUE,"Deacon",3
-"T. Rex","Telegram Sam",TRUE,"Jake",3
 "Taco","Puttin' On The Ritz",TRUE,"Gary",3
 "Tal Bachman","She's So High",TRUE,"Joan",3
 "The Animals","Gonna Send You Back To Walker (Gonna Send You Back To Georgia)",FALSE,"Walker",3
@@ -496,32 +446,25 @@
 "The Guess Who","Runnin' Back To Saskatoon",TRUE,"Hanna",3
 "The Righteous Brothers","Little Latin Lupe Lu",TRUE,"Lupe",3
 "The Time","The Bird",TRUE,"America",3
-"Trisha Yearwood","Georgia Rain",FALSE,"Jasper",3
+"Too Short","Cocktales",TRUE,"Tina",3
 "Usher Featuring Lil Jon & Ludacris","Yeah!",TRUE,"Jon",3
 "Yo Gotti Featuring Lil Baby","Put A Date On It",FALSE,"Royce",3
+"Young Thug","With Them",TRUE,"Becky",3
 "Young Thug Featuring Future","Relationship",TRUE,"Malcolm",3
-"YoungBloodZ Featuring Lil Jon","Damn!",TRUE,"Sean Paul",3
 "2 Chainz Featuring Lil Wayne","Yuck!",TRUE,"Brad",2
 "2Pac","Changes",TRUE,"Huey",2
 "6ix9ine Featuring Anuel AA","BEBE",FALSE,"Ella",2
 "A Flock Of Seagulls","I Ran (So Far Away)",FALSE,"Aurora",2
-"Ace Hood Featuring Chris Brown","Body 2 Body",TRUE,"Ace",2
+"Ace Hood Featuring Future & Rick Ross","Bugatti",TRUE,"Ace",2
 "Adam Sandler","The Chanukah Song",TRUE,"Kirk",2
 "Alabama Shakes","Hold On",TRUE,"Brittany",2
-"Alan Jackson","Drive (For Daddy Gene)",FALSE,"Johnson",2
 "Amanda Marshall","Birmingham",TRUE,"Virgil",2
-"Andy Pratt","Avenging Annie",TRUE,"Floyd",2
+"America","Muskrat Love",TRUE,"Sammy",2
 "Andy Williams","The Village Of St. Bernadette",FALSE,"Bernadette",2
-"Andy Williams","The Village Of St. Bernadette",FALSE,"Lourdes",2
-"Another Bad Creation","Iesha",TRUE,"Mark",2
-"Aretha Franklin","The Weight",TRUE,"Anna Lee",2
-"Aretha Franklin","The Weight",TRUE,"Carmen",2
 "Ariana Grande","In My Head",TRUE,"Abel",2
 "August Alsina","No Love",TRUE,"August",2
 "B.o.B Featuring T.I. & Playboy Tre","Bet I",TRUE,"Tre",2
 "B.o.B Featuring Taylor Swift","Both Of Us",TRUE,"Bobby Ray",2
-"Bad Bunny Featuring Drake","MIA",TRUE,"Santos",2
-"Barry Manilow","Copacabana (at The Copa)",TRUE,"Rico",2
 "Beenie Man Featuring Ms. Thing","Dude",TRUE,"Maxine",2
 "Blake Shelton","Honey Bee",TRUE,"Loretta",2
 "BlocBoy JB Featuring Drake","Look Alive",FALSE,"Shelby",2
@@ -531,960 +474,585 @@
 "Cam'Ron Featuring Juelz Santana","Oh Boy",TRUE,"Santana",2
 "Cassidy Featuring R. Kelly","Hotel",TRUE,"Cassidy",2
 "Chad Brock","Ordinary Life",TRUE,"Shelly",2
-"Cham Featuring Alicia Keys","Ghetto Story Chapter 2",TRUE,"Jerome",2
 "Chris Young","Neon",TRUE,"Johnny Lee",2
-"Christina Aguilera Featuring Lil' Kim","Can't Hold Us Down",TRUE,"Kim",2
 "Christopher Cross","Think Of Laura",TRUE,"Laura",2
 "Coolio","Too Hot",TRUE,"Javier",2
-"Coolio","Too Hot",TRUE,"Rob",2
+"Cream","Crossroads",TRUE,"Willie",2
 "D12 Featuring Eminem","My Band",TRUE,"Marshall",2
+"Darryl Worley","Sounds Like Life To Me",TRUE,"Sarah",2
 "Das EFX","Real Hip Hop",TRUE,"Carl",2
-"Das EFX","Real Hip Hop",TRUE,"Sharon",2
 "David Banner Featuring Lil' Flip","Like A Pimp",TRUE,"David",2
 "David Ruffin","I've Lost Everything I've Ever Loved",TRUE,"Jeff",2
 "Dean Friedman","Ariel",FALSE,"Hudson",2
-"Desiigner","Panda",TRUE,"Phillip",2
 "Dion","Abraham, Martin And John",TRUE,"Abraham",2
-"Dion","Abraham, Martin And John",TRUE,"Martin",2
 "Dixie Chicks","Long Time Gone",TRUE,"Delia",2
-"DMX Featuring Faith Evans","I Miss You",TRUE,"Xavier",2
 "Donovan","Wear Your Love Like Heaven",TRUE,"Carmine",2
 "Drake","Weston Road Flows",FALSE,"Weston",2
-"Drake Featuring Young Thug","Ice Melts",TRUE,"Jeffery",2
 "Duran Duran","New Moon On Monday",FALSE,"Luna",2
 "Elephant Man","Jook Gal (Wine Wine)",TRUE,"Jeanie",2
-"Elton John","Levon",TRUE,"Alvin",2
-"Elvis Presley","Frankie And Johnny",TRUE,"Nellie",2
 "Elvis Presley","Rubberneckin'",TRUE,"Mary Jane",2
 "Eminem","Ass Like That",TRUE,"Mary-Kate",2
 "Eminem","Kamikaze",TRUE,"Craig",2
-"Eminem Featuring Dido","Stan",TRUE,"Phil",2
+"Eminem","Rap God",TRUE,"Ray",2
 "Eminem Featuring Ed Sheeran","River",FALSE,"River",2
 "Eminem Featuring Gwen Stefani","Kings Never Die",TRUE,"Gilbert",2
-"Enrique Iglesias Featuring Pitbull","I Like It",TRUE,"Enrique",2
+"Enrique Iglesias Featuring Pitbull & The WAV.s","I Like How It Feels",TRUE,"Enrique",2
 "Eric Clapton","Willie And The Hand Jive",TRUE,"Billie",2
 "Estelle Featuring Kanye West","American Boy",TRUE,"Estelle",2
 "Falco","Vienna Calling",TRUE,"Stella",2
 "Farruko, Nicki Minaj, Bad Bunny, 21 Savage & Rvssian","Krippy Kush",TRUE,"Alex",2
 "Fats Domino","Jambalaya (On The Bayou)",TRUE,"Yvonne",2
 "Fats Domino","My Girl Josephine",TRUE,"Josephine",2
+"Florida Georgia Line","Get Your Shine On",FALSE,"Ray",2
 "Freedy Johnston","Bad Reputation",FALSE,"Harold",2
+"French Montana Featuring The Weeknd & Max B","A Lie",TRUE,"Montana",2
 "Future","Commas",TRUE,"Katy",2
 "Future","F&N",TRUE,"Jacob",2
+"Future","Feed Me Dope",TRUE,"Al",2
 "Future Featuring Nicki Minaj","You Da Baddest",TRUE,"Stevie",2
 "Future Featuring Travis Scott","First Off",TRUE,"Dwayne",2
 "Game Featuring Lil Wayne","Red Nation",TRUE,"Judah",2
 "Gavin DeGraw","Best I Ever Had",FALSE,"Dakota",2
 "George Michael/Elton John","Don't Let The Sun Go Down On Me",TRUE,"Elton",2
 "Glee Cast","Billionaire",TRUE,"Artie",2
-"Glee Cast","Empire State Of Mind",TRUE,"Ty",2
-"Glee Cast","Ice Ice Baby",TRUE,"Shay",2
 "Glee Cast","Rose's Turn",TRUE,"Kurt",2
-"Golden Earring","Candy's Going Bad",TRUE,"Ted",2
 "Golden Earring","Radar Love",TRUE,"Brenda Lee",2
 "Helen Reddy","The Happy Girls",TRUE,"Nancy",2
 "Jason Michael Carroll","Where I'm From",TRUE,"Grace",2
+"Jay Z Featuring Frank Ocean","Oceans",TRUE,"Ty",2
 "JAY-Z","Kill Jay Z",TRUE,"Eric",2
 "JAY-Z","Moonlight",TRUE,"Lucian",2
 "Jeannie C. Riley","Harper Valley P.T.A.",TRUE,"Johnson",2
 "Jeezy Featuring Jay Z","Seen It All",TRUE,"Emory",2
 "Jesse Jaymes","Shake It (Like A White Girl)",TRUE,"Jess",2
-"Jimmy Dean","The Cajun Queen",TRUE,"Queen",2
-"Julian Lennon","Jesse",TRUE,"Juanita",2
-"Justin Bieber Featuring Nicki Minaj","Beauty And A Beat",TRUE,"Justin",2
+"Joe Tex","Skinny Legs And All",TRUE,"Clyde",2
 "K'Naan Featuring Nelly Furtado","Is Anybody Out There?",TRUE,"Adam",2
+"Kanye West","Bound 2",TRUE,"Jerome",2
 "Kendrick Lamar","Bitch, Don't Kill My Vibe",TRUE,"Ima",2
 "Kendrick Lamar","Fear.",FALSE,"Israel",2
 "Kenny Chesney","Never Wanted Nothing More",TRUE,"Katie",2
 "Kenny Rogers & The First Edition","Reuben James",FALSE,"Madison",2
-"Kool Moe Dee","Wild, Wild West",TRUE,"Don",2
-"Kool Moe Dee","Wild, Wild West",TRUE,"Keith",2
-"Kool Moe Dee","Wild, Wild West",TRUE,"Ross",2
 "Kris Kristofferson","Josie",TRUE,"Josie",2
 "Kristen Bell, Agatha Lee Monn & Katie Lopez","Do You Want To Build A Snowman?",TRUE,"Elsa",2
 "KRS-One","MC's Act Like They Don't Know",TRUE,"Jed",2
+"LeAnn Rimes","Something's Gotta Give",TRUE,"Jake",2
 "Lenny Kravitz Featuring Jay-Z","Storm",TRUE,"Lenny",2
+"Lil  Kim","No Matter What They Say",TRUE,"Kim",2
 "Lil Wayne","Dedicate",TRUE,"Carter",2
 "Lil Wayne Featuring Cory Gunz","6 Foot 7 Foot",TRUE,"Tammy",2
 "Little Richard","Bama Lama Bama Loo",TRUE,"Lucinda",2
-"Ludacris Featuring Mary J. Blige","Runaway Love",TRUE,"Nicole",2
 "Lynyrd Skynyrd","Sweet Home Alabama",TRUE,"Neil",2
-"Machine Gun Kelly","Rap Devil",TRUE,"Oscar",2
-"Machine Gun Kelly","Rap Devil",TRUE,"Ronny",2
+"Mark Lindsay","Arizona",TRUE,"Robin",2
 "Mark Wills","19 Somethin'",TRUE,"Farrah",2
 "Marky Mark & The Funky Bunch Featuring Loleatta Holloway","Good Vibrations",TRUE,"Donnie",2
-"Meek Mill Featuring Chris Brown & Nicki Minaj","All Eyes On You",TRUE,"Nick",2
 "Metro Boomin Featuring Travis Scott & Young Thug","Up To Something",TRUE,"Pat",2
 "Mindless Behavior Featuring Diggy","Mrs. Right",TRUE,"Ray Ray",2
+"Monica","Knock Knock",TRUE,"Monica",2
 "Nancy Sinatra","Drummer Man",FALSE,"Lincoln",2
 "Nelly Featuring Kyjuan, Ali & Murphy Lee","Air Force Ones",TRUE,"Murphy",2
 "Nicki Minaj","Barbie Tingz",TRUE,"Guy",2
 "Nicki Minaj","Chun-Li",TRUE,"Lara",2
-"Nicki Minaj Featuring Drake, Lil Wayne & Chris Brown","Only",TRUE,"Drake",2
 "Nicki Minaj Featuring Lil Wayne","Rich Sex",FALSE,"Sky",2
+"Nicki Minaj, Drake & Lil Wayne","No Frauds",TRUE,"Nick",2
 "Ol' Dirty Bastard","Shimmy Shimmy Ya",TRUE,"Norman",2
 "One Direction","Midnight Memories",FALSE,"Addison",2
-"One Direction","Midnight Memories",FALSE,"Lee",2
 "Pat Boone","Speedy Gonzales",TRUE,"Rosita",2
 "Paul Simon","50 Ways To Leave Your Lover",TRUE,"Gus",2
-"Paul Simon","50 Ways To Leave Your Lover",TRUE,"Roy",2
 "Paul Simon","Me And Julio Down By The Schoolyard",TRUE,"Julio",2
+"Paul Wall Featuring Big Pokey","Sittin' Sidewayz",TRUE,"Paul",2
 "Post Malone","Better Now",TRUE,"Jonas",2
-"Prince Royce Featuring Jennifer Lopez & Pitbull","Back It Up",TRUE,"Royce",2
+"Pusha T Featuring Kanye West","What Would Meek Do?",TRUE,"Phil",2
 "Queen Naija","Medicine",TRUE,"Bryan",2
-"Queen Naija","Medicine",TRUE,"Ryan",2
 "R.E.M.","What's The Frequency, Kenneth?",TRUE,"Kenneth",2
 "RiceGum Featuring Alissa Violet","Its Every Night Sis",TRUE,"Alissa",2
 "Rick Ross Featuring JAY Z","The Devil Is A Lie",FALSE,"Barney",2
+"Roy Orbison","Mean Woman Blues",TRUE,"Roy",2
 "Saga","Wind Him Up",TRUE,"Aldo",2
 "Sean Paul","Get Busy",TRUE,"Annabella",2
-"Sean Paul","Get Busy",TRUE,"Jodi",2
-"Sean Paul","Get Busy",TRUE,"Rebecca",2
+"Sean Paul","Like Glue",TRUE,"Sean Paul",2
 "Shinedown","Second Chance",TRUE,"Haley",2
-"Sir Mix-A-Lot","Jump On It",FALSE,"Denver",2
 "Squeeze","853-5937",TRUE,"Angela",2
 "Tatyana Ali","Daydreamin",TRUE,"Tatyana",2
 "Taylor John Williams","Royals",FALSE,"Cristal",2
 "Taylor Swift","Fifteen",TRUE,"Abigail",2
-"The Band","The Weight",TRUE,"Annalee",2
-"The Band","The Weight",TRUE,"Chester",2
-"The Beach Boys","Peggy Sue",TRUE,"Peggy",2
+"The 1975","Chocolate",TRUE,"Rebecca",2
 "The Doors","Runnin' Blue",TRUE,"Otis",2
+"The Guess Who","Rain Dance",TRUE,"Don",2
 "The Manhattan Transfer","Route 66",TRUE,"Janis",2
-"The Manhattan Transfer","Route 66",TRUE,"Winona",2
 "The Weeknd","Party Monster",TRUE,"Angelina",2
-"The Weeknd","Party Monster",TRUE,"Selena",2
 "The Weeknd","Tell Your Friends",FALSE,"Queen",2
 "Thin Lizzy","The Boys Are Back In Town",TRUE,"Dino",2
 "Til Tuesday","Coming Up Close",TRUE,"Dylan",2
 "Toby Keith","As Good As I Once Was",TRUE,"Dave",2
 "Tom Jones","The Young New Mexican Puppeteer",TRUE,"Abe",2
 "Tone-Loc","Funky Cold Medina",TRUE,"Sheena",2
+"Vanilla Ice","Ice Ice Baby",TRUE,"Shay",2
 "Warren Zevon","Werewolves Of London",TRUE,"Lon",2
 "Westside Connection Featuring Nate Dogg","Gangsta Nation",TRUE,"Andre",2
 "Yes","America",TRUE,"Kathy",2
 "YoungBoy Never Broke Again","Diamond Teeth Samurai",TRUE,"Curtis",2
 "10,000 Maniacs","What's The Matter Here?",FALSE,"Morgan",1
 "10cc","Good Morning Judge",FALSE,"Quentin",1
-"112 Featuring Super Cat","Na Na Na Na",TRUE,"Vicki",1
-"112 Featuring The Notorious B.I.G.","Only You",TRUE,"Bert",1
 "2 Chainz Featuring Drake","No Lie",FALSE,"Louie",1
-"2 Chainz Featuring Drake & Lil Wayne","I Do It",TRUE,"Patricia",1
+"2 Chainz Featuring Drake & Lil Wayne","I Do It",TRUE,"Drake",1
 "2 Chainz Featuring Lil Wayne","Yuck!",FALSE,"Holland",1
-"2 Chainz Featuring Lil Wayne","Yuck!",TRUE,"Amber Rose",1
 "2 Chainz Featuring Pharrell","Feds Watching",FALSE,"Armani",1
-"2 Chainz Featuring Pharrell","Feds Watching",TRUE,"Heather",1
 "2 Chainz Featuring Travis Scott","Whip",TRUE,"Alexa",1
-"21 Savage","1.5",TRUE,"Jerry",1
-"21 Savage","A Lot",TRUE,"Dennis",1
-"21 Savage","Bank Account",FALSE,"Marcus",1
 "21 Savage","Bank Account",TRUE,"Max",1
-"21 Savage","Bank Account",TRUE,"Reggie",1
 "21 Savage","Break Da Law",TRUE,"Daisy",1
-"21 Savage","Break Da Law",TRUE,"Keisha",1
-"21 Savage & Metro Boomin","No Heart",TRUE,"Stuart",1
 "21 Savage & Metro Boomin Featuring Future","X",FALSE,"Brandy",1
+"21 Savage & Metro Boomin Featuring Future","X",TRUE,"Randy",1
 "2Pac","Keep Ya Head Up",TRUE,"Corinne",1
-"2Pac","Keep Ya Head Up",TRUE,"Elijah",1
-"2Pac","Thugz Mansion",TRUE,"Miles",1
 "2Pac, Notorious B.I.G., Radio, Dramacydal & Stretch","Runnin'",TRUE,"Allen",1
-"50 Cent","I Get Money",TRUE,"Enzo",1
 "50 Cent","P.I.M.P.",TRUE,"Niki",1
-"6ix9ine Featuring A Boogie Wit da Hoodie","WAKA",TRUE,"Scott",1
-"6ix9ine Featuring A Boogie Wit da Hoodie","WAKA",TRUE,"Timmy",1
-"6ix9ine Featuring Nicki Minaj & Kanye West","MAMA",TRUE,"Kylie",1
-"6ix9ine Featuring Nicki Minaj & Murda Beatz","FEFE",TRUE,"Khloe",1
 "A Boogie Wit da Hoodie","No Promises",TRUE,"Savannah",1
 "A Boogie Wit da Hoodie Featuring 21 Savage","Undefeated",TRUE,"Nia",1
 "A Boogie Wit da Hoodie Featuring Kodak Black","Drowning",TRUE,"Carlton",1
-"A Boogie Wit da Hoodie Featuring Kodak Black","Drowning",TRUE,"Scottie",1
-"A Tribe Called Quest","Award Tour",FALSE,"Fran",1
-"A Tribe Called Quest","Award Tour",FALSE,"John",1
-"A Tribe Called Quest","Award Tour",TRUE,"Mario",1
 "A Tribe Called Quest","Electric Relaxation (Relax Yourself Girl)",TRUE,"Madeline",1
-"A Tribe Called Quest","Find A Way",TRUE,"Tisha",1
+"A Tribe Called Quest","Find A Way",TRUE,"Martin",1
 "A$AP Ferg Featuring Nicki Minaj","Plain Jane",FALSE,"Nick",1
-"A$AP Ferg Featuring Nicki Minaj","Plain Jane",TRUE,"Bella",1
-"A$AP Ferg Featuring Nicki Minaj","Plain Jane",TRUE,"Kendall",1
-"Aaron Carter","That's How I Beat Shaq",TRUE,"Shaquille",1
 "Ace Hood","Hustle Hard",TRUE,"Marley",1
-"Adam Sandler","The Chanukah Song",TRUE,"Abby",1
-"Adam Sandler","The Chanukah Song",TRUE,"Ann",1
-"Adam Sandler","The Chanukah Song",TRUE,"Dinah",1
-"Adam Sandler","The Chanukah Song",TRUE,"Harrison",1
-"Adam Sandler","The Chanukah Song",TRUE,"Rod",1
 "Adina Howard","Freak Like Me",TRUE,"Adina",1
 "Akon","Sorry, Blame It On Me",TRUE,"Gwen",1
 "Al Martino","Daddy's Little Girl",FALSE,"Easter",1
-"Alan Jackson","Little Man",TRUE,"Morgan",1
+"Alan Jackson","Drive (For Daddy Gene)",TRUE,"Mario",1
 "Alanis Morissette","Unsent",TRUE,"Jonathan",1
-"Alanis Morissette","Unsent",TRUE,"Marcus",1
-"Alanis Morissette","Unsent",TRUE,"Matthew",1
-"Alanis Morissette","Unsent",TRUE,"Terrance",1
-"Alexander O'Neal","Fake",TRUE,"Kay",1
-"Alice Cooper","Department Of Youth",TRUE,"Damon",1
 "Alicia Bridges","I Love The Nightlife (Disco 'Round)",TRUE,"Alicia",1
-"Alicia Keys","Unbreakable",TRUE,"Camille",1
-"Alicia Keys","Unbreakable",TRUE,"Catherine",1
-"Alicia Keys","Unbreakable",TRUE,"Kimora",1
-"Alicia Keys","Unbreakable",TRUE,"Russell",1
 "Amanda Marshall","Birmingham",FALSE,"Jim",1
-"Ambrosia","Nice, Nice, Very Nice",TRUE,"Ginger",1
-"America","Daisy Jane",TRUE,"Daisy Jane",1
-"Amine","Caroline",TRUE,"Meagan",1
 "Amy Winehouse Featuring Ghostface Killah","You Know I'm No Good",FALSE,"Stella",1
 "Anne Murray","A Little Good News",TRUE,"Bryant",1
-"Another Bad Creation","Iesha",TRUE,"Dallas",1
-"Aretha Franklin","Get It Right",TRUE,"Eloise",1
-"Aretha Franklin","I'm In Love",TRUE,"Carolyn",1
-"Aretha Franklin","Rock-A-Bye Your Baby With A Dixie Melody",FALSE,"Mason",1
 "Ariana Grande","R.E.M",TRUE,"Perla",1
-"Ariana Grande","R.E.M",TRUE,"Vickie",1
 "Ariana Grande","Thank U, Next",TRUE,"Ari",1
-"Ariana Grande Featuring Lil Wayne","Let Me Love You",TRUE,"Ariana",1
-"Ariana Grande Featuring Nicki Minaj","Side To Side",TRUE,"Stephanie",1
-"Arthur Conley","Sweet Soul Music",TRUE,"Wilson",1
+"Ariana Grande Featuring Nicki Minaj","Side To Side",TRUE,"Ariana",1
 "Ashanti","Happy",TRUE,"Ashanti",1
-"Asher Roth","G.R.I.N.D. (Get Ready It's A New Day)",TRUE,"Mohammed",1
 "Asher Roth","Lark On My Go-Kart",TRUE,"Ashley",1
 "Atlanta Rhythm Section","Free Spirit",TRUE,"Liberty",1
+"Atlanta Rhythm Section","Jukin",TRUE,"Dean",1
 "Atlanta Rhythm Section","Neon Nites",TRUE,"Star",1
-"Austin Mahone Featuring Pitbull","Mmm Yeah",TRUE,"Armando",1
-"AZ","Sugar Hill",FALSE,"Thomas",1
 "B.J. Thomas","Most Of All",FALSE,"Paul",1
 "B.o.B Featuring Andre 3000","Play The Guitar",TRUE,"Julius",1
-"B.o.B Featuring Bruno Mars","Nothin' On You",TRUE,"Bruno",1
 "B.o.B Featuring Lil Wayne","Strange Clouds",TRUE,"Arnold",1
-"B.o.B Featuring T.I. & Playboy Tre","Bet I",FALSE,"Sidney",1
 "B2K","Girlfriend",TRUE,"Iris",1
-"B2K","Girlfriend",TRUE,"Kathie",1
-"B2K","Girlfriend",TRUE,"Leo",1
-"B2K","Girlfriend",TRUE,"Mason",1
-"B2K","Girlfriend",TRUE,"Regis",1
 "Bad Boy's Da Band","Bad Boy This Bad Boy That",TRUE,"Barry",1
-"Bad Boy's Da Band","Bad Boy This Bad Boy That",TRUE,"Elliot",1
 "Bad Meets Evil","Fast Lane",TRUE,"Brady",1
+"Bad Meets Evil Featuring Bruno Mars","Lighters",TRUE,"Bruno",1
 "Bandit Gang Marco Featuring Dro","Nasty",TRUE,"Cooper",1
 "Barbra Streisand","Evergreen (Love Theme From A Star Is Born)",TRUE,"April",1
 "Barbra Streisand","The Way We Were",TRUE,"Misty",1
-"Barenaked Ladies","One Week",TRUE,"Leann",1
-"Barenaked Ladies","One Week",TRUE,"Robbie",1
+"Barenaked Ladies","One Week",TRUE,"Bert",1
 "Barry McGuire","Eve Of Destruction",FALSE,"Selma",1
 "Beastie Boys","Ch-Check It Out",TRUE,"Darren",1
-"Beastie Boys","Ch-Check It Out",TRUE,"Duke",1
-"Beastie Boys","Hey Ladies",TRUE,"Vincent",1
 "Beenie Man Featuring Chevelle Franklyn","Dancehall Queen (From \Dancehall Queen\"")""",TRUE,"Marcia",1
 "Beenie Man Featuring Mya","Girls Dem Sugar",TRUE,"Fabian",1
-"Beenie Man Featuring Mya","Girls Dem Sugar",TRUE,"Paula",1
 "Belinda Carlisle","Summer Rain",FALSE,"Ana",1
 "benny blanco & Juice WRLD Featuring Brendon Urie","Roses",TRUE,"Maverick",1
 "Beyonce Featuring Jack White","Don't Hurt Yourself",TRUE,"Malcom",1
+"Bhad Bhabie","Hi Bich",TRUE,"Ronny",1
 "Big & Rich","Comin' To Your City",FALSE,"Antonio",1
-"Big & Rich","Comin' To Your City",FALSE,"Jeff",1
-"Big Punisher","I'm Not A Player",TRUE,"Zachary",1
 "Big Sean","Bounce Back",TRUE,"Denzel",1
-"Big Sean","Bounce Back",TRUE,"Karma",1
 "Big Sean","Guap",TRUE,"Sean Don",1
 "Big Sean","Halfway Off The Balcony",TRUE,"Forrest",1
 "Big Sean","Moves",TRUE,"Channing",1
-"Big Sean & Metro Boomin Featuring Travis Scott","Go Legend",TRUE,"Marty",1
-"Big Sean Featuring Chris Brown","My Last",TRUE,"Benny",1
-"Big Sean Featuring Chris Brown","My Last",TRUE,"Sean John",1
+"Big Sean","Paradise",TRUE,"Janet",1
 "Big Sean Featuring Drake","Blessings",TRUE,"Ed",1
-"Big Sean Featuring Drake","Blessings",TRUE,"Edd",1
-"Big Sean Featuring Drake","Blessings",TRUE,"Eddy",1
-"Big Sean Featuring Eminem","No Favors",TRUE,"Jamie Lee",1
-"Big Sean Featuring Kanye West","All Your Fault",TRUE,"Derek",1
-"Big Sean Featuring Kanye West","All Your Fault",TRUE,"Tanisha",1
 "Big Sean Featuring Migos","Sacrifices",FALSE,"Tommy",1
-"Bill Anderson","Mama Sang A Song",TRUE,"Dan",1
 "Bill Anderson","Where Have All Our Heroes Gone",TRUE,"Douglas",1
-"Bill Anderson","Where Have All Our Heroes Gone",TRUE,"Gene",1
-"Bill Anderson","Where Have All Our Heroes Gone",TRUE,"Gerry",1
-"Bill Anderson","Where Have All Our Heroes Gone",TRUE,"Winston",1
 "Billy Joel","Big Shot",TRUE,"Elaine",1
 "Billy Joel","It's Still Rock And Roll To Me",TRUE,"Beau",1
+"Billy Joel","Keeping The Faith",FALSE,"Earl",1
 "Billy Joel","Movin' Out (Anthony's Song)",FALSE,"Sullivan",1
-"Billy Joel","Movin' Out (Anthony's Song)",TRUE,"Leone",1
 "Billy Joel","She's Always A Woman",FALSE,"Eden",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Bernie",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Doris",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Johnnie",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Juan",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Kennedy",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Lawrence",1
-"Billy Joel","We Didn't Start The Fire",TRUE,"Reagan",1
 "Billy Ray Cyrus","Achy Breaky Heart",TRUE,"Cliff",1
-"Birdman Featuring Lil Wayne","Pop Bottles",TRUE,"Marc",1
 "Biz Markie","Just A Friend",TRUE,"Agatha",1
-"Biz Markie","Just A Friend",TRUE,"Agnes",1
-"Biz Markie","Just A Friend",TRUE,"Germaine",1
 "Black Eyed Peas Featuring Macy Gray","Request Line",TRUE,"Macy",1
+"Blaine Larsen","How Do You Get That Lonely",TRUE,"Lawrence",1
 "Blake Shelton","The Baby",TRUE,"Greg",1
-"Blessid Union Of Souls","Hey Leonardo (She Likes Me For Me)",TRUE,"Robert",1
-"Blood, Sweat & Tears","Lucretia Mac Evil",TRUE,"Lucretia",1
 "Bloodhound Gang","The Bad Touch",TRUE,"Lyle",1
-"Blue Oyster Cult","(Don't Fear) The Reaper",TRUE,"Valentine",1
 "Blues Traveler","Hook",TRUE,"Anne",1
-"Bob Dylan","Gotta Serve Somebody",TRUE,"Terry",1
-"Bob Dylan","Hurricane (Part I)",TRUE,"Alfred",1
 "Bobbie Gentry","Ode To Billie Joe",FALSE,"Carroll",1
-"Bobbie Gentry","Ode To Billie Joe",TRUE,"Taylor",1
 "Bobby Bare","Four Strong Winds",FALSE,"Alberta",1
 "Bobby Bloom","Montego Bay",TRUE,"Gillian",1
-"Bobby Bloom","Montego Bay",TRUE,"Vernon",1
-"Bobby Darin","Queen Of The Hop",TRUE,"Molly",1
+"Bobby Brown","My Prerogative",TRUE,"Ted",1
+"Bobby Darin","Splish Splash",TRUE,"Molly",1
 "Bobby Goldsboro","Summer (The First Time)",TRUE,"Billy Ray",1
-"Bobby Rydell","Kissin' Time",FALSE,"Dee",1
 "Bobby Shmurda","Hot Boy",TRUE,"Mitch",1
-"Bobby Shmurda","Hot Boy",TRUE,"Monte",1
-"Bobby Valentino Featuring Timbaland","Anonymous",TRUE,"Cathy Lee",1
-"Bone Thugs-N-Harmony","Thuggish Ruggish Bone",TRUE,"Tasha",1
-"Bowling For Soup","1985",TRUE,"Debbie",1
-"Bowling For Soup","1985",TRUE,"Elmo",1
-"Bowling For Soup","1985",TRUE,"Van",1
+"Bow Wow Featuring Lil Wayne","Sweat",TRUE,"Keith",1
 "Bowling For Soup","Girl All The Bad Guys Want",TRUE,"Nona",1
-"Bowling For Soup","High School Never Ends",TRUE,"Reese",1
 "Brad Paisley","I'm Still A Guy",TRUE,"Bambi",1
 "Brad Paisley","Letter To Me",TRUE,"Bridget",1
 "Brad Paisley","Online",TRUE,"Calvin",1
-"Brad Paisley","Southern Comfort Zone",TRUE,"Martha",1
 "Brad Paisley Featuring LL Cool J","Accidental Racist",TRUE,"Sherman",1
+"Bradley Cooper","Maybe It's Time",TRUE,"Catherine",1
 "Brand Nubian","Word Is Bond",TRUE,"Howard",1
-"Brand Nubian","Word Is Bond",TRUE,"Kenny",1
-"Bridgit Mendler","Ready Or Not",TRUE,"William",1
-"Britney Spears Featuring G-Eazy","Make Me",TRUE,"Penelope",1
+"Brantley Gilbert","Country Must Be Country Wide",FALSE,"Mason",1
 "Bros","When Will I Be Famous?",TRUE,"Karl",1
-"Bruce Springsteen","Girls In Their Summer Clothes",TRUE,"Shaniqua",1
+"Bruce Hornsby","Walk In The Sun",TRUE,"Vernon",1
 "Bruce Springsteen","Prove It All Night",FALSE,"Angeline",1
-"Bruce Springsteen","Prove It All Night",FALSE,"Monroe",1
-"Bryce Vine","Drew Barrymore",TRUE,"Lauryn",1
-"Bryce Vine","Drew Barrymore",TRUE,"Paris",1
-"Bryson Tiller","Self-Made",TRUE,"Noble",1
-"Buck 22 Featuring Billy Ray Cyrus","Achy Breaky 2",TRUE,"Miley",1
-"Buddy Jewell","Sweet Southern Comfort",TRUE,"Irwin",1
 "Burton Cummings","I'm Scared",TRUE,"Thomas",1
-"Busta Rhymes","Arab Money",FALSE,"Malaysia",1
 "Buster Brown","Fannie Mae",TRUE,"Fannie Mae",1
-"C+C Music Factory","Things That Make You Go Hmmmm...",TRUE,"Robbie Rob",1
+"C+C Music Factory","Do You Wanna Get Funky",TRUE,"Rob",1
 "Cali Swag District","Teach Me How To Dougie",TRUE,"Starr",1
+"Calvin Harris Featuring Frank Ocean & Migos","Slide",FALSE,"Malaysia",1
 "Calvin Harris Featuring Kehlani & Lil Yachty","Faking It",TRUE,"Lani",1
-"Cam'Ron Featuring Juelz Santana","Oh Boy",TRUE,"Bonita",1
-"Cam'ron Featuring Kanye West & Syleena Johnson","Down And Out",TRUE,"Louis",1
-"Cam'Ron Featuring Mase","Horse & Carriage",TRUE,"Eva",1
-"Cameo","She's Strange",TRUE,"Ava",1
-"Camila Cabello Featuring Quavo","OMG",TRUE,"Boston",1
+"Calvin Harris Featuring Young Thug, Pharrell Williams & Ariana Grande","Heatstroke",TRUE,"Jeffery",1
+"Capleton","Wings Of The Morning",TRUE,"Marcus",1
 "Captain & Tennille","You Never Done It Like That",TRUE,"Columbus",1
+"Cardi B","Be Careful",TRUE,"Keisha",1
 "Cardi B","Bodak Yellow (Money Moves)",TRUE,"Mona",1
-"Cardi B & YG","She Bad",TRUE,"Nova",1
-"Cardi B Featuring Chance The Rapper","Best Life",TRUE,"Dante",1
-"Cardi B Featuring Chance The Rapper","Best Life",TRUE,"Jamie",1
+"Cardi B","Money",TRUE,"Ross",1
 "Carlos Vives & Shakira","La Bicicleta",FALSE,"Marta",1
-"Carly Simon","Why",TRUE,"Shane",1
 "Carrie Underwood","Before He Cheats",TRUE,"Shania",1
 "Cat Stevens","Morning Has Broken",TRUE,"Eden",1
 "Chance The Rapper","I Might Need Security",TRUE,"Heath",1
-"Chance The Rapper Featuring Lil Wayne & 2 Chainz","No Problem",TRUE,"Petey Pablo",1
 "Charlene","I've Never Been To Me",FALSE,"Carlo",1
-"Charlene","I've Never Been To Me",FALSE,"Monte",1
-"Chase Rice","Eyes On You",FALSE,"Montana",1
 "Chic","Everybody Dance",TRUE,"Rogers",1
+"Chiddy Bang","Opposite Of Adults",TRUE,"Ron",1
 "Chief Keef Featuring Lil Reese","I Don't Like",FALSE,"Reggie",1
 "Childish Gambino","Summertime Magic",FALSE,"Valentine",1
-"Childish Gambino","V. 3005",TRUE,"Lorenzo",1
-"Chris Brown Feat. Ludacris","Wet The Bed",TRUE,"Toni",1
-"Chris Brown Featuring Nicki Minaj","Love More",TRUE,"Elle",1
-"Chris Brown Featuring Nicki Minaj","Love More",TRUE,"Naomi",1
-"Chris Brown Featuring Tyga & Kevin McCall","Deuces",TRUE,"Raymond",1
+"Chingy Featuring Jermaine Dupri","Dem Jeans",TRUE,"Marc",1
+"Chris Brown Featuring Lil Wayne & French Montana Or & Too $hort","Loyal",FALSE,"Montana",1
+"Chris Rea","Whatever Happened To Benny Santini?",TRUE,"Benny",1
+"Christina Aguilera","Dirrty",TRUE,"Bernie",1
 "Chubb Rock","Treat Em Right",FALSE,"James",1
-"Chubb Rock","Treat Em Right",TRUE,"Crystal",1
-"Chubby Checker","(Dance The) Mess Around",TRUE,"Dee",1
-"Chubby Checker","Twistin' U.S.A.",FALSE,"Asia",1
-"Chubby Checker","Twistin' U.S.A.",FALSE,"Charlotte",1
-"Chubby Checker","Twistin' U.S.A.",FALSE,"Lou",1
-"Chuck Berry","Dear Dad",FALSE,"Junior",1
-"City High Featuring Eve","Caramel",TRUE,"Mira",1
-"Crash Test Dummies","Superman's Song",TRUE,"Clark",1
-"Creedence Clearwater Revival","Green River",TRUE,"Junior",1
-"Crystal Gayle","Half The Way",TRUE,"Gayle",1
+"Chuck Berry","Back In The U.S.A.",FALSE,"Lou",1
+"Clarence Carter","Funky Fever",TRUE,"Wilson",1
+"Crystal Gayle","Half The Way",TRUE,"Crystal",1
 "Culture Club","It's A Miracle",TRUE,"Monroe",1
 "D-12","Purple Hills",TRUE,"Christopher",1
-"D-12","Purple Hills",TRUE,"Von",1
 "D.R.A.M. Featuring Lil Yachty","Broccoli",FALSE,"Alfredo",1
-"Da Brat","Funkdafied",TRUE,"Ralph",1
 "Da Brat","Sittin On Top Of The World",FALSE,"Benjamin",1
 "Da Brat","Sittin On Top Of The World",TRUE,"Ellie",1
-"Da Brat Featuring Cherish","In Love Wit Chu",TRUE,"Tina Marie",1
+"Daddy Yankee Featuring Fergie","Impacto",TRUE,"Raymond",1
 "Dae Dae","Wat U Mean (Aye, Aye, Aye)",TRUE,"Clifford",1
-"Daisy Dee","Crazy",TRUE,"Daisy Dee",1
 "Dana","As We Lay",FALSE,"Autumn",1
 "Danielle Bradbery","Maybe It Was Memphis",FALSE,"Melody",1
 "Danielle Bradbery","Maybe It Was Memphis",TRUE,"Williams",1
 "Darius Rucker","Alright",TRUE,"Patsy",1
-"Darius Rucker","Wagon Wheel",FALSE,"Caroline",1
-"Darryl Worley","Sounds Like Life To Me",TRUE,"Johnny Ray",1
+"Darlene Love","All Alone On Christmas (From \Home Alone 2\"")""",FALSE,"John",1
 "Das EFX","Freakit",TRUE,"Samantha",1
+"Das EFX","They Want EFX",TRUE,"Duke",1
 "Daughtry","Waiting For Superman",TRUE,"Lois",1
-"David Banner","Play",TRUE,"Sheryl",1
-"David Banner Featuring Lil' Flip","Like A Pimp",TRUE,"Micheal",1
 "David Bowie","China Girl",TRUE,"Marlon",1
-"David Bowie","The Hearts Filthy Lesson",TRUE,"Miranda",1
 "Deep Purple","Smoke On The Water",FALSE,"Geneva",1
 "Deep Purple","Smoke On The Water",TRUE,"Claude",1
-"DeJ Loaf","Try Me",TRUE,"Devin",1
 "DeJ Loaf Featuring Big Sean","Back Up",FALSE,"Belle",1
+"DeJ Loaf Featuring Big Sean","Back Up",TRUE,"Juan",1
 "Demi Lovato Featuring Cher Lloyd","Really Don't Care",TRUE,"Demi",1
-"Destiny's Child","Independent Women Part I",TRUE,"Cameron",1
 "Dierks Bentley Featuring Brothers Osborne","Burning Man",FALSE,"Joshua",1
 "Dilated Peoples Featuring Kanye West","This Way",TRUE,"Clint",1
-"Dion","Sandy",TRUE,"Ellis",1
-"DJ Khaled Featuring Big Sean, Kendrick Lamar & Betty Wright","Holy Key",TRUE,"Paul June",1
+"DJ ESCO Featuring Future & Lil Uzi Vert","Too Much Sauce",TRUE,"Shaquille",1
 "DJ Khaled Featuring Chris Brown, Lil Wayne & Big Sean","How Many Times",FALSE,"Catalina",1
 "DJ Khaled Featuring Jay Z & Future","I Got The Keys",TRUE,"Josh",1
-"DJ Khaled Featuring Justin Bieber, Quavo, Chance The Rapper & Lil Wayne","I'm The One",TRUE,"Whitney",1
-"DJ Khaled Featuring Nicki Minaj, Chris Brown, August Alsina, Jeremih, Future & Rick Ross","Do You Mind",TRUE,"Celine",1
-"DJ Khaled Featuring T.I. Akon, Rick Ross, Fat Joe. Lil' Wayne & Baby","We Takin' Over",FALSE,"Bennett",1
-"DJ Kool","Let Me Clear My Throat",TRUE,"Don Mack",1
-"DJ Kool","Let Me Clear My Throat",TRUE,"Doug",1
+"DJ Khaled Featuring T.I. Akon, Rick Ross, Fat Joe. Lil' Wayne & Baby","We Takin' Over",TRUE,"Junior",1
 "DJ Snake Featuring Selena Gomez, Ozuna & Cardi B","Taki Taki",TRUE,"Adele",1
-"DJ Snake Featuring Selena Gomez, Ozuna & Cardi B","Taki Taki",TRUE,"Hayley",1
-"DMX Featuring Faith Evans","I Miss You",TRUE,"Jarvis",1
-"Don McLean","American Pie (Parts I & II)",TRUE,"Lennon",1
-"Dr. Hook","The Millionaire",TRUE,"Knox",1
-"Drake","2019-03-14",TRUE,"Sandi",1
-"Drake","30 For 30 Freestyle",TRUE,"Peyton",1
 "Drake","9 AM In Dallas",FALSE,"Essence",1
-"Drake","Can't Have Everything",TRUE,"Russ",1
 "Drake","Charged Up",TRUE,"Corey",1
-"Drake","Diplomatic Immunity",TRUE,"Robyn",1
-"Drake","Diplomatic Immunity",TRUE,"Royal",1
 "Drake","Do Not Disturb",TRUE,"Ian",1
-"Drake","Elevate",TRUE,"Braden",1
-"Drake","Elevate",TRUE,"Dayton",1
 "Drake","Energy",FALSE,"Kennedy",1
 "Drake","Free Smoke",FALSE,"Hilton",1
-"Drake","From Time",FALSE,"Macy",1
 "Drake","From Time",TRUE,"Bria",1
-"Drake","From Time",TRUE,"Kourtney",1
-"Drake","From Time",TRUE,"Summer",1
-"Drake","From Time",TRUE,"Trey",1
 "Drake","Furthest Thing",TRUE,"Derrick",1
 "Drake","God's Plan",FALSE,"Scarlett",1
 "Drake","Is There More",TRUE,"Maya",1
 "Drake","Know Yourself",TRUE,"Ethan",1
-"Drake","Know Yourself",TRUE,"Niko",1
-"Drake","Know Yourself",TRUE,"Oliver",1
-"Drake","Know Yourself",TRUE,"Winnie",1
-"Drake","Lose You",TRUE,"Trina",1
-"Drake","Redemption",TRUE,"Sydney",1
-"Drake","Sandra's Rose",TRUE,"Amber",1
-"Drake","Sandra's Rose",TRUE,"Mohamed",1
-"Drake","Shot For Me",TRUE,"Katia",1
-"Drake","Still Here",TRUE,"Weston",1
-"Drake","Summer Sixteen",TRUE,"Kai",1
+"Drake","Redemption",TRUE,"Erica",1
 "Drake","Too Much",TRUE,"Noel",1
 "Drake","Tuscan Leather",TRUE,"Akeem",1
-"Drake","Tuscan Leather",TRUE,"Dwight",1
-"Drake","Tuscan Leather",TRUE,"Ellen",1
-"Drake","Two Birds, One Stone",TRUE,"Pam",1
-"Drake","Weston Road Flows",TRUE,"Glenn",1
-"Drake","Weston Road Flows",TRUE,"Vince",1
+"Drake","Two Birds, One Stone",TRUE,"Dennis",1
+"Drake & Future","Big Rings",TRUE,"Celine",1
 "Drake & Future","Digital Dash",TRUE,"Quentin",1
 "Drake & Future","Live From The Gutter",FALSE,"Buford",1
-"Drake Featuring 2 Chainz & Young Thug","Sacrifices",TRUE,"Katrina",1
+"Drake Featuring 2 Chainz & Big Sean","All Me",TRUE,"Damon",1
 "Drake Featuring Birdman","We'll Be Fine",TRUE,"Aliyah",1
 "Drake Featuring Giggs","KMT",TRUE,"Gustavo",1
 "Drake Featuring Kanye West, Lil Wayne & Eminem","Forever",TRUE,"Benjamin",1
-"Drake Featuring Lil Wayne","Miss Me",TRUE,"Zoe",1
 "Drake Featuring Lil Wayne","The Motto",FALSE,"Margarita",1
 "Drake Featuring Lil Wayne","Used To",FALSE,"Clark",1
-"Drake Featuring Lil Wayne & Young Jeezy","I'm Going In",TRUE,"Kareem",1
 "Drake Featuring Nicki Minaj","Make Me Proud",FALSE,"Howard",1
-"Drake Featuring PARTYNEXTDOOR","Preach",TRUE,"Jay Ray",1
-"Drake Featuring Quavo & Travis Scott","Portland",TRUE,"Griselda",1
 "Drake Featuring The Throne","Pop Style",TRUE,"Emmitt",1
 "Earth, Wind & Fire","Let Me Talk",TRUE,"Hardy",1
 "Ed Sheeran","Eraser",TRUE,"Damien",1
 "Ed Sheeran","Galway Girl",FALSE,"Arthur",1
-"Ed Sheeran","Galway Girl",FALSE,"Jamie",1
 "Ed Sheeran","Galway Girl",TRUE,"Kaleigh",1
-"Elvis Presley","Guitar Man",FALSE,"Kingston",1
-"Eminem","Ass Like That",TRUE,"Hilary",1
+"Ed Sheeran","Shape Of You",TRUE,"Van",1
 "Eminem","Beautiful",TRUE,"Edna",1
-"Eminem","Berzerk",TRUE,"Lamar",1
-"Eminem","Fall",TRUE,"Tyler",1
-"Eminem","Killshot",TRUE,"Gerald",1
-"Eminem","Killshot",TRUE,"Gunner",1
-"Eminem","Killshot",TRUE,"Jade",1
+"Eminem","Just Lose It",TRUE,"Micheal",1
 "Eminem","Lose Yourself",TRUE,"Mekhi",1
-"Eminem","Music Box",TRUE,"Dakota",1
-"Eminem","Music Box",TRUE,"Tabatha",1
-"Eminem","Rap God",TRUE,"Dale",1
-"Eminem","Superman",TRUE,"Hailie Jade",1
-"Eminem","The Real Slim Shady",TRUE,"Carson",1
-"Eminem","Untouchable",TRUE,"Heidi",1
 "Eminem","Venom",TRUE,"Danica",1
-"Eminem","Venom",TRUE,"Edgar",1
-"Eminem","We Made You",TRUE,"Blake",1
-"Eminem","We Made You",TRUE,"Cash",1
-"Eminem","We Made You",TRUE,"Lindsay",1
-"Eminem","We Made You",TRUE,"Portia",1
 "Eminem & Jessie Reyez","Nice Guy",FALSE,"Levi",1
-"Eminem Featuring Gwen Stefani","Kings Never Die",TRUE,"Khalil",1
-"Eminem Featuring Royce Da 5'9","Not Alike",TRUE,"Harvey",1
+"Eminem Featuring Dido","Stan",FALSE,"Denver",1
 "Eminem, 50 Cent, Lloyd Banks & Cashis","You Don't Know",TRUE,"Lloyd",1
-"En Vogue","Give It Up, Turn It Loose",TRUE,"Tamika",1
+"En Vogue","Lies",TRUE,"Debbie",1
 "En Vogue","Riddle",TRUE,"Tyrone",1
-"EPMD","The Joint",TRUE,"Raphael",1
-"Erick Sermon Featuring Marvin Gaye","Music",TRUE,"Murray",1
-"Estelle Featuring Kanye West","American Boy",TRUE,"Gladys",1
+"Erykah Badu","On",TRUE,"Queen",1
 "Fabolous Feat. Chris Brown","Ready",FALSE,"Mercy",1
 "Fabolous Featuring Tamia Or Ashanti","Into You",FALSE,"Bart",1
-"Fabolous Featuring Tamia Or Ashanti","Into You",TRUE,"Ruth",1
 "Faith Hill","Mississippi Girl",FALSE,"Star",1
-"Falco","Vienna Calling",TRUE,"Maria Marilyn",1
 "Famous Dex","Japan",FALSE,"Jane",1
-"Famous Dex","Japan",FALSE,"Mary",1
-"Fat Joe Featuring R. Kelly","We Thuggin'",TRUE,"Aisha",1
-"Fat Joe Featuring R. Kelly","We Thuggin'",TRUE,"Shonda",1
+"Fastball","Fire Escape",TRUE,"Clark",1
 "Fats Domino","Be My Guest",TRUE,"Lindy",1
+"Fergie","Big Girls Don't Cry",TRUE,"Valentine",1
 "Ferras","Hollywood's Not America",TRUE,"Helena Jane",1
 "Fetty Wap Featuring Monty","Jugg",TRUE,"Monty",1
 "Flo Rida Featuring Robin Thicke & Verdine White","I Don't Like It, I Love It",FALSE,"Tom",1
 "Flo Rida Featuring Sage The Gemini & Lookas","G.D.F.R.",FALSE,"Katrina",1
 "Flo Rida Featuring Sage The Gemini & Lookas","G.D.F.R.",TRUE,"Anna",1
-"Flo Rida Featuring Sean Kingston","Roll",TRUE,"Robbin",1
 "Flobots","Handlebars",TRUE,"Leif",1
-"Florida Georgia Line","Sun Daze",FALSE,"Marley",1
-"Foxy Brown Featuring Jay-Z","I'll Be",TRUE,"Lana",1
+"Foster The People","Pumped Up Kicks",TRUE,"Robert",1
 "Frank Ocean","Nights",TRUE,"Percy",1
-"Frank Ocean","Nikes",TRUE,"Carmelo",1
+"Frank Ocean","Nikes",TRUE,"Amber Rose",1
 "Frank Ocean","Novacane",TRUE,"Stanley",1
 "Frank Sinatra","Granada",FALSE,"Tierra",1
-"Frankie Smith","Double Dutch Bus",TRUE,"Lolita",1
+"Freddy Cannon","Buzz Buzz A-Diddle-It",TRUE,"Ruth",1
 "Freddy Cannon","Transistor Sister",TRUE,"Connie",1
-"Freddy Cannon","Transistor Sister",TRUE,"Darin",1
-"Freddy Cannon","Transistor Sister",TRUE,"Presley",1
-"French Montana","Ain't Worried About Nothin",FALSE,"Haven",1
-"French Montana Featuring Drake","No Stylist",TRUE,"Zack",1
-"French Montana Featuring Rick Ross, Drake, Lil Wayne","Pop That",TRUE,"Wallace",1
-"Future","4 Da Gang",TRUE,"Seth",1
-"Future","Feed Me Dope",TRUE,"Elroy",1
+"Future","4 Da Gang",TRUE,"Jerry",1
 "Future","Mask Off",TRUE,"Mari",1
-"Future","Mask Off",TRUE,"Theodore",1
-"Future","Same Damn Time",TRUE,"Irene",1
-"Future & Juice WRLD","Astronauts",TRUE,"Emilio",1
-"Future & Juice WRLD","Astronauts",TRUE,"Riley",1
+"Future","Never Stop",TRUE,"Rico",1
+"Future & Juice WRLD Featuring Young Scooter","Jet Lag",TRUE,"Meagan",1
 "Future & Young Thug","No Cap",TRUE,"Beverly",1
 "Future & Young Thug Featuring Offset","Patek Water",FALSE,"Percy",1
-"Future Featuring Kanye West","I Won",TRUE,"Perry",1
-"Future Featuring Lil Wayne","Karate Chop (Remix)",TRUE,"Emmett",1
-"Future Featuring Lil Wayne","Karate Chop (Remix)",TRUE,"Halle",1
 "Future Featuring T.I.","Magic",FALSE,"Aspen",1
-"G-Eazy","The Plan",TRUE,"Patrick",1
-"G-Eazy Featuring A$AP Rocky & Cardi B","No Limit",TRUE,"Jared",1
-"Game","Martians Vs Goblins",TRUE,"Marvel",1
-"Game","Martians Vs Goblins",TRUE,"Theresa",1
-"Gang Starr","You Know My Steez",TRUE,"Dorothy",1
-"Garnet Mimms & The Enchanters","A Quiet Place",TRUE,"Adeline",1
+"Future Featuring The Weeknd","Comin Out Strong",TRUE,"Cash",1
+"G-Eazy","The Plan",TRUE,"Gerald",1
 "Garth Brooks","Good Ride Cowboy",FALSE,"Kaycee",1
-"Garth Brooks","Good Ride Cowboy",FALSE,"Peter",1
 "George Strait","If You Can Do Anything Else",FALSE,"Diego",1
-"George Strait","If You Can Do Anything Else",FALSE,"Savannah",1
 "George Strait","The Best Day",TRUE,"Coleman",1
-"Ghostface Killah","Cherchez LaGhost",TRUE,"Chauncey",1
-"Ginuwine","In Those Jeans",TRUE,"Levi",1
-"Ginuwine","In Those Jeans",TRUE,"Sergio",1
-"Ginuwine Featuring Baby","Hell Yeah",TRUE,"Sonia",1
+"Georgie Fame","The Ballad Of Bonnie And Clyde",FALSE,"Savannah",1
+"Ghostface Killah Featuring Ne-Yo","Back Like That",TRUE,"Eva",1
 "Gladys Knight And The Pips","Every Beat Of My Heart",FALSE,"Emerald",1
+"Gladys Knight And The Pips","Every Beat Of My Heart",TRUE,"Rod",1
 "Glee Cast","River Deep, Mountain High",FALSE,"Robin",1
 "Glee Cast Featuring Jonathan Groff","Bohemian Rhapsody",TRUE,"Mia",1
+"Glen Campbell","By The Time I Get To Phoenix",FALSE,"Phoenix",1
 "Glen Campbell","Southern Nights",TRUE,"Joy",1
 "Goodie Mob.","Cell Therapy",TRUE,"Dick",1
 "Goodie Mob.","Dirty South",FALSE,"Freeman",1
-"Goodie Mob.","Dirty South",TRUE,"Clinton",1
-"Goodie Mob.","Soul Food",TRUE,"Tameka",1
-"Gorillaz","Clint Eastwood",TRUE,"Russel",1
+"Goodie Mob.","Dirty South",TRUE,"Ann",1
+"Gorillaz","Clint Eastwood",TRUE,"Russ",1
 "Grateful Dead","Sugar Magnolia",TRUE,"Sugar Magnolia",1
-"Gretchen Wilson","Redneck Woman",TRUE,"Tanya",1
 "Gucci Mane & Nicki Minaj","Make Love",TRUE,"Anna Nicole",1
 "Guns N' Roses","Sympathy For The Devil (\Interview With The Vampire\"")""",TRUE,"Anastasia",1
-"Hank Snow","I've Been Everywhere",FALSE,"Dayton",1
-"Hank Snow","I've Been Everywhere",FALSE,"Glen",1
-"Hank Snow","I've Been Everywhere",FALSE,"Paloma",1
-"Hank Snow","I've Been Everywhere",FALSE,"Salvador",1
 "Henry Gross","Shannon",TRUE,"Shannon",1
 "Hoodie Allen Featuring Ed Sheeran","All About It",FALSE,"Prince",1
 "Hoodie Allen Featuring Ed Sheeran","All About It",TRUE,"Adrien",1
-"Hoodie Allen Featuring Ed Sheeran","All About It",TRUE,"Megan",1
+"Hot Chelle Rae Featuring New Boyz","I Like It Like That",TRUE,"Miley",1
 "Ice Cube","Really Doe",TRUE,"Betsy",1
+"Ice Cube","Why We Thugs",TRUE,"Russell",1
 "Ice Cube","Wicked",TRUE,"Darryl",1
 "Ice Cube Featuring Das EFX","Check Yo Self",FALSE,"Charlie",1
-"Ice Cube Featuring Mr. Short Khop","Pushin' Weight",TRUE,"Lincoln",1
-"Iggy Azalea","Team",TRUE,"Hans",1
-"Iggy Azalea Featuring M0","Beg For It",TRUE,"Trinidad",1
-"Illegal","We Getz Busy",TRUE,"Jermaine",1
-"India.Arie","I Am Not My Hair",TRUE,"India",1
+"Ice Cube Featuring George Clinton","Bop Gun (One Nation)",TRUE,"Dayton",1
+"Iggy Azalea Feauring Tyga","Kream",TRUE,"Bella",1
 "India.Arie","Little Things",TRUE,"Donny",1
+"J Balvin & Willy William Featuring Beyonce","Mi Gente",TRUE,"William",1
 "J. Cole","Middle Child",TRUE,"Bentley",1
-"J. Cole Featuring Trey Songz","Can't Get Enough",TRUE,"Wesley",1
 "Ja Rule Featuring R. Kelly & Ashanti","Wonderful",TRUE,"Jeffrey",1
 "Jake Owen","Down To The Honkytonk",TRUE,"Shelia",1
 "Jake Paul Featuring Team 10","It's Everyday Bro",TRUE,"Chance",1
-"Jake Paul Featuring Team 10","It's Everyday Bro",TRUE,"Tessa",1
+"James Brown","Soul Power (Pt. 1)",TRUE,"Marty",1
 "James Brown And The Famous Flames","There Was A Time",FALSE,"Augusta",1
 "James Taylor","Carolina In My Mind",TRUE,"Karin",1
 "James Taylor","Fire And Rain",TRUE,"Susanne",1
 "Jason Aldean","Tattoos On This Town",TRUE,"Allie",1
-"Jason Derulo Featuring Nicki Minaj & Ty Dolla $ign","Swalla",TRUE,"Valentino",1
-"Jay Sean Featuring Lil Wayne","Hit The Lights",TRUE,"Jay Sean",1
 "Jay Sean Featuring Nicki Minaj","2012 (It Ain't The End)",TRUE,"Edison",1
 "Jay Sean Featuring Pitbull","I'm All Yours",TRUE,"Tia",1
 "Jay-Z","Blue Magic",TRUE,"Bailey",1
-"Jay-Z","Can't Knock The Hustle",FALSE,"Remy",1
-"Jay-Z","Change Clothes",TRUE,"Vera",1
-"Jay-Z","Girls, Girls, Girls",TRUE,"Cherie",1
-"JAY-Z","Marcy Me",TRUE,"Isiah",1
-"JAY-Z","Marcy Me",TRUE,"Marcy",1
-"JAY-Z","Marcy Me",TRUE,"Myrtle",1
 "Jay-Z, Bono, The Edge & Rihanna","Stranded (Haiti Mon Amour)",TRUE,"Colleen",1
-"Jeannie C. Riley","Harper Valley P.T.A.",TRUE,"Shirley",1
+"Jeezy Featuring Jay Z","Seen It All",FALSE,"Thomas",1
 "Jeff Beck","People Get Ready",FALSE,"Jordan",1
 "Jefferson Starship","St. Charles",TRUE,"Ulysses",1
-"Jennifer Lopez Featuring French Montana","I Luh Ya Papi",TRUE,"Omar",1
 "Jerry Reed","When You're Hot, You're Hot",TRUE,"Homer",1
 "Jeru The Damaja","Come Clean",TRUE,"Fidel",1
-"Jimmy Buffett","Volcano",FALSE,"Juan",1
-"Jimmy Cliff","Wonderful World, Beautiful People",TRUE,"Harold",1
 "Joe","Don't Wanna Be A Player (From \Booty Call\"")""",FALSE,"Milan",1
 "Joe Diffie","Pickup Man",TRUE,"Bobbie Joe",1
-"Joe Nichols","Sunny And 75",FALSE,"Sunny",1
-"John Mellencamp","R.O.C.K. In The U.S.A. (A Salute'to 60's Rock)",TRUE,"Lyman",1
-"John Mellencamp","R.O.C.K. In The U.S.A. (A Salute'to 60's Rock)",TRUE,"Ryder",1
+"John Denver","The Cowboy And The Lady",TRUE,"Harvey",1
 "John Mellencamp","Rooty Toot Toot",TRUE,"Teddi Jo",1
-"Johnny Cash","Everybody Loves A Nut",TRUE,"Isabella",1
-"Johnny Horton","Johnny Freedom",TRUE,"Dana",1
 "Joni Mitchell","In France They Kiss On Main Street",TRUE,"Gail",1
-"Joni Mitchell","In France They Kiss On Main Street",TRUE,"Melvin",1
-"Josh Kelley","Georgia Clay",FALSE,"Clay",1
-"Juicy J Featuring Wale & Trey Songz","Bounce It",TRUE,"Rudy",1
 "Julianne Hough","That Song In My Head",TRUE,"Billy Don",1
-"Junior M.A.F.I.A.","Player's Anthem",TRUE,"Roxie",1
 "Junior M.A.F.I.A. Featuring The Notorious B.I.G.","Get Money",TRUE,"Adrienne",1
 "Justin Bieber","Change Me",TRUE,"Serenity",1
-"Justin Bieber Featuring Busta Rhymes","Drummer Boy",TRUE,"Merry",1
-"Juvenile Featuring Mannie Fresh","In My Life",FALSE,"Magnolia",1
+"Justin Timberlake","Senorita",TRUE,"Justin",1
 "Juvenile Featuring Soulja Slim","Slow Motion",TRUE,"Kirby",1
-"Juvenile Featuring Soulja Slim","Slow Motion",TRUE,"Rusty",1
-"Kanye West","All Mine",TRUE,"Kerry",1
-"Kanye West","All Mine",TRUE,"Tristan",1
 "Kanye West","Famous",FALSE,"Marina",1
-"Kanye West","Famous",FALSE,"Rey",1
+"Kanye West","Famous",TRUE,"Taylor",1
 "Kanye West","Jesus Walks",FALSE,"Avis",1
-"Kanye West","Jesus Walks",TRUE,"Kathie Lee",1
-"Kanye West","Through The Wire",TRUE,"Sky",1
-"Kanye West","Violent Crimes",TRUE,"Marlin",1
+"Kanye West","Through The Wire",TRUE,"Emmett",1
 "Kanye West","Yikes",TRUE,"Felicia",1
 "Kanye West Featuring Syleena Johnson","All Falls Down",TRUE,"Alexus",1
-"Kanye West Featuring Teyana Taylor, Nicki Minaj & Bon Iver","Dark Fantasy",TRUE,"Leon",1
-"Kanye West Featuring Teyana Taylor, Nicki Minaj & Bon Iver","Dark Fantasy",TRUE,"Phoebe",1
-"Katy Perry","Cozy Little Christmas",FALSE,"Tiffany",1
+"Kardinal Offishall Featuring Akon","Dangerous",TRUE,"Halle",1
 "Keith Murray","The Most Beautifullest Thing In This World",TRUE,"Quincy",1
 "Keith Murray Featuring Def Squad","Yeah Yeah U Know It",TRUE,"Annie Mae",1
+"Kelly Clarkson","Catch My Breath",TRUE,"Karma",1
 "Kendrick Lamar","DNA.",TRUE,"Brock",1
-"Kendrick Lamar","Fear.",TRUE,"Demarcus",1
-"Kendrick Lamar","Fear.",TRUE,"Rihanna",1
+"Kendrick Lamar","Element.",TRUE,"Kenny",1
 "Kendrick Lamar","The Blacker The Berry",FALSE,"Aryan",1
-"Kenny Chesney","Big Star",TRUE,"Garth",1
+"Kendrick Lamar Featuring Zacari","Love.",TRUE,"Tyson",1
 "Kenny Chesney","Keg In The Closet",TRUE,"Mary Ann",1
-"Kenny Rogers & The First Edition","Reuben James",TRUE,"Flora",1
-"Kevin Gates","Let It Sing",TRUE,"Tory",1
+"Kent Jones","Don't Mind",TRUE,"Regina",1
 "Kevin Gates","Really Really",TRUE,"Cedric",1
-"Kevin Rudolf Featuring Lil Wayne","Let It Rock",TRUE,"Tamara",1
 "Khalid, Ty Dolla $ign & 6LACK","OTW",TRUE,"Khalid",1
-"Kid Cudi Featuring Kanye West & Common","Make Her Say",TRUE,"Ray Jay",1
-"Killer Mike Featuring Big Boi","A.D.I.D.A.S.",TRUE,"Nathaniel",1
+"Kid Rock","Cowboy",TRUE,"Heidi",1
 "Klymaxx","The Men All Pause",TRUE,"Gianni",1
-"Kodak Black Featuring Future","Conscience",FALSE,"Chase",1
-"Kool Moe Dee","Wild, Wild West",TRUE,"Milton",1
-"Kool Moe Dee","Wild, Wild West",TRUE,"Sidney",1
+"Kodak Black","Everything 1K",TRUE,"Derek",1
+"Kodak Black","Patty Cake",TRUE,"Dana",1
 "Kreayshawn","Gucci Gucci",TRUE,"Ivana",1
 "Kurtis Blow","Basketball",TRUE,"Bernard",1
-"Kurtis Blow","Basketball",TRUE,"Kurtis",1
-"Kurtis Blow","Basketball",TRUE,"Willis",1
-"LeAnn Rimes","Nothin' Better To Do",TRUE,"Bobby Jo",1
+"Kurtis Blow","The Breaks (Part 1)",TRUE,"Kurtis",1
+"Lady Gaga","Marry The Night",TRUE,"Ginger",1
+"Lauryn Hill","Doo Wop (That Thing)",TRUE,"Lauryn",1
 "Lee Brice","Parking Lot Party",FALSE,"Coleman",1
 "Len","Steal My Sunshine",TRUE,"Karen",1
-"Leo Sayer","Long Tall Glasses (I Can Dance)",TRUE,"Victor",1
+"Lightning Seeds","The Life Of Riley",TRUE,"Riley",1
+"Lil Baby","Global",TRUE,"Dee",1
 "Lil Baby","Pure Cocaine",TRUE,"Era",1
 "Lil Baby","Southside",TRUE,"Bernice",1
 "Lil Baby & Gunna","Business Is Business",TRUE,"Marlo",1
 "Lil Bow Wow","Take Ya Home",TRUE,"Todd",1
 "Lil Jon Featuring Tyga","Bend Ova",FALSE,"Jose",1
-"Lil Uzi Vert","For Real",TRUE,"Vivienne",1
-"Lil Uzi Vert","New Patek",TRUE,"Rey",1
 "Lil Uzi Vert","No Sleep Leak",TRUE,"Corbin",1
 "Lil Uzi Vert Featuring Pharrell Williams","Neon Guts",FALSE,"Carlton",1
-"Lil Wayne","A Milli",TRUE,"Orville",1
 "Lil Wayne","Blunt Blowin",TRUE,"Ashton",1
-"Lil Wayne","Blunt Blowin",TRUE,"Edward",1
 "Lil Wayne","Dedicate",FALSE,"Marvel",1
-"Lil Wayne","I'm Me",TRUE,"Ronald",1
-"Lil Wayne","MegaMan",TRUE,"Samuel",1
-"Lil Wayne Featuring Detail","No Worries",TRUE,"Stewart",1
-"Lil Wayne Featuring Drake & Jadakiss","It's Good",TRUE,"Griffin",1
-"Lil Wayne Featuring John Legend","So Special",TRUE,"Lorena",1
-"Lil Wayne Featuring Rick Ross","John",TRUE,"Chiquita",1
-"Lil Wayne Featuring Rick Ross","John",TRUE,"Esther",1
+"Lil Wayne Featuring Static Major","Lollipop",TRUE,"Hilary",1
 "Lil Yachty Featuring Juice WRLD","Yacht Club",TRUE,"Alexis",1
-"Lil' Flip Featuring Lea","Sunshine",TRUE,"Lea",1
-"Lil' Kim Featuring Puff Daddy","No Time",TRUE,"John Paul",1
-"Limp Bizkit Featuring Method Man","N 2 Gether Now",TRUE,"Elmer",1
 "Little River Band","Reminiscing",TRUE,"Glen",1
-"Lloyd Banks Featuring Juelz Santana","Beamer, Benz, Or Bentley",TRUE,"Ruben",1
+"Living Colour","Cult Of Personality",TRUE,"Joseph",1
 "Logic Featuring Big Sean","Wassup",TRUE,"Jaden",1
-"Lonestar","Walking In Memphis",TRUE,"Muriel",1
+"Logic Featuring Ryan Tedder","One Day",TRUE,"Ryan",1
 "Loon Featuring Kelis","How You Want That",TRUE,"Cesar",1
 "Lost Boyz","Get Up",TRUE,"Hassan",1
-"Ludacris","Number One Spot",TRUE,"Dora",1
-"Ludacris","Number One Spot",TRUE,"Ivy",1
+"Lost Boyz","Music Makes Me High",TRUE,"Charles",1
+"Ludacris","Roll Out (My Business)",TRUE,"Lorenzo",1
 "Luniz","I Got 5 On It",FALSE,"Taylor",1
 "Lupe Fiasco","Around My Way (Freedom Ain't Free)",TRUE,"Chandler",1
-"Lupe Fiasco Featuring Ed Sheeran","Old School Love",TRUE,"Lance",1
-"Mac Miller","Frick Park Market",TRUE,"Miller",1
-"Madonna","Vogue",TRUE,"Katharine",1
-"Madonna","Vogue",TRUE,"Lauren",1
-"Major Lazer Featuring PARTYNEXTDOOR & Nicki Minaj","Run Up",TRUE,"Hillary",1
+"Lupe Fiasco Featuring Skylar Grey","Words I Never Said",TRUE,"Glenn",1
+"Mac Miller","Hurt Feelings",TRUE,"Whitney",1
+"Mac Miller","Smile Back",TRUE,"Lennon",1
+"Macklemore & Ryan Lewis Featuring Eric Nally, Melle Mel, Kool Moe Dee & Grandmaster Caz","Downtown",TRUE,"Dan",1
+"Manfred Mann's Earth Band","Blinded By The Light",TRUE,"Scott",1
 "Mann","Buzzin'",TRUE,"Brodie",1
-"Maren Morris Featuring Vince Gill","Dear Hate",TRUE,"Selma",1
-"Mariah Carey","It's Like That",TRUE,"Mimi",1
 "Mariah Carey Featuring T-Pain","Migrate",TRUE,"Mae-Mae",1
-"Mariah Carey Featuring T-Pain","Migrate",TRUE,"Rae-Rae",1
-"Marky Mark & The Funky Bunch","Wildside",TRUE,"Bennett",1
 "Martina McBride","God's Will",FALSE,"August",1
-"Marvin Gaye & Tammi Terrell","Keep On Lovin' Me Honey",TRUE,"Tammi",1
 "Mase","Feel So Good",TRUE,"Chaz",1
-"Mase Featuring Puff Daddy","Lookin' At Me",FALSE,"Roscoe",1
+"Masta Ace Incorporated","The I.N.C. Ride",FALSE,"Charlotte",1
 "MC5","Kick Out The Jams",TRUE,"Mackenzie",1
-"Meek Mill","1942 Flows",TRUE,"Jazmine",1
-"Meek Mill","Championships",FALSE,"Max",1
 "Meek Mill","Intro",TRUE,"Cruz",1
-"Meek Mill Featuring 21 Savage","Pay You Back",TRUE,"Waldo",1
-"Meek Mill Featuring Drake","Going Bad",TRUE,"Laurie",1
-"Meek Mill Featuring Lil Uzi Vert & Nicki Minaj","Froze",TRUE,"Brittney",1
-"Meek Mill Featuring Rick Ross & JAY-Z","What's Free",FALSE,"Marcy",1
-"Meek Mill Featuring T.I., Birdman Lil Wayne, DJ Khaled, Rick Ross & Swizz Beatz","Ima Boss",TRUE,"Herschel",1
-"Meek Mill Featuring Tory Lanez","Litty",TRUE,"Quinten",1
+"Meek Mill Featuring Chris Brown & Ty Dolla $ign","Whatever You Need",TRUE,"Tory",1
 "Metro Boomin Featuring 21 Savage","10 Freaky Girls",TRUE,"Harriet",1
-"MGK Featuring Waka Flocka Flame","Wild Boy",TRUE,"Miguel",1
-"Michael Buble","It's Beginning To Look A Lot Like Christmas",TRUE,"Janice",1
-"Michael Buble","It's Beginning To Look A Lot Like Christmas",TRUE,"Jen",1
-"Migos","Versace",TRUE,"Rocco",1
+"Michael Jackson","They Don't Care About Us",TRUE,"Roosevelt",1
 "Migos Featuring Post Malone","Notice Me",TRUE,"Kimberly",1
-"Migos Featuring Travis Scott","Kelly Price",TRUE,"Garfield",1
-"Millie Jackson","Leftovers",TRUE,"Philip",1
 "Miranda Lambert","All Kinds Of Kinds",TRUE,"Phyllis",1
+"Miranda Lambert","Mama's Broken Heart",TRUE,"Kennedy",1
 "Mobb Deep Featuring Vita & Noyd","Burn",FALSE,"Mickey",1
 "Morris Day","The Oak Tree",TRUE,"Morris",1
-"Musiq Soulchild Featuring Ayana","Girl Next Door",TRUE,"Tonya",1
-"Mustard & Migos","Pure Water",TRUE,"Ricky Bobby",1
-"My Darkest Days Featuring Zakk Wylde","Porn Star Dancing",TRUE,"Cassandra",1
-"N.O.R.E. Featuring Daddy Yankee, Nina Sky, Gem Star & Big Mato","Oye Mi Canto",TRUE,"Cale",1
-"N.O.R.E. Featuring Daddy Yankee, Nina Sky, Gem Star & Big Mato","Oye Mi Canto",TRUE,"Santiago",1
-"Nancy Sinatra & Lee Hazlewood","Lady Bird",TRUE,"Winter",1
-"Nas","I Can",TRUE,"Lina",1
+"Nancy Sinatra & Lee Hazlewood","Lady Bird",TRUE,"Summer",1
 "Nas","If I Ruled The World",TRUE,"Armani",1
-"Nas","Street Dreams",TRUE,"Dionne",1
 "Natasha Bedingfield","These Words",TRUE,"Byron",1
 "Naughty By Nature","Hip Hop Hooray",TRUE,"Jo-Jo",1
-"Naughty By Nature","Hip Hop Hooray",TRUE,"Parker",1
 "Naughty By Nature Featuring 3LW","Feels Good (Don't Worry Bout A Thing)",TRUE,"Chadwick",1
-"Neil Diamond","Solitary Man",TRUE,"Melinda",1
-"Nelly Featuring City Spud","Ride Wit Me",TRUE,"Courtney",1
-"Nicki Minaj","Anaconda",TRUE,"Troy",1
-"Nicki Minaj","Barbie Dreams",TRUE,"Odell",1
-"Nicki Minaj","Barbie Dreams",TRUE,"Stefan",1
+"NAV Featuring The Weeknd","Price On My Head",TRUE,"Tonya",1
+"Neneh Cherry","Buffalo Stance",TRUE,"Timmy",1
+"New Boyz Feat. Chris Brown","Better With The Lights Off",TRUE,"Khloe",1
+"New Radicals","You Get What You Give",TRUE,"Courtney",1
 "Nicki Minaj","Chun-Li",FALSE,"Mai",1
-"Nicki Minaj","Ganja Burns",TRUE,"Audrey",1
-"Nicki Minaj Featuring 2 Chainz","Beez In The Trap",TRUE,"Franklin",1
 "Nicki Minaj Featuring Drake","Moment 4 Life",TRUE,"Nicki Nick",1
 "Nicki Minaj Featuring Drake, Lil Wayne & Chris Brown","Only",FALSE,"Holly",1
-"Nicki Minaj Featuring Eminem","Roman's Revenge",TRUE,"Jasmine",1
-"Noreaga","SuperThug (What What)",TRUE,"Manuel",1
-"O-Town","Liquid Dreams",TRUE,"Salma",1
-"O-Town","Liquid Dreams",TRUE,"Tyra",1
 "Offset","Red Room",TRUE,"Brooklyn",1
-"Ohio Players","Jive Turkey (Part 1)",TRUE,"Mervin",1
-"OK Go","I Won't Let You Down",TRUE,"Nikki",1
+"OG Maco","U Guessed It",TRUE,"Franklin",1
 "Old Dominion","Make It Sweet",FALSE,"Anne",1
-"Old Dominion","Song For Another Time",TRUE,"Marina",1
 "Olivia","Bizounce",FALSE,"Lorenzo",1
 "One Direction","Best Song Ever",TRUE,"Georgia Rose",1
-"OneRepublic","Good Life",FALSE,"Abbey",1
-"OutKast","Elevators (Me & You)",TRUE,"Marta",1
 "OutKast","Jazzy Belle",TRUE,"Antwan",1
 "OutKast","Southernplayalisticadillacmuzik",TRUE,"Dusty",1
-"P. Diddy Featuring The Neptunes","Diddy",TRUE,"Branson",1
-"P. Diddy Featuring The Neptunes","Diddy",TRUE,"Brenda",1
 "P.M. Dawn","Looking Through Patient Eyes",TRUE,"Joni",1
 "Paperboy","Ditty",FALSE,"Vernon",1
-"Paul McCartney & Wings","Helen Wheels",TRUE,"Kendal",1
+"Paul Simon","Duncan",TRUE,"Lincoln",1
 "Paul Simon","Slip Slidin' Away",TRUE,"Dolores",1
-"Paul Wall Featuring Big Pokey","Sittin' Sidewayz",TRUE,"Archie",1
-"Paul Wall Featuring Jermaine Dupri","I'm Throwed",FALSE,"Brandi",1
-"Peter Gabriel","Games Without Frontiers",TRUE,"Britt",1
-"Peter Sarstedt","Where Do You Go To (My Lovely)",FALSE,"Michel",1
-"Peter Sarstedt","Where Do You Go To (My Lovely)",FALSE,"Napoleon",1
-"Peter Sarstedt","Where Do You Go To (My Lovely)",TRUE,"Marie-Claire",1
-"Peter Sarstedt","Where Do You Go To (My Lovely)",TRUE,"Marlene",1
-"Petey Pablo","Freek-A-Leek",TRUE,"Dominique",1
-"Petey Pablo","Freek-A-Leek",TRUE,"Sabrina",1
-"Petey Pablo","Freek-A-Leek",TRUE,"Shamika",1
-"Petey Pablo","Freek-A-Leek",TRUE,"Shawna",1
-"Petey Pablo","Freek-A-Leek",TRUE,"Tara",1
+"Paul Wall Featuring Jermaine Dupri","I'm Throwed",TRUE,"Chester",1
+"Pink","So What",TRUE,"Jessica",1
 "Pitbull","Bojangles",FALSE,"Liberty",1
 "Pitbull","Pause",TRUE,"Brooke",1
 "Pitbull Featuring TJR","Don't Stop The Party",TRUE,"Joel",1
-"Pitbull x El Chombo x Karol G Featuring Cutty Ranks","Dame Tu Cosita",TRUE,"Karol",1
-"Playboi Carti","Magnolia",TRUE,"Magnolia",1
+"Pitbull x El Chombo x Karol G Featuring Cutty Ranks","Dame Tu Cosita",TRUE,"Armando",1
 "Poison","Your Mama Don't Dance",TRUE,"Bret",1
-"Post Malone","92 Explorer",TRUE,"Roseanne",1
 "Post Malone","White Iverson",TRUE,"Davis",1
+"Prince Royce","Darte Un Beso",TRUE,"Royce",1
 "Puff Daddy","Victory",FALSE,"Brook",1
-"Puff Daddy","Victory",TRUE,"Francis",1
 "Pusha T","If You Know You Know",FALSE,"Floyd",1
 "Pusha T","The Games We Play",TRUE,"Rae",1
-"Pusha T Featuring Kanye West","What Would Meek Do?",TRUE,"Avery",1
-"Quavo","Huncho Dreams",TRUE,"Elliott",1
-"Quavo","Huncho Dreams",TRUE,"Rashad",1
 "Quicksilver Messenger Service","Who Do You Love",TRUE,"Arlene",1
-"R. Kelly","She's Got That Vibe",TRUE,"Cheryl",1
-"R. Kelly","She's Got That Vibe",TRUE,"Joann",1
-"R. Kelly","She's Got That Vibe",TRUE,"Laurel",1
-"R. Kelly","She's Got That Vibe",TRUE,"Rachelle",1
-"R. Kelly","She's Got That Vibe",TRUE,"Tonia",1
 "R. Kelly","Step In The Name Of Love",TRUE,"Henry",1
-"R. Kelly Featuring Jay-Z","Fiesta",TRUE,"Kisha",1
-"R.E.M.","It's The End Of The World As We Know It (And I Feel Fine)",TRUE,"Leonard",1
-"R.E.M.","It's The End Of The World As We Know It (And I Feel Fine)",TRUE,"Lester",1
-"R.E.M.","Man On The Moon",TRUE,"Newton",1
 "Rae Sremmurd & Juicy J","Powerglide",FALSE,"Leo",1
-"Ray Stevens","Gitarzan",TRUE,"Chet",1
-"RiceGum Featuring Alissa Violet","Its Every Night Sis",TRUE,"Logan",1
 "Rick Ross","Hustlin'",FALSE,"Burt",1
-"Rick Ross Featuring JAY Z","The Devil Is A Lie",FALSE,"Enzo",1
+"Rick Ross Featuring Drake & Chrisette Michele","Aston Martin Music",TRUE,"Elroy",1
 "Rick Ross Featuring John Legend","Magnificent",TRUE,"Allan",1
-"Rick Ross Featuring Kanye West, T-Pain, Lil' Wayne","Maybach Music 2",TRUE,"Gregory",1
 "Rick Ross Featuring Ne-Yo","Super High",TRUE,"Cassie",1
-"Rick Ross Featuring Ne-Yo","Super High",TRUE,"Fran",1
 "Rickie Lee Jones","The Real End",TRUE,"Marquis",1
+"Rihanna","Cheers (Drink To That)",TRUE,"Tyra",1
+"Rihanna & Sean Paul","Break It Off",TRUE,"Penelope",1
+"Rihanna Featuring Jeezy","Hard",TRUE,"Louis",1
 "Roger Daltrey","After The Fire",TRUE,"Matt",1
 "Run-D.M.C.","Down With The King",FALSE,"Jay",1
 "Run-D.M.C.","Down With The King",TRUE,"Hollis",1
 "RuPaul","Supermodel (You Better Work)",TRUE,"Christy",1
-"RuPaul","Supermodel (You Better Work)",TRUE,"Claudia",1
-"Sage The Gemini","Now & Later",TRUE,"Sage",1
-"Sam Cooke","Cousin Of Mine",TRUE,"Jeremiah",1
+"Russ","What They Want",TRUE,"Katia",1
 "Sam Hunt","Drinkin' Too Much",TRUE,"Hannah Lee",1
 "Santana","Well All Right",TRUE,"Alison",1
-"Sean Kingston Featuring Nicki Minaj","Letting Go (Dutty Love)",TRUE,"Hugh",1
-"Sean Paul","Temperature",TRUE,"Bridgette",1
-"Sean Paul","Temperature",TRUE,"Grady",1
+"Sean Paul","So Fine",FALSE,"Kingston",1
 "Sean Paul Featuring Sasha","I'm Still In Love With You",TRUE,"Sasha",1
 "Selena Gomez","Bad Liar",FALSE,"Troy",1
 "Shanice","I Love Your Smile",TRUE,"Shanice",1
-"Sir Mix-A-Lot","Jump On It",FALSE,"Columbus",1
+"Shirley Brown","It Ain't No Fun",TRUE,"Shirley",1
+"Shwayze Featuring Cisco Adler","Buzzin'",TRUE,"June",1
 "Sister Sledge","He's The Greatest Dancer",TRUE,"Adonis",1
 "Sister Sledge","We Are Family",TRUE,"Jewel",1
-"Skee-Lo","I Wish",TRUE,"Lorraine",1
-"Ski Mask The Slump God Featuring Juice WRLD","Nuketown",TRUE,"Vicky",1
+"Slade","Take Me Bak 'Ome",TRUE,"Sidney",1
 "Sophia Grace","Best Friends",TRUE,"Sophia Grace",1
-"Souls Of Mischief","93 'Til Infinity",TRUE,"Owen",1
+"Spin Doctors","Cleopatra's Cat",TRUE,"Mark",1
+"Starbuck","Everybody Be Dancin'",TRUE,"Carmen",1
 "Steely Dan","Hey Nineteen",TRUE,"Retha",1
-"Styx","Borrowed Time",FALSE,"Leslie",1
-"Styx","Sing For The Day",TRUE,"Dorian",1
 "Sugababes","Hole In The Head",TRUE,"Ricki",1
 "Swizz Beatz","Money In The Bank",TRUE,"Cristian",1
 "T-Pain Featuring Yung Joc","Buy U A Drank (Shawty Snappin')",FALSE,"Oakley",1
-"T-Wayne","Nasty Freestyle",TRUE,"Rickey",1
 "T.I.","Go Get It",TRUE,"Luis",1
-"T.I.","Top Back",FALSE,"Giovanni",1
-"T.I. Featuring Big K.R.I.T.","I'm Flexin'",FALSE,"Ward",1
-"T.I. Featuring Big K.R.I.T.","I'm Flexin'",TRUE,"Marietta",1
 "T.I. Featuring Justin Timberlake","Dead And Gone",TRUE,"Ida",1
-"Tee Grizzley","First Day Out",TRUE,"Theo",1
-"Terror Squad","Lean Back",TRUE,"Trinity",1
-"Tevin Campbell","Alone With You",TRUE,"Kyle",1
-"Tevin Campbell","Another Way",TRUE,"Trace",1
 "The Badlees","Angeline Is Coming Home",TRUE,"Angeline",1
 "The Band","Up On Cripple Creek",FALSE,"George",1
-"The Beach Boys","Barbara Ann",TRUE,"Betty Lou",1
-"The Beach Boys","Barbara Ann",TRUE,"Betty Sue",1
-"The Beach Boys","Barbara Ann",TRUE,"Mary Sue",1
-"The Beach Boys","California Saga (On My Way To Sunny Californ-i-a)",TRUE,"Charley",1
 "The Beach Boys","Surfin' U.S.A.",FALSE,"Cruz",1
-"The Chad Mitchell Trio","The John Birch Society",TRUE,"Jasper",1
-"The Chainsmokers","#SELFIE",TRUE,"Valencia",1
+"The Beatles","I Am The Walrus",TRUE,"Edgar",1
 "The Clipse","Grindin'",FALSE,"Chuck",1
-"The Game","Dreams",TRUE,"Mya",1
-"The Game Featuring Kanye West","Wouldn't Get Far",TRUE,"Gabrielle",1
-"The Guess Who","Clap For The Wolfman",TRUE,"Ron Ron",1
+"The Doobie Brothers","Dependin' On You",TRUE,"Patrick",1
+"The Hollies","Dear Eloise",TRUE,"Eloise",1
 "The Jacksons","Goin' Places",FALSE,"Gary",1
-"The Kingston Trio","Tom Dooley",TRUE,"Grayson",1
-"The Lonely Island Featuring Michael Bolton","Jack Sparrow",TRUE,"Erin",1
-"The Lonely Island Featuring Michael Bolton","Jack Sparrow",TRUE,"Raven",1
-"The Lost Trailers","Holler Back",TRUE,"Mary Jo",1
 "The Marshall Tucker Band","This Ol' Cowboy",FALSE,"Anton",1
-"The Notorious B.I.G.","Hypnotize",TRUE,"Toby",1
-"The Notorious B.I.G. Featuring Puff Daddy","Notorious B.I.G.",TRUE,"Gino",1
+"The Notorious B.I.G.","Going Back To Cali",TRUE,"Leo",1
+"The Notorious B.I.G. Featuring Puff Daddy","Notorious B.I.G.",TRUE,"Francis",1
 "The Rolling Stones","You Can't Always Get What You Want",FALSE,"Chelsea",1
-"The Roots Featuring Musiq","Break You Off",TRUE,"Foster",1
+"The Shirelles","Mama Said",TRUE,"Billy Joe",1
 "The Steve Miller Band","The Joker",TRUE,"Maurice",1
-"The System","Coming To America",FALSE,"Kenya",1
-"The Who","The Seeker",TRUE,"Timothy",1
-"The Yardbirds","Little Games",TRUE,"Katherine",1
-"The Yardbirds","Little Games",TRUE,"Margaret",1
-"Tim Curry","I Do The Rock",TRUE,"Colin",1
-"Tim Curry","I Do The Rock",TRUE,"Edith",1
-"Tim Curry","I Do The Rock",TRUE,"Gertrude",1
-"Tim Curry","I Do The Rock",TRUE,"Jaclyn",1
-"Tim Curry","I Do The Rock",TRUE,"Meg",1
-"Tim Curry","I Do The Rock",TRUE,"Rona",1
-"Tim Curry","I Do The Rock",TRUE,"Wade",1
+"The Weeknd","Tell Your Friends",TRUE,"Lamar",1
+"Thomas Rhett","Life Changes",TRUE,"Lauren",1
+"Three Dog Night","Joy To The World",TRUE,"Jeremiah",1
 "Tim McGraw","One Of These Days",TRUE,"Patty Sue",1
-"Tim McGraw","Southern Voice",TRUE,"Jerry Lee",1
-"Tim McGraw","Southern Voice",TRUE,"Scarlett",1
-"Timbaland","Clock Strikes",TRUE,"Moe Dee",1
-"Toby Keith","As Good As I Once Was",TRUE,"Bobbi Jo",1
 "Toni Braxton","He Wasn't Man Enough",TRUE,"Braxton",1
-"Too Short","Cocktales",TRUE,"Erika",1
-"Too Short","Cocktales",TRUE,"Janine",1
+"Tony Toni Tone","Feels Good",TRUE,"Toni",1
 "Tori Amos","Caught A Lite Sneeze",TRUE,"Ernestine",1
 "Train","If It's Love",TRUE,"Henry Lee",1
-"Train","Save Me, San Francisco",FALSE,"Marin",1
 "Travis Scott","Beibs In The Trap",FALSE,"Anna Nicole",1
 "Travis Scott","Sicko Mode",TRUE,"Chase",1
-"Trey Songz Featuring Nicki Minaj","Bottoms Up",TRUE,"Anna Nicki",1
+"Travis Scott","Stargazing",TRUE,"Ellen",1
+"Travis Tritt","Modern Day Bonnie And Clyde",FALSE,"Johnson",1
+"Trey Songz","Say Aah",TRUE,"Jamie",1
+"Trey Songz Featuring Twista","Gotta Make It",TRUE,"Trey",1
 "Twista Featuring Kanye West & Jamie Foxx","Slow Jamz",FALSE,"Evelyn",1
-"Twista Featuring Kanye West & Jamie Foxx","Slow Jamz",TRUE,"Isaac",1
-"Tyga","Rack City",TRUE,"Alonzo",1
-"Tyga Featuring Lil Wayne","Faded",TRUE,"Cleo",1
-"Tyga Featuring Lil Wayne","Faded",TRUE,"Pat Ron",1
-"Tyrese","Signs Of Love Makin'",TRUE,"Tyrese",1
+"Tyga Featuring Travis McCoy","Coconut Juice",TRUE,"Brittney",1
+"US 3","Cantaloop (Flip Fantasia)",FALSE,"Asia",1
 "Usher Featuring Rick Ross","Lemme See",TRUE,"Trayvon",1
-"Vanessa Hudgens","Come Back To Me",TRUE,"Vanessa",1
 "Vikki Carr","It Must Be Him",TRUE,"Vikki",1
-"Wale Featuring Lady Gaga","Chillin",TRUE,"Jeremy",1
-"Wale Featuring Meek Mill & Rick Ross","Ambition",TRUE,"Warner",1
-"Warren Zevon","Werewolves Of London",FALSE,"Kent",1
 "Weird Al Yankovic","Amish Paradise",TRUE,"Ezekiel",1
-"Weird Al Yankovic","Canadian Idiot",TRUE,"Dion",1
-"Weird Al Yankovic","I Lost On Jeopardy",TRUE,"Art",1
-"Wyclef Jean Featuring Claudette Ortiz","Two Wrongs",TRUE,"Claudette",1
+"Wham!","Wake Me Up Before You Go-Go",TRUE,"Doris",1
+"Wu-Tang Clan","Method Man",FALSE,"Peter",1
+"YG Featuring 2 Chainz, Big Sean & Nicki Minaj","Big Bank",TRUE,"Colin",1
 "Yo Gotti Featuring Jeezy & YG","Act Right",FALSE,"Trinidad",1
-"Yo Gotti Featuring Nicki Minaj","Rake It Up",TRUE,"Chyna",1
-"Young Jeezy Featuring 2 Chainz","R.I.P.",TRUE,"Berry",1
-"Young Jeezy Featuring 2 Chainz","R.I.P.",TRUE,"Mitchell",1
-"Young Jeezy Featuring Jay-Z & Andre 3000","I Do",TRUE,"Vito",1
-"Young Money","Roger That",TRUE,"Brett",1
-"Young Money Featuring Gucci Mane","Steady Mobbin'",TRUE,"Rosanne",1
+"Young Thug","Best Friend",TRUE,"Dora",1
+"Youngstown","I'll Be Your Everything",TRUE,"Paris",1
+"ZZ Top","Give It Up",TRUE,"Presley",1

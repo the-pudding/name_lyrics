@@ -802,9 +802,8 @@
 "Bill Withers",TRUE,"Billy",1,1
 "Bill Withers",TRUE,"Heaven",1,1
 "Bill Withers",TRUE,"Jesus",1,1
-"Billie Eilish",TRUE,"Baby",1,3
-"Billie Eilish",TRUE,"Billie",1,3
-"Billie Eilish",TRUE,"Peter",1,3
+"Billie Eilish",TRUE,"Baby",1,2
+"Billie Eilish",TRUE,"Peter",1,2
 "Billy Bland",TRUE,"Buddy",1,1
 "Billy Currington",FALSE,"Bud",1,8
 "Billy Currington",FALSE,"Ford",1,8
@@ -2995,12 +2994,11 @@
 "Future & Juice WRLD Featuring Young Scooter",TRUE,"Meagan",1,1
 "Future & Juice WRLD Featuring Young Scooter",TRUE,"Richard",1,1
 "Future & Young Thug",FALSE,"Bentley",3,3
-"Future & Young Thug",FALSE,"Chanel",1,3
+"Future & Young Thug",FALSE,"Chanel",2,3
 "Future & Young Thug",FALSE,"Royce",1,3
 "Future & Young Thug",TRUE,"Barry",1,3
 "Future & Young Thug",TRUE,"Beverly",1,3
 "Future & Young Thug",TRUE,"Bobby",1,3
-"Future & Young Thug",TRUE,"Chanel",1,3
 "Future & Young Thug",TRUE,"Dexter",1,3
 "Future & Young Thug",TRUE,"Michael",1,3
 "Future & Young Thug",TRUE,"Pedro",1,3
@@ -3484,7 +3482,6 @@
 "Iggy Azalea",TRUE,"Hans",1,2
 "Iggy Azalea",TRUE,"Kylie",1,2
 "Iggy Azalea",TRUE,"Sally",1,2
-"Iggy Azalea",TRUE,"Walker",1,2
 "Iggy Azalea Featuring Charli XCX",FALSE,"Ace",1,1
 "Iggy Azalea Featuring M0",FALSE,"Madison",1,1
 "Iggy Azalea Featuring M0",TRUE,"James",1,1
@@ -5331,7 +5328,6 @@
 "Madonna",TRUE,"Baby",5,9
 "Madonna",TRUE,"Bette",1,9
 "Madonna",TRUE,"Cherish",1,9
-"Madonna",TRUE,"Davis",1,9
 "Madonna",TRUE,"Fred",1,9
 "Madonna",TRUE,"Gene",1,9
 "Madonna",TRUE,"Ginger",1,9
@@ -5554,7 +5550,6 @@
 "Meek Mill",TRUE,"Martin Luther",1,5
 "Meek Mill",TRUE,"Nicki",1,5
 "Meek Mill",TRUE,"Ross",1,5
-"Meek Mill",TRUE,"Sullivan",1,5
 "Meek Mill",TRUE,"Wendy",1,5
 "Meek Mill Featuring 21 Savage",FALSE,"Chanel",1,1
 "Meek Mill Featuring 21 Savage",TRUE,"Arnold",1,1
@@ -7594,7 +7589,6 @@
 "The Dramatics",TRUE,"Ken",1,3
 "The Dream Academy",FALSE,"June",1,2
 "The Dream Academy",TRUE,"John",1,1
-"The Dream Academy",TRUE,"Kennedy",1,1
 "The Drifters",TRUE,"Baby",2,2
 "The Edwin Hawkins' Singers Featuring: Dorothy Combs Morrison",TRUE,"Jesus",1,1
 "The Emotions",TRUE,"Baby",1,1
@@ -8726,7 +8720,7 @@
 "Young Thug Featuring Gunna & Lil Baby",FALSE,"Chanel",1,1
 "Young Thug Featuring Gunna & Lil Baby",FALSE,"Louis",1,1
 "Young Thug Featuring Gunna & Lil Baby",TRUE,"Marc",1,1
-"Young Thug Featuring Nicki Minaj",TRUE,"Chanel",1,1
+"Young Thug Featuring Nicki Minaj",FALSE,"Chanel",1,1
 "YoungBloodZ Featuring Lil Jon",TRUE,"Bo",1,1
 "YoungBloodZ Featuring Lil Jon",TRUE,"John",1,1
 "YoungBloodZ Featuring Lil Jon",TRUE,"Sean",1,1
