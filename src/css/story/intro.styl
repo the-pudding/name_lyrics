@@ -8,16 +8,27 @@
 		text-align center
 
 	&__dek
-		max-width $column-width
+		max-width 25rem
 		margin 0 auto
 		margin-top 1rem
 		text-align center
+
+	.byGroup
+		display flex
+		align-items: baseline;
+		margin 2rem 0 4rem 0
+		svg
+			display block
+			margin auto
+			stroke $primary
+
 
 	&__byline
 		max-width $column-width
 		margin 0 auto
 		margin-top 1rem
 		text-align center
+		set-type-size('small')
 
 	&__time
 		display block
@@ -25,3 +36,5 @@
 		margin 0 auto
 		margin-top 1rem
 		text-align center
+		set-type-size('small')
+		text-transform uppercase
