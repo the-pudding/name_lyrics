@@ -2,11 +2,13 @@
   width $sidebar-width
   background-color $bg-light
   flex 0 0 auto
-  transform translateX(100%)
+  transform translateX(-100%)
   transition transform 400ms ease-in-out
   z-index 50
+  position fixed
   +mq('bp-6')
     transform translateX(0)
+    position relative
   &.is-visible
     transform translateX(0)
     transition transform 400ms ease-in-out

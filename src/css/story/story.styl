@@ -1,12 +1,16 @@
 /* CUSTOM STORY STYLE */
 #content
-  display flex
+  display block
+  +mq('bp-6')
+    display flex
 
   article
     max-width $column-width
     padding 0 1rem
-    margin-left 2rem
+    margin 0 auto
     overflow hidden
+    +mq('bp-6')
+      margin-left 2rem
 
 .playlist__song
   padding 0 1rem 1rem 1rem

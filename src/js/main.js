@@ -37,6 +37,19 @@ function setupStickyHeader() {
   }
 }
 
+function setupSidebarDrawer(){
+  const $sidebar = d3.select('.sidebar')
+  const $toggle = d3.select('.drawer__toggle')
+
+  $sidebar.classed('is-visible', false)
+
+  $toggle.on('click', () => {
+    const visible = $sidebar.classed('is-visible')
+    $sidebar.classed('is-visible', !visible)
+    $toggle.classed('is-visible', !visible)
+  })
+}
+
 function setupToggle(){
   const $toggle = $body.select('.filter')
 
@@ -69,6 +82,7 @@ function init() {
   // kick off graphic code
   // setup data filtering toggle
   setupToggle()
+  setupSidebarDrawer()
 
   repeat.init();
   popular.init()
