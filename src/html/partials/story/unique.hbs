@@ -34,15 +34,31 @@
   <p class='prose'>{{{doc.uniqueArtistProse}}}</p>
 
   <figure class='section__figure section__figure-uniqueArtist'>
-    <div class='chart__search'>
-      <div class='text-container'>
-        <div class='ui__search'>
-          <input class='search__input' placeholder='Find an artist...'>
-          <ul class='search__result'></ul>
-        </div>
-        <p class='unique-meta'></p>
+    <div class='section__figure-meta'>
+      <h3 class='chart__title'>{{{doc.uniqueArtistTitle}}}</h3>
+      <p class='chart__sub'>{{{doc.uniqueArtistSub}}}</p>
+      <div class='legend'>
+        <p class='legend-text'>Names mentioned in
+          <span class='legend-1'>1</span>
+          <span class='legend-3'>3</span>
+          <span class='legend-6'>6</span>
+          <span class='legend-9'>9</span>
+          <span class='legend-12'>12</span>
+        songs</p>
       </div>
+    </div>
 
+    <div class='section__figure-chart'>
+      <div class='chart__search'>
+        <div class='text-container'>
+          <div class='ui__search'>
+            <input class='search__input' placeholder='Find an artist...'>
+            <ul class='search__result'></ul>
+          </div>
+          <p class='unique-meta'></p>
+        </div>
+
+      </div>
     </div>
   </figure>
 </section>

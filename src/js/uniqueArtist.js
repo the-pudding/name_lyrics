@@ -3,7 +3,8 @@ import './pudding-chart/unique-template'
 
 // selections
 const $section = d3.select('#unique')
-const $figure = $section.selectAll('.section__figure-uniqueArtist')
+const $figureCont = $section.selectAll('.section__figure-uniqueArtist')
+const $figure = $figureCont.selectAll('.section__figure-chart')
 const $uiChart = $figure.select('.chart__search')
 
 let $resultSel = $uiChart.select('.search__result')

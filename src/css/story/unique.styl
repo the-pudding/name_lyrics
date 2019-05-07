@@ -80,9 +80,30 @@
 
 
   .section__figure-uniqueArtist
-    display flex
-    flex-direction column
-    align-items: flex-end;
+    padding 0 1rem
+    .legend
+      &-text
+        set-type-size('small')
+        color rgba($white, 0.7)
+        margin 0
+        span
+          font-weight bold
+          margin 0 0.25rem
+      &-12
+        color $primary
+      &-9
+        color #ff938d
+      &-6
+        color #ffbab4
+      &-3
+        color #ffdcd9
+      &-1
+        color $white
+    .section__figure-chart
+      display flex
+      flex-direction column
+      align-items: flex-end;
+
 
     .chart, .chart__search
       margin 0.75rem 0.5rem
@@ -106,7 +127,7 @@
         align-items: baseline;
 
         .unique-artist
-          set-type-size('large')
+          set-type-size('medium')
           font-family $sans-display
           font-weight bold
           order 0
