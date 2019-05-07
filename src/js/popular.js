@@ -3,14 +3,18 @@ import loadData from './load-data'
 
 // selections
 const $section = d3.select('#popular')
-const $spark = $section.selectAll('.section__figure-popularSpark')
+const $sparkCont = $section.selectAll('.section__figure-popularSpark')
+const $spark = $sparkCont.select('.section__figure-chart')
 const $figure = $section.selectAll('.section__figure-popular')
 const $uiChart = $figure.select('.ui__search')
 
 let $resultSel = $uiChart.select('.search__result')
 let $inputSel = $uiChart.select('.search__input')
 let uniqueArtist = $uiChart.select('.unique-artist')
-let $chartCont = null
+let $chartCont = $figure.select('.chart__container')
+let $count = $uiChart.select('.search__count')
+let $showMore = $section.select('.show-more')
+let $gradient = $section.select('.gradient')
 
 let data = []
 let charts = []
@@ -41,7 +45,6 @@ function update(state){
   const enteredName = $inputSel.node().value
   if (enteredName) {
     const filtered = nested.filter(d => d.key === enteredName)
-    console.log({filtered})
     handleResult(filtered[0])
   }
 
@@ -65,17 +68,10 @@ function setup(){
     .slice(1, 11)
 
   setupSpark(sliced)
-  //
-  // const $sel = $figure
-  // charts = $sel
-  //   .selectAll('.chart')
-  //   .data(sliced)
-  //   .enter()
-  //   .append('div')
-  //   .attr('class', 'chart')
-  //   .unique()
 
   setupSearch()
+
+  $showMore.on('click', handleSeeMore)
 }
 
 function setupSpark(dat){
@@ -115,6 +111,7 @@ function setupSpark(dat){
 
         update.select('.spark-count')
           .text(d => d.count)
+
       }
 
     )
@@ -126,16 +123,49 @@ function hideResult() {
 }
 
 function highlightName(name, text){
-  const pattern = new RegExp(`((\\b)(${name})(\\b))`)
+  const pattern = new RegExp(`((\\b)(${name})())`, 'i')
   const replaceWith = '<span>$1</span>'
 
   const rep = text.replace(pattern, replaceWith)
   return rep
 }
 
+function handleSeeMore(){
+  const $btn = d3.select(this)
+  const truncated = $figure.classed('is-truncated');
+	const text = truncated ? 'Show Fewer' : 'Show All';
+	$btn.text(text);
+	$figure.classed('is-truncated', !truncated);
+
+	if (!truncated) {
+		const y = +$btn.attr('data-y');
+		window.scrollTo(0, y);
+	}
+
+	$btn.attr('data-y', window.scrollY);
+	$figure.select('.gradient').classed('is-visible', !truncated);
+  $btn.attr('aria-checked', !truncated)
+}
+
 function handleResult(d){
   let uniqData = d.value.values
-  console.log(uniqData)
+    .sort((a, b) => d3.ascending(a.highestRank, b.highestRank))
+  let length = uniqData.length
+
+  if (length >= 5) {
+    $figure.classed('is-truncated', true)
+    $showMore.node().disabled = false
+    $showMore.classed('is-visible', true)
+    $showMore.html(`Show ${length - 5} more`)
+    $gradient.classed('is-visible', true)
+  }
+
+  if (length <= 5){
+    $figure.classed('is-truncated', false)
+    $showMore.node().disabled = true
+    $showMore.classed('is-visible', false)
+    $gradient.classed('is-visible', false)
+  }
 
   $chartCont.selectAll('.playlist-item')
     .data(uniqData, d => d.name)
@@ -180,6 +210,8 @@ function handleResult(d){
 
     )
 
+    $count.text(d => `Found in ${uniqData.length} songs`)
+
 
 }
 
@@ -220,8 +252,8 @@ function setupSearch(){
   $inputSel.on('input', handleSearch)
   // add chart
 
-  $chartCont = $uiChart.append('div')
-    .attr('class', 'chart__container')
+  // $chartCont = $uiChart.append('div')
+  //   .attr('class', 'chart__container')
 
 }
 

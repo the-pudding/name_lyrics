@@ -1,8 +1,32 @@
 #popular
+  max-width $largeFigWidth
   .section__figure-group
     display flex
+    flex-direction column
+    align-items center
+    +mq('bp-6')
+      flex-direction row
   .section__figure-popularSpark
     min-width 250px
+    margin-top 0
+    .chart__title
+      font-family $sans-display
+      set-type-size('large')
+      font-weight bold
+      margin 0
+      padding-left 60px
+    .chart__sub
+      font-family $sans-display
+      set-type-size('small')
+      text-transform uppercase
+      color rgba($white, 0.7)
+      margin 0 0 0.5rem 0
+      padding-left 60px
+    .chart__note
+      set-type-size('x-small')
+      color rgba($white, 0.7)
+      margin 0.5rem 0 0 0
+
     .g-bar
       display flex
       flex-direction row
@@ -26,18 +50,38 @@
 
   .section__figure-popular
     padding 0 1rem
+    position relative
+    &.is-truncated
+      height 430px
+      overflow: hidden
+    .gradient
+      position absolute
+      width 100%
+      height 3rem
+      background linear-gradient(rgba($bg, 0), $bg)
+      bottom 0
+      visibility hidden
+      pointer-events none
+      &.is-visible
+        visibility visible
     input
       outline none;
       border none;
       background-color $primary
-      set-type-size('root')
+      set-type-size('large')
       font-family $sans-display
       font-weight bold
       color $bg !important
-      width 100px
+      width 150px
       margin-top 0.25rem
       &::placeholder
         color $bg-light
+    .ui__search-row
+      display flex
+      p
+        margin 0 0.5rem
+        set-type-size('small')
+        text-transform: uppercase;
     .playlist-item
       padding 0 0 1rem 0
       margin 0.5rem 0
@@ -60,3 +104,20 @@
           text-transform uppercase
           set-type-size('small')
           margin 0
+
+.toggle-table
+  text-align: center
+  margin-top 1rem
+.show-more
+  padding 0.5rem
+  font-family $sans-display
+  border-radius 5px
+  border 1px solid $white
+  background-color $bg
+  color $white
+  width 160px
+  height 45px
+  margin 0 auto
+  display none
+  &.is-visible
+    display block

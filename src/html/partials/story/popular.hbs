@@ -15,16 +15,31 @@
     <p class='prose'>{{{doc.popularProse}}}</p>
 
     <figure class='section__figure section__figure-popularSpark'>
-
+      <div class='section__figure-meta'>
+        <h3 class='chart__title'>{{{doc.popularSparkTitle}}}</h3>
+        <p class='chart__sub'>{{{doc.popularSparkSub}}}</p>
+      </div>
+      <div class='section__figure-chart'></div>
+      <p class='chart__note'>{{{doc.popularSparkNote}}}</p>
     </figure>
   </div>
 
+  <p class='prose'>{{{doc.popularSearch}}}</p>
+
   <figure class='section__figure section__figure-popular'>
     <div class='ui__search'>
-      <input class='search__input' placeholder='Find a name...'>
+      <div class='ui__search-row'>
+        <input class='search__input' placeholder='Find a name...'>
+        <p class='search__count'></p>
+      </div>
       <ul class='search__result'></ul>
     </div>
+    <div class='chart__container'></div>
+    <div class='gradient'></div>
   </figure>
+  <div class='toggle-table'>
+    <button class='show-more' disabled role='switch' aria-checked="false">Show More</button>
+  </div>
 
 
 </section>
