@@ -1,24 +1,51 @@
 .intro
 	margin 0 auto
-	padding 4rem 0 0 0
+	padding 3rem 0 0 0
+
+	&__top
+		display flex
+		flex-direction row
+		margin-bottom 3rem
+
+		.intro__album
+			width 180px
+			height 180px
+			background-color: $primary
+			padding 1rem
+			display flex
+			align-items: center;
+			justify-content: center
+			margin-right 2rem
+			&-cover
+				width 100px
+				fill $bg
 
 	&__hed
 		max-width 60rem
-		margin 0 auto
-		text-align center
+		margin 0
 		font-family $sans-display
+		line-height 1
 
 	&__dek
 		max-width 25rem
-		margin 0 auto
+		margin 0
 		margin-top 1rem
-		text-align center
 		font-family $sans-display
+		color rgba($white, 0.5)
+		line-height 1.2
+
+	&__sub
+		margin 0
+		set-type-size('small')
+		font-family $sans-display
+		text-transform uppercase
 
 	.byGroup
 		display flex
 		align-items: baseline;
-		margin 2rem 0 4rem 0
+		color rgba($white, 0.5)
+		span
+			margin 0 0.5rem
 		svg
 			display block
 			margin auto
@@ -27,19 +54,16 @@
 
 	&__byline
 		max-width $column-width
-		margin 0 auto
-		margin-top 1rem
+		margin 1rem 0 0 0
 		text-align center
 		set-type-size('small')
 
 	&__time
 		display block
 		max-width $column-width
-		margin 0 auto
 		margin-top 1rem
 		text-align center
 		set-type-size('small')
-		text-transform uppercase
 
 	.disclaimer-title
 		set-type-size('small')
