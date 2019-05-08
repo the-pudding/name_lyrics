@@ -140,3 +140,13 @@ figure
       font-family monospace
       background-color $bg-light
       padding 0 0.25rem
+
+.section__figure-gradient
+  height 100%
+  width 100px
+  background linear-gradient(90deg, rgba($bg, 0), $bg)
+  position absolute
+  right 0
+  opacity 1
+  +mq(bp-4)
+    opacity 0
