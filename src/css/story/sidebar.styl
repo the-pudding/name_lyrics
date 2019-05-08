@@ -55,6 +55,9 @@
     top 0
     width $sidebar-width
     padding 1rem
+    height 100%
+    +mq('bp-6')
+      height auto
 
     svg
       max-width 150px
@@ -106,6 +109,12 @@
       font-family $sans-display
       set-type-size('small')
       margin 0.25rem 0
+  .question-prose
+    set-type-size('root')
+    margin 0.5rem 0.75rem 0.5rem 0.5rem
+  .question-context
+    color rgba($white, 0.5)
+    margin 0.5rem
 
   &__nonPeople-button
     display flex

@@ -27,17 +27,19 @@
 
     <div class='sidebar__nonPeople'>
       <h2 class='sidebar-title'>{{doc.nonPeopleTitle}}</h2>
-      {{#each doc.nonPeopleText}}
-        <p class='sidebar-prose'>{{{value}}}</p>
-      {{/each}}
-
       <div class='sidebar__nonPeople-button'>
-        <p class='sidebar-prose'>{{doc.buttonQuery}}</p>
+        <p class='question-prose'>{{doc.buttonQuery}}</p>
         <button class='filter' role="switch" aria-checked="false" aria-labelledby="sidebar-prose">
             <span class='button-label'>No</span>
             <span class='button-label'>Yes</span>
         </button>
       </div>
+
+      {{#each doc.nonPeopleText}}
+        <p class='sidebar-prose question-context'>{{{value}}}</p>
+      {{/each}}
+
+
     </div>
 
   </div>
