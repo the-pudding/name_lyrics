@@ -1,5 +1,6 @@
 /* global d3 */
 import debounce from 'lodash.debounce';
+import EnterView from 'enter-view'
 import isMobile from './utils/is-mobile';
 import graphic from './graphic';
 import footer from './footer';
@@ -22,6 +23,28 @@ function resize() {
     previousWidth = width;
     graphic.resize();
   }
+}
+
+function setupSectionEnter(){
+	EnterView({
+		selector: 'section',
+		enter: el => {
+      let id = el.id
+      d3.selectAll('.section-link').classed('is-active', false)
+      d3.select(`.section-link-${id}`).classed('is-active', true)
+    },
+    exit: el => {
+      const active = d3.select('.section-link.is-active').node()
+      const all = d3.selectAll('.section-link')
+
+      all.classed('is-active', false)
+      const nodes = all.nodes()
+      const ar = nodes.indexOf(active) - 1
+      const sel = d3.select(nodes[ar]).classed('is-active', true)
+    },
+		offset: 0.1,
+		once: false
+	})
 }
 
 function setupStickyHeader() {
@@ -83,6 +106,7 @@ function init() {
   // setup data filtering toggle
   setupToggle()
   setupSidebarDrawer()
+  setupSectionEnter()
 
   repeat.init();
   popular.init()

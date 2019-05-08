@@ -8,13 +8,15 @@
       </button>
     </div>
     <div class='sidebar__pudding'>
-      <img inline src='pudding/wordmark.svg'>
+      <a class='homeLink' href='https://pudding.cool'>
+        <img inline src='pudding/wordmark.svg'>
+      </a>
     </div>
 
     <div class='sidebar__sections'>
       <h2 class='sidebar-title'>{{doc.sectionTitle}}</h2>
       {{#each doc.sections}}
-        <a href='#{{link}}'>
+        <a class='section-link section-link-{{link}}' href='#{{link}}'>
           <div class='sidebar__section'>
             <h3 class='sidebar__section-title'>{{title}}</h3>
             <p class='sidebar__section-prose'>{{desc}}</p>

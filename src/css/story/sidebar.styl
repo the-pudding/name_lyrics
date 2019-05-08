@@ -60,9 +60,11 @@
       max-width 150px
       fill $white
       padding-left 0.5rem
+    .homeLink
+      border-bottom none
 
   &-title
-    set-type-size('x-large')
+    set-type-size('large')
     text-transform uppercase
     font-weight: 200;
     font-family $sans-display
@@ -79,19 +81,22 @@
     &:hover > a:not(:hover)
       opacity 0.5
 
-  a
+  .section-link
     display block
     border-bottom 1px solid rgba($white, 0.2)
-    padding 0.25rem
-    height 40px
+    padding 2px 0.25rem 0.25rem 0.5rem
+    height 35px
     overflow hidden
     background-color transparent
     transition 100ms linear
     cursor: pointer;
+    border-left 2px solid $bg-light
     &:hover
       height 85px
       background-color rgba($white, 0.1)
       transition 100ms linear
+    &.is-active
+      border-left 2px solid $primary
 
     .sidebar__section-title
       margin-top 0.2rem
