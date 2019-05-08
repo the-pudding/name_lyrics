@@ -67,29 +67,37 @@
     font-weight: 200;
     font-family $sans-display
     padding-left 0.5rem
+    margin-top 0.5rem
 
   &-prose
     font-family $sans-display
     set-type-size('small')
     margin 1rem 0
+  &__sections
+    height 355px
+    display block
+    &:hover > a:not(:hover)
+      opacity 0.5
 
-  &__section
+  a
+    display block
     border-bottom 1px solid rgba($white, 0.2)
-    padding 0.5rem
-    height 45px
+    padding 0.25rem
+    height 40px
     overflow hidden
     background-color transparent
     transition 100ms linear
     cursor: pointer;
     &:hover
-      height 100px
+      height 85px
       background-color rgba($white, 0.1)
       transition 100ms linear
-    &-title
-      margin-top 0.25rem
+
+    .sidebar__section-title
+      margin-top 0.2rem
       set-type-size('root')
       font-weight bold
-    &-prose
+    .sidebar__section-prose
       font-family $sans-display
       set-type-size('small')
       margin 0.25rem 0
