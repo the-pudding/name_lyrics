@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style type="text/css">
+@font-face {
+font-family: octicons-link;
+src: url(data:font/woff;charset=utf-8;base64,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) format('woff');
+}
+body {
+-webkit-text-size-adjust: 100%;
+text-size-adjust: 100%;
+color: #333;
+font-family: "Helvetica Neue", Helvetica, "Segoe UI", Arial, freesans, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+font-size: 16px;
+line-height: 1.6;
+word-wrap: break-word;
+}
+a {
+background-color: transparent;
+}
+a:active,
+a:hover {
+outline: 0;
+}
+strong {
+font-weight: bold;
+}
+h1 {
+font-size: 2em;
+margin: 0.67em 0;
+}
+img {
+border: 0;
+}
+hr {
+box-sizing: content-box;
+height: 0;
+}
+pre {
+overflow: auto;
+}
+code,
+kbd,
+pre {
+font-family: monospace, monospace;
+font-size: 1em;
+}
+input {
+color: inherit;
+font: inherit;
+margin: 0;
+}
+html input[disabled] {
+cursor: default;
+}
+input {
+line-height: normal;
+}
+input[type="checkbox"] {
+box-sizing: border-box;
+padding: 0;
+}
+table {
+border-collapse: collapse;
+border-spacing: 0;
+}
+td,
+th {
+padding: 0;
+}
+* {
+box-sizing: border-box;
+}
+input {
+font: 13px / 1.4 Helvetica, arial, nimbussansl, liberationsans, freesans, clean, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
+a {
+color: #4078c0;
+text-decoration: none;
+}
+a:hover,
+a:active {
+text-decoration: underline;
+}
+hr {
+height: 0;
+margin: 15px 0;
+overflow: hidden;
+background: transparent;
+border: 0;
+border-bottom: 1px solid #ddd;
+}
+hr:before {
+display: table;
+content: "";
+}
+hr:after {
+display: table;
+clear: both;
+content: "";
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 15px;
+margin-bottom: 15px;
+line-height: 1.1;
+}
+h1 {
+font-size: 30px;
+}
+h2 {
+font-size: 21px;
+}
+h3 {
+font-size: 16px;
+}
+h4 {
+font-size: 14px;
+}
+h5 {
+font-size: 12px;
+}
+h6 {
+font-size: 11px;
+}
+blockquote {
+margin: 0;
+}
+ul,
+ol {
+padding: 0;
+margin-top: 0;
+margin-bottom: 0;
+}
+ol ol,
+ul ol {
+list-style-type: lower-roman;
+}
+ul ul ol,
+ul ol ol,
+ol ul ol,
+ol ol ol {
+list-style-type: lower-alpha;
+}
+dd {
+margin-left: 0;
+}
+code {
+font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+font-size: 12px;
+}
+pre {
+margin-top: 0;
+margin-bottom: 0;
+font: 12px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+}
+.select::-ms-expand {
+opacity: 0;
+}
+.octicon {
+font: normal normal normal 16px/1 octicons-link;
+display: inline-block;
+text-decoration: none;
+text-rendering: auto;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+}
+.octicon-link:before {
+content: '\f05c';
+}
+.markdown-body:before {
+display: table;
+content: "";
+}
+.markdown-body:after {
+display: table;
+clear: both;
+content: "";
+}
+.markdown-body>*:first-child {
+margin-top: 0 !important;
+}
+.markdown-body>*:last-child {
+margin-bottom: 0 !important;
+}
+a:not([href]) {
+color: inherit;
+text-decoration: none;
+}
+.anchor {
+display: inline-block;
+padding-right: 2px;
+margin-left: -18px;
+}
+.anchor:focus {
+outline: none;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin-top: 1em;
+margin-bottom: 16px;
+font-weight: bold;
+line-height: 1.4;
+}
+h1 .octicon-link,
+h2 .octicon-link,
+h3 .octicon-link,
+h4 .octicon-link,
+h5 .octicon-link,
+h6 .octicon-link {
+color: #000;
+vertical-align: middle;
+visibility: hidden;
+}
+h1:hover .anchor,
+h2:hover .anchor,
+h3:hover .anchor,
+h4:hover .anchor,
+h5:hover .anchor,
+h6:hover .anchor {
+text-decoration: none;
+}
+h1:hover .anchor .octicon-link,
+h2:hover .anchor .octicon-link,
+h3:hover .anchor .octicon-link,
+h4:hover .anchor .octicon-link,
+h5:hover .anchor .octicon-link,
+h6:hover .anchor .octicon-link {
+visibility: visible;
+}
+h1 {
+padding-bottom: 0.3em;
+font-size: 2.25em;
+line-height: 1.2;
+border-bottom: 1px solid #eee;
+}
+h1 .anchor {
+line-height: 1;
+}
+h2 {
+padding-bottom: 0.3em;
+font-size: 1.75em;
+line-height: 1.225;
+border-bottom: 1px solid #eee;
+}
+h2 .anchor {
+line-height: 1;
+}
+h3 {
+font-size: 1.5em;
+line-height: 1.43;
+}
+h3 .anchor {
+line-height: 1.2;
+}
+h4 {
+font-size: 1.25em;
+}
+h4 .anchor {
+line-height: 1.2;
+}
+h5 {
+font-size: 1em;
+}
+h5 .anchor {
+line-height: 1.1;
+}
+h6 {
+font-size: 1em;
+color: #777;
+}
+h6 .anchor {
+line-height: 1.1;
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table,
+pre {
+margin-top: 0;
+margin-bottom: 16px;
+}
+hr {
+height: 4px;
+padding: 0;
+margin: 16px 0;
+background-color: #e7e7e7;
+border: 0 none;
+}
+ul,
+ol {
+padding-left: 2em;
+}
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+margin-top: 0;
+margin-bottom: 0;
+}
+li>p {
+margin-top: 16px;
+}
+dl {
+padding: 0;
+}
+dl dt {
+padding: 0;
+margin-top: 16px;
+font-size: 1em;
+font-style: italic;
+font-weight: bold;
+}
+dl dd {
+padding: 0 16px;
+margin-bottom: 16px;
+}
+blockquote {
+padding: 0 15px;
+color: #777;
+border-left: 4px solid #ddd;
+}
+blockquote>:first-child {
+margin-top: 0;
+}
+blockquote>:last-child {
+margin-bottom: 0;
+}
+table {
+display: block;
+width: 100%;
+overflow: auto;
+word-break: normal;
+word-break: keep-all;
+}
+table th {
+font-weight: bold;
+}
+table th,
+table td {
+padding: 6px 13px;
+border: 1px solid #ddd;
+}
+table tr {
+background-color: #fff;
+border-top: 1px solid #ccc;
+}
+table tr:nth-child(2n) {
+background-color: #f8f8f8;
+}
+img {
+max-width: 100%;
+box-sizing: content-box;
+background-color: #fff;
+}
+code {
+padding: 0;
+padding-top: 0.2em;
+padding-bottom: 0.2em;
+margin: 0;
+font-size: 85%;
+background-color: rgba(0,0,0,0.04);
+border-radius: 3px;
+}
+code:before,
+code:after {
+letter-spacing: -0.2em;
+content: "\00a0";
+}
+pre>code {
+padding: 0;
+margin: 0;
+font-size: 100%;
+word-break: normal;
+white-space: pre;
+background: transparent;
+border: 0;
+}
+.highlight {
+margin-bottom: 16px;
+}
+.highlight pre,
+pre {
+padding: 16px;
+overflow: auto;
+font-size: 85%;
+line-height: 1.45;
+background-color: #f7f7f7;
+border-radius: 3px;
+}
+.highlight pre {
+margin-bottom: 0;
+word-break: normal;
+}
+pre {
+word-wrap: normal;
+}
+pre code {
+display: inline;
+max-width: initial;
+padding: 0;
+margin: 0;
+overflow: initial;
+line-height: inherit;
+word-wrap: normal;
+background-color: transparent;
+border: 0;
+}
+pre code:before,
+pre code:after {
+content: normal;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font-size: 11px;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.pl-c {
+color: #969896;
+}
+.pl-c1,
+.pl-s .pl-v {
+color: #0086b3;
+}
+.pl-e,
+.pl-en {
+color: #795da3;
+}
+.pl-s .pl-s1,
+.pl-smi {
+color: #333;
+}
+.pl-ent {
+color: #63a35c;
+}
+.pl-k {
+color: #a71d5d;
+}
+.pl-pds,
+.pl-s,
+.pl-s .pl-pse .pl-s1,
+.pl-sr,
+.pl-sr .pl-cce,
+.pl-sr .pl-sra,
+.pl-sr .pl-sre {
+color: #183691;
+}
+.pl-v {
+color: #ed6a43;
+}
+.pl-id {
+color: #b52a1d;
+}
+.pl-ii {
+background-color: #b52a1d;
+color: #f8f8f8;
+}
+.pl-sr .pl-cce {
+color: #63a35c;
+font-weight: bold;
+}
+.pl-ml {
+color: #693a17;
+}
+.pl-mh,
+.pl-mh .pl-en,
+.pl-ms {
+color: #1d3e81;
+font-weight: bold;
+}
+.pl-mq {
+color: #008080;
+}
+.pl-mi {
+color: #333;
+font-style: italic;
+}
+.pl-mb {
+color: #333;
+font-weight: bold;
+}
+.pl-md {
+background-color: #ffecec;
+color: #bd2c00;
+}
+.pl-mi1 {
+background-color: #eaffea;
+color: #55a532;
+}
+.pl-mdr {
+color: #795da3;
+font-weight: bold;
+}
+.pl-mo {
+color: #1d3e81;
+}
+kbd {
+display: inline-block;
+padding: 3px 5px;
+font: 11px Consolas, "Liberation Mono", Menlo, Courier, monospace;
+line-height: 10px;
+color: #555;
+vertical-align: middle;
+background-color: #fcfcfc;
+border: solid 1px #ccc;
+border-bottom-color: #bbb;
+border-radius: 3px;
+box-shadow: inset 0 -1px 0 #bbb;
+}
+.task-list-item {
+list-style-type: none;
+}
+.task-list-item+.task-list-item {
+margin-top: 3px;
+}
+.task-list-item input {
+margin: 0 0.35em 0.25em -1.6em;
+vertical-align: middle;
+}
+:checked+.radio-label {
+z-index: 1;
+position: relative;
+border-color: #4078c0;
+}
+.sourceLine {
+display: inline-block;
+}
+code .kw { color: #000000; }
+code .dt { color: #ed6a43; }
+code .dv { color: #009999; }
+code .bn { color: #009999; }
+code .fl { color: #009999; }
+code .ch { color: #009999; }
+code .st { color: #183691; }
+code .co { color: #969896; }
+code .ot { color: #0086b3; }
+code .al { color: #a61717; }
+code .fu { color: #63a35c; }
+code .er { color: #a61717; background-color: #e3d2d2; }
+code .wa { color: #000000; }
+code .cn { color: #008080; }
+code .sc { color: #008080; }
+code .vs { color: #183691; }
+code .ss { color: #183691; }
+code .im { color: #000000; }
+code .va {color: #008080; }
+code .cf { color: #000000; }
+code .op { color: #000000; }
+code .bu { color: #000000; }
+code .ex { color: #000000; }
+code .pp { color: #999999; }
+code .at { color: #008080; }
+code .do { color: #969896; }
+code .an { color: #008080; }
+code .cv { color: #008080; }
+code .in { color: #008080; }
+</style>
+<style>
+body {
+  box-sizing: border-box;
+  min-width: 200px;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 45px;
+  padding-top: 0px;
+}
+</style>
+
+</head>
+
+<body>
+
+<p>This folder contains all of the data used in The Pudding essay <a href="https://pudding.cool">My Awesome Essay</a> published in February 2018.</p>
+<p>This file was last updated: May 16, 2019</p>
+<h2 id="allnamescsv--allnamesr">allNames.csv &amp; allNames.R</h2>
+<ul>
+<li><p><code>allNames.R</code>: The script used to process a file of song lyrics (that, due to copyright issues we can’t release), to create <code>allNames.csv</code>. Some manual cleaning was conducted on the data, as described below.</p></li>
+<li><p><code>allNames.csv</code>: The data, as described below</p>
+<ul>
+<li><strong>What is this?</strong>: A file containing each line of song lyrics in which a name was found</li>
+<li><strong>Source(s) &amp; Methods</strong>: All songs used in this analysis were on the US Billboard Hot 100 list at least once since the chart’s inception in 1958. Song lyrics were obtained primarily through MetroLyrics. Many thanks to Colin Morris for providing lyric data for songs popular prior to 2017 (used in his project on repetition in pop music). Since these lyrics are user submitted, it is possibly (and even likely) that there are spelling errors that I was unable to compensate for. Over 15,000 songs that met the above criteria were analyzed, and of those, 5,195 contained a name (as defined below). To identify names in song lyrics, I used US national-level baby name data from the Social Security Administration (downloaded from Kaggle). Since there were over 93,000 names in this dataset, I limited my search to just those names that have been used as names at least 5,000 times since the 1950’s. This resulted in 3,607 names. I then searched through the song lyrics for any instance of any name in this dataset. Using the R package udpipe, I tagged each name with a part of speech to eliminate uses of words that were used as verbs (e.g., Will the person vs. “I will do something”) or adjectives (e.g., “baby girl”). I intended to retain only names tagged as proper nouns, but since song lyrics are not always grammatically correct, part of speech tagging can be inaccurate. Thus, I also manually checked the data, removing instances of names that were not being used as proper nouns. There were a few other manual corrections made. Last names presented as surnames (e.g., “Kennedy” in “John F. Kennedy”) were removed, but if the surname stood on its own (e.g. “I am the realest since Kennedy”) it could have been referring to a first name, so it was retained. Names that appeared to refer to a non-person (e.g., places, brands, drug references, colors, seasons, etc.) have been denoted in the <code>nonPerson</code> column. Double word names (e.g., Barbara Ann) were adjusted manually to count as a single entity rather than counting as “Barbara” and “Ann”.</li>
+<li><strong>Last Modified</strong>: May 16, 2019</li>
+<li><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></li>
+<li><strong>Spatial Applicability</strong>: Based on United States Billboard Rankings</li>
+<li><strong>Temporal Applicability</strong>: Songs that made it to Billboard Hot 100 between 1958 and April 2019.</li>
+<li><strong>Observations (Rows)</strong>: There are 20626 rows in this dataset. Each row represents a single line in a song.</li>
+<li><strong>Variables (Columns)</strong>: There are 8 columns in this dataset. They are described below:</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">artist</td>
+<td align="left">The name of the artist (including featured artists)</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">song</td>
+<td align="left">Song Title</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">sentence</td>
+<td align="left">The line of song lyrics that contained a name</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">highestRank</td>
+<td align="left">The highest rank this song hit on the Billboard Hot 100 Charts</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">year</td>
+<td align="left">The earliest year that this song was on the charts</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">nonPerson</td>
+<td align="left">Whether or not this name likely refers to a non-person (for instance, “Molly” is a name, but often also a drug reference). <code>NA</code> indicates that the name was manually determined to most likely refer to a person.</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">name</td>
+<td align="left">Name detected in the lyrics</td>
+<td align="left">character</td>
+</tr>
+</tbody>
+</table>
+<h2 id="letterscsv">letters.csv</h2>
+<ul>
+<li><p><code>letters.R</code>: The script used to process a file of lyrics (<code>allNames.csv</code>) that include a name. This dataset was derived from <code>allNames.csv</code>, so refer to that file’s <code>Source</code> field for more information on how this data was collected. These data were used in the “Lettering” section of the “Sing My Name” Pudding story.</p></li>
+<li><p><code>letters.csv</code>: The data, as described below</p>
+<ul>
+<li><strong>What is this?</strong>: The difference between usage of the first and last letters of names as used in song lyrics and in society.</li>
+</ul></li>
+<li><p><strong>Source(s) &amp; Methods</strong>: See the <code>Source(s) &amp; Methods</code> section of <code>allNames.csv</code> for more information. Calculated as the difference between the percentage of names mentioned in at least one song that starts or ends with a letter and the percentage of names that have been used as names in the US at least 5,000 times since 1950 that start or end with that letter.</p></li>
+<li><p><strong>Last Modified</strong>: May 16, 2019</p></li>
+<li><p><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></p></li>
+<li><p><strong>Spatial Applicability</strong>: Based on United States Billboard Rankings</p></li>
+<li><p><strong>Temporal Applicability</strong>: Songs that made it to Billboard Hot 100 between 1958 and April 2019.</p></li>
+<li><p><strong>Observations (Rows)</strong>: There are 102 rows in this dataset. Each row represents a letter and associated condition, both as a first or last letter in a name, and when names are only those that refer to people vs. when they could refer to brands, seasons, cars, etc.</p></li>
+<li><p><strong>Variables (Columns)</strong>: There are 4 columns in this dataset. They are described below:</p></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">letter</td>
+<td align="left">A single letter of the alphabet</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">dif</td>
+<td align="left">The difference between the percentage of names that start or end with this letter in songs as compared to society. A negative value is more common in society than in songs.</td>
+<td align="left">numeric</td>
+</tr>
+<tr class="odd">
+<td align="left">position</td>
+<td align="left">Whether the letter is the first or last letter in a name</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">person</td>
+<td align="left">Whether or not the name refers to a person (if <code>FALSE</code> could refer to a brand, drug, month, season, etc.)</td>
+<td align="left">logical</td>
+</tr>
+</tbody>
+</table>
+<h2 id="onlynamescsv">onlyNames.csv</h2>
+<ul>
+<li><strong>What is this?</strong>: Names that, according to the Social Security Administration, have been used in the US at least 5,000 times since the 1950’s.</li>
+<li><strong>Source(s) &amp; Methods</strong>: Data was accessed from <a href="https://www.kaggle.com/kaggle/us-baby-names">Kaggle</a>, and filtered to only include years after 1950.</li>
+<li><strong>Last Modified</strong>: May 16, 2019</li>
+<li><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></li>
+<li><strong>Spatial Applicability</strong>: United States</li>
+<li><strong>Temporal Applicability</strong>: 1950 - 2014</li>
+<li><strong>Observations (Rows)</strong>: There are 3607 rows in this dataset.Each row represents a single name.</li>
+<li><strong>Variables (Columns)</strong>: There are 2 columns in this dataset. They are described below:</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">name</td>
+<td align="left">The name as spelled by the Social Security Administration</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">count</td>
+<td align="left">The number of babies born and given that name (since 1950)</td>
+<td align="left">integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="repeatscsv--repeatsr">repeats.csv &amp; repeats.R</h2>
+<ul>
+<li><p><code>repeats.R</code>: The script used to process a file of lyrics (<code>allNames.csv</code>) that include a name. This dataset was derived from <code>allNames.csv</code>, so refer to that file’s <code>Source</code> field for more information on how this data was collected. These data were used in the “Repeat Names” section of the “Sing My Name” Pudding story.</p></li>
+<li><p><code>repeats.csv</code>: The data, as described below</p>
+<ul>
+<li><strong>What is this?</strong>: A dataset of the most popular name mentioned in over 15,000 top songs</li>
+<li><strong>Source(s) &amp; Methods</strong>: See the <code>Source(s) &amp; Methods</code> section of <code>allNames.csv</code> for more information.</li>
+<li><strong>Last Modified</strong>: May 16, 2019</li>
+<li><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></li>
+<li><strong>Spatial Applicability</strong>: Based on United States Billboard Rankings</li>
+<li><strong>Temporal Applicability</strong>: Songs that made it to Billboard Hot 100 between 1958 and April 2019.</li>
+<li><strong>Observations (Rows)</strong>: There are 5946 rows in this dataset. Each row represents a single song.</li>
+<li><strong>Variables (Columns)</strong>: There are 5 columns in this dataset. They are described below:</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">artist</td>
+<td align="left">The artist of the song</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">song</td>
+<td align="left">Song title</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">person</td>
+<td align="left">Whether or not a name likely represents a person (if <code>FALSE</code> the name may be referencing a drug, brand, month etc.)</td>
+<td align="left">logical</td>
+</tr>
+<tr class="even">
+<td align="left">name</td>
+<td align="left">The most popular name detected in the song</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">n</td>
+<td align="left">The count of times that the name is used in the song</td>
+<td align="left">integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="timeless_namescsv">timeless_names.csv</h2>
+<ul>
+<li><p><code>timeless_names.R</code>: The script used to process a file of lyrics (<code>allNames.csv</code>) that include a name. This dataset was derived from <code>allNames.csv</code>, so refer to that file’s <code>Source</code> field for more information on how this data was collected. These data were used in the “Timeless Names” section of the “Sing My Name” Pudding story.</p></li>
+<li><p><code>timeless_names.csv</code>: The data, as described below</p>
+<ul>
+<li><strong>What is this?</strong>: Dataset giving the top 10 names per decade (based on number of songs that use the name)</li>
+<li><strong>Source(s) &amp; Methods</strong>: See the <code>Source(s) &amp; Methods</code> section of <code>allNames.csv</code> for more information.</li>
+<li><strong>Last Modified</strong>: May 16, 2019</li>
+<li><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></li>
+<li><strong>Spatial Applicability</strong>: Based on United States Billboard Rankings</li>
+<li><strong>Temporal Applicability</strong>: Songs that made it to Billboard Hot 100 between 1958 and April 2019.</li>
+<li><strong>Observations (Rows)</strong>: There are 120 rows in this dataset. Each row represents a single name &amp; condition. That is, “Molly”, may show up twice in a single decade if it is used at least once to refer to a person and also to refer to a drug. The usage is distinguishable by the <code>person</code> column.</li>
+<li><strong>Variables (Columns)</strong>: There are 5 columns in this dataset. They are described below:</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">decade</td>
+<td align="left">The earlist decade that the song appeared on the Billboard Hot 100 (starting in the 1960’s)</td>
+<td align="left">numeric</td>
+</tr>
+<tr class="even">
+<td align="left">name</td>
+<td align="left">The name identified in the song lyrics</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">n</td>
+<td align="left">The count of songs that included each name in a decade</td>
+<td align="left">integer</td>
+</tr>
+<tr class="even">
+<td align="left">rank</td>
+<td align="left">The numeric rank (1-10) of this name’s popularity per decade</td>
+<td align="left">integer</td>
+</tr>
+<tr class="odd">
+<td align="left">person</td>
+<td align="left">Whether or not the name refers to a person (if <code>FALSE</code> could refer to a brand, drug, month, season, etc.)</td>
+<td align="left">logical</td>
+</tr>
+</tbody>
+</table>
+<h2 id="unique_by_artistcsv--unique_by_artistr">unique_by_artist.csv &amp; unique_by_artist.R</h2>
+<ul>
+<li><p><code>unique_by_artist.R</code>: The script used to process a file of lyrics (<code>allNames.csv</code>) that include a name. This dataset was derived from <code>allNames.csv</code>, so refer to that file’s <code>Source</code> field for more information on how this data was collected. These data were used in the “Unique Names” section of the “Sing My Name” Pudding story.</p></li>
+<li><p><code>unique_by_artist.csv</code>: The data, as described below</p>
+<ul>
+<li><strong>What is this?</strong>: A dataset showing the count of unique names used by each artist</li>
+<li><strong>Source(s) &amp; Methods</strong>: See the <code>Source(s) &amp; Methods</code> section of <code>allNames.csv</code> for more information.</li>
+<li><strong>Last Modified</strong>: May 16, 2019</li>
+<li><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></li>
+<li><strong>Spatial Applicability</strong>: Based on United States Billboard Rankings</li>
+<li><strong>Temporal Applicability</strong>: Songs that made it to Billboard Hot 100 between 1958 and April 2019.</li>
+<li><strong>Observations (Rows)</strong>: There are 8771 rows in this dataset. Each row represents one name, usage, and artist combination. That is, “Molly”, may show up twice in a single artist’s repertoire if it is used at least once to refer to a person and also to refer to a drug.</li>
+<li><strong>Variables (Columns)</strong>: There are 5 columns in this dataset. They are described below:</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">artist</td>
+<td align="left">Name of the song’s artist</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">person</td>
+<td align="left">Whether or not the name refers to a person (if <code>FALSE</code> could refer to a brand, drug, month, season, etc.)</td>
+<td align="left">logical</td>
+</tr>
+<tr class="odd">
+<td align="left">name</td>
+<td align="left">The name of the person identified in a song</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">names</td>
+<td align="left">The count of songs that use this name (by a specific artist)</td>
+<td align="left">integer</td>
+</tr>
+<tr class="odd">
+<td align="left">songs</td>
+<td align="left">The total number of songs by that artist in our database.</td>
+<td align="left">integer</td>
+</tr>
+</tbody>
+</table>
+<h2 id="uniquecsv--uniquer">unique.csv &amp; unique.R</h2>
+<ul>
+<li><p><code>unique.R</code>: The script used to process a file of lyrics (<code>allNames.csv</code>) that include a name. This dataset was derived from <code>allNames.csv</code>, so refer to that file’s <code>Source</code> field for more information on how this data was collected. These data were used in the “Unique Names” &amp; “Popular Names” sections of the “Sing My Name” Pudding story.</p></li>
+<li><p><code>unique.csv</code>: The data, as described below</p>
+<ul>
+<li><strong>What is this?</strong>: Dataset representing the unique names used in each song.</li>
+<li><strong>Source(s) &amp; Methods</strong>: See the <code>Source(s) &amp; Methods</code> section of <code>allNames.csv</code> for more information.</li>
+<li><strong>Last Modified</strong>: May 16, 2019</li>
+<li><strong>Contact Information</strong>: <a href="mailto:amber@pudding.cool">Amber Thomas</a></li>
+<li><strong>Spatial Applicability</strong>: Based on United States Billboard Rankings</li>
+<li><strong>Temporal Applicability</strong>: Songs that made it to Billboard Hot 100 between 1958 and April 2019.</li>
+<li><strong>Observations (Rows)</strong>: There are 9785 rows in this dataset. Each row represents one name &amp; usage combination in each individual song. That is, “Molly”, may show up twice in a single song if it is used at least once to refer to a person and also to refer to a drug.</li>
+<li><strong>Variables (Columns)</strong>: There are 7 columns in this dataset. They are described below:</li>
+</ul></li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Header</th>
+<th align="left">Description</th>
+<th align="left">Data Type</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">artist</td>
+<td align="left">Name of the song’s artist</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">name</td>
+<td align="left">The person’s name identified in the song</td>
+<td align="left">character</td>
+</tr>
+<tr class="odd">
+<td align="left">song</td>
+<td align="left">Song title</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">person</td>
+<td align="left">Whether or not the name likely refers to a person (if <code>FALSE</code> may refer to a drug, month, brand, car etc.)</td>
+<td align="left">logical</td>
+</tr>
+<tr class="odd">
+<td align="left">sentence</td>
+<td align="left">An example of the lyrics used in a song when mentioning the name</td>
+<td align="left">character</td>
+</tr>
+<tr class="even">
+<td align="left">year</td>
+<td align="left">The earliest year that the song appeared on the Billboard Hot 100</td>
+<td align="left">numeric</td>
+</tr>
+<tr class="odd">
+<td align="left">highestRank</td>
+<td align="left">The highest rank that the song reached on the Billboard Hot 100</td>
+<td align="left">numeric</td>
+</tr>
+</tbody>
+</table>
+<h2 id="session-info">Session Info</h2>
+<pre><code>## ─ Session info ──────────────────────────────────────────────────────────
+##  setting  value                       
+##  version  R version 3.4.4 (2018-03-15)
+##  os       macOS  10.14.4              
+##  system   x86_64, darwin15.6.0        
+##  ui       RStudio                     
+##  language (EN)                        
+##  collate  en_US.UTF-8                 
+##  ctype    en_US.UTF-8                 
+##  tz       America/Los_Angeles         
+##  date     2019-05-16                  
+## 
+## ─ Packages ──────────────────────────────────────────────────────────────
+##  package     * version    date       lib
+##  assertthat    0.2.1      2019-03-21 [1]
+##  backports     1.1.4      2019-04-10 [1]
+##  callr         3.1.1      2018-12-21 [1]
+##  cli           1.1.0      2019-03-19 [1]
+##  crayon        1.3.4      2017-09-16 [1]
+##  curl          3.3        2019-01-10 [1]
+##  desc          1.2.0      2019-05-08 [1]
+##  devtools      2.0.2      2019-04-08 [1]
+##  digest        0.6.18     2018-10-10 [1]
+##  dplyr         0.8.0.1    2019-02-15 [1]
+##  evaluate      0.13       2019-02-12 [1]
+##  fs            1.3.1      2019-05-06 [1]
+##  glue          1.3.1.9000 2019-05-09 [1]
+##  here          0.1        2017-05-28 [1]
+##  htmltools     0.3.6      2017-04-28 [1]
+##  knitr         1.22.10    2019-05-16 [1]
+##  magrittr      1.5        2014-11-22 [1]
+##  memoise       1.1.0      2017-04-21 [1]
+##  packrat       0.5.0      2018-11-14 [1]
+##  pillar        1.4.0      2019-05-11 [1]
+##  pkgbuild      1.0.2      2018-10-16 [1]
+##  pkgconfig     2.0.2      2018-08-16 [1]
+##  pkgload       1.0.2      2018-10-29 [1]
+##  prettyunits   1.0.2      2015-07-13 [1]
+##  processx      3.3.0      2019-03-10 [1]
+##  ps            1.3.0      2018-12-21 [1]
+##  puddingR    * 0.0.0.9000 2019-05-17 [1]
+##  purrr         0.3.2      2019-03-15 [1]
+##  R6            2.4.0      2019-02-14 [1]
+##  Rcpp          1.0.1      2019-03-17 [1]
+##  remotes       2.0.2      2018-10-30 [1]
+##  rlang         0.3.4      2019-04-07 [1]
+##  rmarkdown     1.12       2019-03-14 [1]
+##  rprojroot     1.3-2      2018-01-03 [1]
+##  rstudioapi    0.10       2019-03-19 [1]
+##  sessioninfo   1.1.1      2018-11-05 [1]
+##  stringi       1.4.3      2019-03-12 [1]
+##  stringr       1.4.0      2019-02-10 [1]
+##  testthat      2.0.0      2017-12-13 [1]
+##  tibble        2.1.1      2019-03-16 [1]
+##  tidyselect    0.2.5      2018-10-11 [1]
+##  usethis       1.5.0      2019-04-07 [1]
+##  withr         2.1.2      2018-03-15 [1]
+##  xfun          0.7        2019-05-14 [1]
+##  yaml          2.2.0      2018-07-25 [1]
+##  source                               
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.1)                       
+##  CRAN (R 3.4.4)                       
+##  Github (r-lib/desc@c860e7b)          
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  Github (tidyverse/glue@ea0edcb)      
+##  CRAN (R 3.4.0)                       
+##  CRAN (R 3.4.0)                       
+##  Github (yihui/knitr@97e3d80)         
+##  CRAN (R 3.4.0)                       
+##  CRAN (R 3.4.0)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.0)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  Github (the-pudding/puddingR@63e3315)
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.3)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.3)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+##  CRAN (R 3.4.4)                       
+## 
+## [1] /Library/Frameworks/R.framework/Versions/3.4/Resources/library
+</code></pre>
+
+</body>
+</html>

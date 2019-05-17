@@ -15,7 +15,7 @@ Ok, so now we have data on all the names found in x top songs from Billboard's H
 
 We'll start with loading some necessary packages. 
 
-```{r}
+```{r load_packages}
 library(tidyverse)
 library(here)
 library(gender)
@@ -84,21 +84,23 @@ allNames <- rbind(allMinusChosen, manualNameSongs)
 
 Most of the processing has already been done, but we can limit our results to just names that were identified as Proper Nouns either manually or programmatically. We also need to remove last names, and substitute double names (like "Barbara Ann" or "Mary Sue") with the single names tagged by the system.  
 
-```{r}
+```{r defining_proper}
 proper <- allNames %>% 
   mutate(manualPOS = ifelse(is.na(posCorrection), upos, posCorrection),
          manualName = ifelse(is.na(compound), name, compound)) %>% 
   filter(manualPOS == "PROPN",
          is.na(last)) %>% 
   select(-c(name)) %>% 
-  rename(name = manualName)
+  rename(name = manualName,
+         nonPerson = NaP) %>% 
+  select(-c("upos", "xpos", "dep_rel", "posCorrection", "last", "compound", "manualPOS"))
 ```
 
 Let's also split out our data, to just names, and names that could include other things (brands, drugs, cities, etc.)
 
-```{r}
+```{r defining_justnames}
 justNames <- proper %>% 
-  filter(is.na(NaP))
+  filter(is.na(nonPerson))
 ```
 
 ## Exploration
@@ -107,7 +109,7 @@ justNames <- proper %>%
 
 Alright, let's start simple. What are the most common names used overall? 
 
-```{r}
+```{r defining_common}
 common <- justNames %>% 
   count(name, sort = TRUE)
 
@@ -199,21 +201,20 @@ repeats
 ```
 Let's find the single song with the most mentions of every name.
 
-```{r}
+```{r repeat_names}
 repeatInd <- proper %>% 
-  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  # add a column to denote whether or not the name is likely reffering to a person
+  mutate(person = ifelse(is.na(nonPerson), TRUE, FALSE)) %>% 
   group_by(artist, song, person) %>% 
+  # count the number of times a name was used inside a song
   count(name, sort = TRUE) %>% 
+  # Keep only the top name per song
   mutate(row = row_number()) %>% 
   filter(row == 1) %>%  
   select(-row) %>% 
-  ungroup() %>% 
-  group_by(person, name) %>% 
-  arrange(desc(n)) %>% 
-  mutate(row = row_number()) %>% 
-  filter(row == 1) %>% 
-  select(-row)
-
+  ungroup() 
+```
+```{r}
 write.csv(repeatInd, "../src/assets/data/repeats.csv", row.names = FALSE)
   
 ```
@@ -244,51 +245,76 @@ unNameOut <- proper %>%
 write.csv(unNameOut, "../src/assets/data/unique.csv", row.names = FALSE)
 ```
 
-```{r}
+```{r output_popular}
+# Export just the distinct names mentioned by artists per song
 byNameOut <-  proper %>% 
-  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  # add column which indicates if a name represents a person or something else
+  mutate(person = ifelse(is.na(nonPerson), TRUE, FALSE)) %>% 
+  # find distinct names mentioned by an artist in each song
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
+  # remove any excess white space around the names
   mutate(name = trimws(name)) %>% 
+  # filter out this R.Kelly song
   filter(song != "She's Got That Vibe") %>% 
-  select(c("artist", "name", "song", "person", "sentence", "year", "highestRank"))
+  # keep only
+  select(c("artist", "name", "song", "person", "sentence", "year", "highestRank")) %>% 
+  ungroup()
+```
 
+```{r}
 write.csv(byNameOut, "../src/assets/data/popular.csv", row.names = FALSE)
 ```
 
 
 
-```{r}
+```{r name_per_artist}
+# Find the number of songs that each artist uses a name in
 unNameArtist <- proper %>% 
-  mutate(person = ifelse(is.na(NaP), TRUE, FALSE)) %>% 
+  # create column indicating if name refers to a person or not
+  mutate(person = ifelse(is.na(nonPerson), TRUE, FALSE)) %>% 
+  # keep all names used distinctly by the artist in each song
   group_by(artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
+  # count the number of songs that contain each name 
   group_by(artist, person, name) %>% 
   summarise(n = n()) 
+```
 
-#write.csv(unNameArtist, "../src/assets/data/artist.csv", row.names = FALSE)
+```{r songs_per_artist}
+# Find the number of songs each artist has that contain names (regardless of usage)
+artistLookupAll <- proper %>% 
+  group_by(artist) %>% 
+  # Find just unique songs by that artist
+  distinct(song) %>% 
+  # Count how many there are
+  summarise(count = n()) %>% 
+  # Add a column indicating that the name could refer to people & non-people
+  mutate(person = FALSE)
+
+# Find the number of songs each artist has that contain names (that represent people only)
+artistLookup<- proper %>% 
+  # Filter names not used to represent a person
+  filter(is.na(nonPerson)) %>% 
+  group_by(artist) %>% 
+  # Find just unique songs by that artist
+  distinct(song) %>% 
+  # Count how many there are
+  summarise(count = n()) %>% 
+  # add a column indicating that the names are only people
+  mutate(person = TRUE)
+
+# Combine the above data frames by row
+allLookup <- rbind(artistLookup, artistLookupAll)
+
+# Bind with our count of name mentions per artist
+unNameArtistLookup <- unNameArtist %>% 
+  left_join(allLookup) %>% 
+  # Change the column names
+  rename(names = n, songs = count)
 ```
 
 ```{r}
-artistLookupAll <- proper %>% 
-  group_by(artist) %>% 
-  distinct(song) %>% 
-  summarise(count = n()) %>% 
-  mutate(person = FALSE)
-
-artistLookup<- justNames %>% 
-  group_by(artist) %>% 
-  distinct(song) %>% 
-  summarise(count = n()) %>% 
-  mutate(person = TRUE)
-
-allLookup <- rbind(artistLookup, artistLookupAll)
-
-unNameArtistLookup <- unNameArtist %>% 
-  left_join(allLookup) %>% 
-  rename(names = n, songs = count)
-
-
 write.csv(unNameArtistLookup, "../src/assets/data/artist.csv", row.names = FALSE)
 ```
 
@@ -314,7 +340,9 @@ ggplot(firstLetter, aes(x = first, y = n)) + geom_bar(stat = "identity")
 How does this compare to the Social Security name data that we have? 
 
 ```{r}
-onlyNames <- read.csv(here::here("processed_data", "onlyNames.csv"), header = TRUE, stringsAsFactors = FALSE)
+onlyNames <- read.csv(here::here("processed_data", "onlyNames.csv"), header = TRUE, stringsAsFactors = FALSE) 
+
+onlyNamesClean <- onlyNames %>% rename(name = Name)
 
 onlyNameLetter <- onlyNames %>% 
   mutate(first = str_sub(Name, 1, 1)) %>% 
@@ -337,6 +365,80 @@ firstLettersAll <- rbind(onlyNameLetter, firstLetterPercent)
 ggplot(firstLettersAll, aes(x = first, y = percent, group = group, fill = group)) + geom_bar(stat = "identity", position = "dodge")
 ```
 Huh, names starting with B, C, P, R, and S are quite a bit more popular in songs than in the actual country. A names and D names are slightly less common and K and L names are wayyy less common in songs than in the country.
+
+
+```{r names_function}
+findLetters <- function(data, position, condition){
+  data %>% 
+    # find either first or last letter, depending on position argument
+    mutate(letter = case_when(
+      position == "first" ~ str_sub(name, 1, 1),
+      position == "last" ~ str_sub(name, -1 ,-1)
+    )) %>% 
+    # Create new column with position information
+    mutate(position = position) %>% 
+    # Find all of the distinct names
+    distinct(name, .keep_all = TRUE) %>% 
+    ungroup() %>% 
+    # count all the names that start or end with each letter
+    count(letter, sort = TRUE) %>% 
+    # calculate percent of names from the condition that start or end
+    # the same way
+    mutate(percent = case_when(
+      condition == "song" ~ (n / nrow(common)) * 100,
+      condition == "society" ~ (n / nrow(onlyNames) * 100)
+    ),
+    group = condition
+    )
+}
+```
+
+
+```{r compare_conditions}
+compareConditions <- function(songCondition, societyCondition, person, position){
+  # combine song and society conditions
+  all <- rbind(songCondition, societyCondition) %>% 
+    # remove the count column
+    select(-n) %>% 
+    # convert our long data to wide
+    spread(group, percent) %>% 
+    # calculate percentage difference between conditions
+    mutate(dif = song - society,
+           position = position, 
+           person = person) %>% 
+    # Remove unneccessary columns
+    select(-c(society, song))
+}
+
+```
+
+```{r running_names_function}
+# Finding counts & percentages for first letters
+songFirst <- findLetters(justNames, "first", "song")
+societyFirst <- findLetters(onlyNamesClean, "first", "society")
+
+# Finding counts & percentages for last letters
+songLast <- findLetters(justNames, "last", "song")
+societyLast <- findLetters(onlyNamesClean, "last", "society")
+
+# Finding counts of names in songs for non-people
+songFirstNP <- findLetters(proper, "first", "song")
+songLastNP <- findLetters(proper, "last", "song") 
+
+
+# Combine the song starting letters with the society starting letters
+allFirst <- compareConditions(songFirst, societyFirst, TRUE, "first")
+allLast <- compareConditions(songLast, societyLast, TRUE, "last")
+allFirstNP <- compareConditions(songFirstNP, societyFirst, FALSE, "first")
+allLastNP <- compareConditions(songLastNP, societyLast, FALSE, "last")
+
+# Combine all results
+allLetters <- rbind(allFirst, allLast, allFirstNP, allLastNP) %>% 
+  # capitalize all letters
+  mutate(letter = toupper(letter))
+  
+```
+
 
 ```{r}
 firstLetterPercent <- justNames %>% 
@@ -532,21 +634,32 @@ There are almost twice as many male names (`maleFemaleSongs[1,2]`) mentioned in 
 
 Let's take a look at the top names by decade
 
-```{r}
+```{r by_decade}
+# Find the most popular ten names per decade 
+# (only names that refer to people)
 byDecade <- justNames %>% 
+  # make sure year is read as a number, not a character
   mutate(year = as.integer(year)) %>% 
+  # calculate which decade the year fell into
   mutate(decade = year - year %% 10) %>% 
+  # Find unique names in each decade, artist, song, combination
   group_by(decade, artist, song) %>% 
   distinct(name, .keep_all = TRUE) %>% 
   ungroup() %>% 
+  # Count the number of songs include a name in each decade
   group_by(decade) %>% 
   count(name, sort = TRUE) %>% 
+  # rank each name based on its count
   mutate(rank = row_number()) %>% 
+  # Keep only the top 10
   filter(rank <= 10) %>% 
   filter(!is.na(decade)) %>% 
+  # Remove any from 1950's since the Billboard Charts started in 1958
   filter(decade != "1950") %>% 
   mutate(person = TRUE)
 
+# Find the most popular ten names per decade
+# names referring to anything 
 byDecadeAll <- proper %>% 
   mutate(year = as.integer(year)) %>% 
   mutate(decade = year - year %% 10) %>% 
@@ -561,7 +674,11 @@ byDecadeAll <- proper %>%
   filter(decade != "1950") %>% 
   mutate(person = FALSE)
 
+# Combine the above data frames
 decades <- rbind(byDecade, byDecadeAll)
+```
+
+```{r}
 
 write.csv(decades, "../src/assets/data/decade.csv", row.names = FALSE)
 

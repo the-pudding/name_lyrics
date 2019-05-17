@@ -1,0 +1,69 @@
+---
+title: "Exporting"
+author: "Amber Thomas"
+date: "5/16/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+This is all the code needed to export everything for our open data
+
+```{r}
+devtools::install_github('the-pudding/puddingR', force = TRUE)
+library(puddingR)
+```
+
+```{r}
+rmd <- here::here("topSongExploration.Rmd")
+
+# export full datafile with codebook (no scripts needed)
+puddingR::export_data(proper, "allNames", na = "NA", location = "open", codebook = TRUE)
+
+# export scripts that analyzed lyrics to arrive at the allnames file
+chunks <- c("load_packages", "find_name", "check_all_names", "loop")
+puddingR::export_code(here::here("topSongs.Rmd"), toKeep = chunks, "allNames")
+```
+
+```{r}
+repeatChunks <- c("load_packages", "repeat_names")
+
+# export repeat names with codebook & scripts
+puddingR::export_data(repeatInd, "repeats", na = "NA", location = "open", codebook = TRUE, scripts = repeatChunks, scriptFile = rmd)
+```
+```{r}
+uniqueChunks <- c("load_packages", "output_popular")
+
+# export unique names with codebook & scripts
+puddingR::export_data(byNameOut, "unique", na = "NA", location = "open", codebook = TRUE, scripts = uniqueChunks, scriptFile = rmd)
+```
+```{r}
+artistChunks <- c("load_packages", "name_per_artist", "songs_per_artist")
+
+# export unique names with codebook & scripts
+puddingR::export_data(unNameArtistLookup, "unique_by_artist", na = "NA", location = "open", codebook = TRUE, scripts = artistChunks, scriptFile = rmd)
+```
+
+```{r}
+decadeChunks <- c("load_packages", "just_names", "by_decade")
+
+# export unique names with codebook & scripts
+puddingR::export_data(decades, "timeless_names", na = "NA", location = "open", codebook = TRUE, scripts = decadeChunks, scriptFile = rmd)
+```
+
+```{r}
+letterChunks <- c("load_packages", "just_names", "names_function", "compare_conditions", "running_names_function")
+
+# export unique names with codebook & scripts
+puddingR::export_data(allLetters, "letters", na = "NA", location = "open", codebook = TRUE, scripts = letterChunks, scriptFile = rmd)
+```
+```{r}
+# export only names from SSA
+puddingR::export_data(onlyNamesClean, "onlyNames", "open", na = "NA", codebook = TRUE)
+```
+```{r}
+puddingR::knit_data_readme()
+```
+
