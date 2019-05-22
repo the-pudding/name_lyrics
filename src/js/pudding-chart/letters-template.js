@@ -131,7 +131,6 @@ d3.selection.prototype.letters = function init(options) {
 			},
 			// update scales and render chart
 			render() {
-				console.log({data})
         $vizCont.selectAll('.letter-details')
           .data(data, d => {
             return d.letter
