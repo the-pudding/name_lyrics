@@ -1,7 +1,7 @@
 library(tidyverse)
 
 # accessing data from github repo
-data <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names_in_songs/allNames.csv", stringsAsFactors = FALSE, header = TRUE)
+data <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names-in-songs/allNames.csv", stringsAsFactors = FALSE, header = TRUE)
 
 # Find the number of songs that each artist uses a name in
 unNameArtist <- data %>% 

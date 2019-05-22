@@ -8,7 +8,7 @@ library(udpipe)
 
 
 # accessing data from github repo
-onlyNames <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names_in_songs/names.csv", stringsAsFactors = FALSE, header = TRUE)
+onlyNames <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names-in-songs/names.csv", stringsAsFactors = FALSE, header = TRUE)
 
 
 findName <- function(artist, song, lyrics, name){

@@ -1,10 +1,10 @@
 library(tidyverse)
 
 # accessing data from github repo
-data <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names_in_songs/allNames.csv", stringsAsFactors = FALSE, header = TRUE)
+data <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names-in-songs/allNames.csv", stringsAsFactors = FALSE, header = TRUE)
 
 # accessing names from social security administration from github repo
-onlyNames <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names_in_songs/onlyNames.csv", stringsAsFactors = FALSE, header = TRUE)
+onlyNames <- read.csv("https://raw.githubusercontent.com/the-pudding/data/master/names-in-songs/onlyNames.csv", stringsAsFactors = FALSE, header = TRUE)
 
 # keeping only names referencing people
 justNames <- data %>% 
